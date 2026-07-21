@@ -1,0 +1,28 @@
+name: 💡 功能建议 / Feature request
+description: 提一个你希望 omicOS 支持的能力 / Suggest a capability you'd like in omicOS
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题 / What are you trying to do
+      description: 描述场景与痛点,而不只是具体方案。/ Describe the scenario and pain point, not just a specific solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你期望的能力 / What you'd like
+      description: 你设想的功能或改进。/ The feature or improvement you have in mind.
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: 涉及组件 / Component
+      options:
+        - 不确定 / Not sure
+        - 桌面 App / Desktop app
+        - 网页端 / Web UI
+        - 内核 · 命令行 / Kernel · CLI (omicos)
+        - 分析能力 · agent / skill / Analysis capabilities

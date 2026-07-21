@@ -1,0 +1,52 @@
+name: 🐛 问题反馈 / Bug report
+description: 报告一个使用中遇到的问题 / Report a problem you ran into
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈!请尽量填写下面的信息,方便我们复现与定位。涉及账号 / 付费问题请走应用内客服。
+        Thanks! Please fill in as much as you can so we can reproduce it. For account/billing issues, use in-app support.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 发生了什么 / What happened
+      description: 简述问题、你期望的结果、以及实际结果。/ What went wrong, what you expected, what actually happened.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      placeholder: |
+        1. …
+        2. …
+        3. …
+  - type: dropdown
+    id: component
+    attributes:
+      label: 涉及组件 / Component
+      options:
+        - 不确定 / Not sure
+        - 桌面 App / Desktop app
+        - 网页端 / Web UI
+        - 内核 · 命令行 / Kernel · CLI (omicos)
+        - 远程连接 / SSH remote
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: 版本号 / Versions
+      description: 尽量注明桌面 App / 网页端 / 内核版本(设置 → 关于)。/ Desktop / web UI / kernel versions if known (Settings → About).
+      placeholder: "e.g. desktop 0.1.x, webui 0.2.x, core 0.3.x"
+  - type: input
+    id: os
+    attributes:
+      label: 系统 / OS
+      placeholder: "e.g. Windows 11, macOS 15, Ubuntu 22.04"
+  - type: textarea
+    id: extra
+    attributes:
+      label: 其他信息 / Anything else
+      description: 截图、报错文本、日志等。请勿粘贴 API Key 等密钥。/ Screenshots, error text, logs. Do NOT paste API keys or secrets.

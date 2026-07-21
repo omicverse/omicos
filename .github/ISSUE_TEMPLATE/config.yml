@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 官网与下载 / Website & download
+    url: https://omicos.cn
+    about: 产品介绍、下载、文档。/ Product info, downloads, docs.
+  - name: 账号 / 付费 / 客服 / Account · billing · support
+    url: https://omicos.cn
+    about: 账号或付费相关问题请通过官网或应用内客服联系。/ For account or billing issues, use the website or in-app support.
