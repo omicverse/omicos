@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.13 — 2026-07-21
+
+- **会话行菜单**:每条会话可置顶 / 归档 / 标为未读,并跨设备同步。
+- **本地会话的模型也同步到云端**:在另一台设备打开同一会话时能看到相同的模型。
+- **修复:远程会话的「后续建议」不再报错**:SSH 隧道会话的后续建议面板此前总显示「建议暂不可用」,现已修正。
+
+- **Conversation row menu**: each conversation can be pinned / archived / marked unread, synced across devices.
+- **A local conversation's model now syncs to the cloud**: open the same conversation on another device and you'll see the same model.
+- **Fixed: "follow-up suggestions" no longer error on remote conversations**: the suggestions panel for SSH-tunnel conversations used to always show "unavailable"; fixed.
+
 ## 0.3.12 — 2026-07-20
 
 - **远程连接更稳定**:优化 SSH 远程内核的关闭、就绪判定与状态刷新,并按连接把工作区操作路由到正确的内核,减少抖动。
