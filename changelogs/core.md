@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.14 — 2026-07-21
+
+- **新增证据模式(Evidence mode)**:开启后,每个结论都用引用的文献或来自数据的具体数字支撑,并强制附上反方证据——新增引用文献、引用数据、查找反证三种能力,配合独立校验。面向 Pro 等级的组学(omics)分析。
+- **分域权益判定修正**:同时拥有不同研究域权益的用户(例如「人文社科 Pro、组学社区版」),现在能按当前所在域正确解锁该域的付费 agent 与 skill,不再被其他域的等级误挡。
+- **记忆系统重构**:记忆条目新增分类与「有效期」信息——失效的记忆是被标记为过期而非删除(文件保留作历史),默认只召回当前有效的事实;「常用」的记忆按最近一次被用到来衡量,越常用越保持在前,长期不用的逐渐淡出。
+- **其它稳定性**:已保存连接的打开更稳、轮次事件按会话隔离、内核根目录与新建对话默认目录分离。
+
+- **New: Evidence mode**: when on, every conclusion is backed by a cited reference or a concrete number from your data, and counter-evidence is required — adding cite-literature, cite-data and find-counter-evidence capabilities with an independent check. For Pro-tier omics analysis.
+- **Per-domain entitlement fix**: users who hold entitlements in different research domains (e.g. "Humanities Pro, omics Community") now correctly unlock a domain's paid agents and skills based on the domain they're in, instead of being blocked by another domain's tier.
+- **Memory system redesign**: memory entries gain a category and validity information — a superseded memory is marked expired rather than deleted (the file is kept as history), and only currently-valid facts are recalled by default; "frequently used" memories are measured by when they were last used, so the ones you rely on stay near the top while ignored ones fade out.
+- **Other stability**: steadier opening of saved connections, per-conversation isolation of turn events, and separation of the kernel's root directory from the default directory for new conversations.
+
 ## 0.3.13 — 2026-07-21
 
 - **会话行菜单**:每条会话可置顶 / 归档 / 标为未读,并跨设备同步。
