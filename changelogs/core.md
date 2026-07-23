@@ -7,6 +7,11 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.16 — 2026-07-23
+
+- 本次更新修复了服务器连接 bug。
+- This update fixes a server connection bug.
+
 ## 0.3.15 — 2026-07-22
 
 - **MCP 服务器可以带界面了(MCP Apps)**:支持 MCP 服务器提供交互式界面并在对话中渲染;已渲染的界面在该回合结束后仍能继续调用其工具。
