@@ -7,6 +7,22 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.15 — 2026-07-22
+
+- **MCP 服务器可以带界面了(MCP Apps)**:支持 MCP 服务器提供交互式界面并在对话中渲染;已渲染的界面在该回合结束后仍能继续调用其工具。
+- **可以用本地路径的 MCP 服务器**,并把原来含糊的「握手失败」换成明确的预检提示(目录是否存在、命令是否可执行等),不用再猜哪里配错了。
+- **一键安装精选的非 npm MCP 服务器**:无需打开终端;来源固定、安装前校验文件完整性,并会先征得你的同意。
+- **可安装的服务器目录改为云端下发**:新增服务器或修复失效的下载链接不再需要你升级客户端。
+- **自定义供应商的上下文窗口以你的设置为准**:此前若与某个内置模型同名,你填写的窗口会被内置值悄悄覆盖,现已修正。
+- **长时间运行更省资源**:修复「运行状态」进程采样在长期运行下的内存与文件句柄增长。
+
+- **MCP servers can now ship a UI (MCP Apps)**: MCP servers may provide an interactive interface rendered inside the conversation, and a rendered app can keep calling its tools after that turn ends.
+- **Use MCP servers from a local path**, with the vague "handshake failed" replaced by specific pre-flight checks (does the directory exist, is the command executable, …) so you no longer have to guess what's misconfigured.
+- **One-click install for curated non-npm MCP servers**: no terminal needed; sources are fixed, file integrity is verified before install, and your consent is requested first.
+- **The installable-server catalog is now served from the cloud**: adding a server or fixing a dead download link no longer requires you to update the client.
+- **A custom provider's context window now wins**: if it shared a name with a built-in model, your configured window was silently overridden — fixed.
+- **Lighter long-running resource use**: fixed memory and file-handle growth in the process sampler behind the runtime status view.
+
 ## 0.3.14 — 2026-07-21
 
 - **新增证据模式(Evidence mode)**:开启后,每个结论都用引用的文献或来自数据的具体数字支撑,并强制附上反方证据——新增引用文献、引用数据、查找反证三种能力,配合独立校验。面向 Pro 等级的组学(omics)分析。
