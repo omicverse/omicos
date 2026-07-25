@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.17 — 2026-07-24
+
+- **更聪明的会话标题**:新会话在第一轮完成后由模型生成一个简洁标题(侧边栏动画更新),不再只是截断你的第一句话;并保护无法读取的历史、恢复会话标题。
+- **文件搜索更快更干净,并修复超大会话拖垮云同步**:文件搜索 / 通配 / 列目录改用更强的引擎,统一忽略 `.omicos`、`node_modules`、`target` 等目录,搜索输出加了上限——修复了个别会话因体积异常膨胀(数百 MB)而云同步卡死的问题。
+- **同步自愈**:遇到异常巨大的单条记录时自动修复,不再无限重试、卡住整个同步。
+
+- **Smarter conversation titles**: a new conversation gets a concise model-generated title after its first turn (the sidebar animates the update), instead of just truncating your first message; unreadable history is protected and conversation titles are restored.
+- **Faster, cleaner file search, and a fix for oversized conversations stalling cloud sync**: file search / glob / list now use a stronger engine, consistently ignore directories like `.omicos`, `node_modules` and `target`, and cap search output — fixing cases where a conversation grew abnormally large (hundreds of MB) and jammed cloud sync.
+- **Self-healing sync**: an abnormally large single record is now repaired automatically instead of retrying forever and stalling the whole sync.
+
 ## 0.3.16 — 2026-07-23
 
 - 本次更新修复了服务器连接 bug。
