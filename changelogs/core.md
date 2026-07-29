@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.18 — 2026-07-26
+
+- **文件搜索更省、结果可完整取回**:搜索新增「只列匹配文件」「按文件计数」两种模式,便于先廉价定位再钻入内容;当内联结果被截断时,完整结果会写到临时文件供取回。
+- **更可靠的会话保存与损坏历史恢复**:会话库写入加了跨进程锁与原子替换,保存失败时如实报错而非留下半截;并能从可解析的旧历史恢复标题与正文,覆盖前先备份。
+- **委派的专家用自己的技能**:被委派的 agent 现在按它自己的授权集运行,而不是发起这一轮的 agent 的。
+- **Notebook Copilot 更安全**:每次改写/执行都绑定到当前锁定的 notebook 与已校验的单元格,信息过期即安全拒绝,并采用带完整性校验的原子保存,避免切换标签或同步把操作误导到别的 notebook。
+- **Windows 稳定性**:修复根目录/驱动器路径导致内核起不来的问题(含从 `E:\` 保存后被历史损坏成裸 `E:` 的工作区),内核中断时干净地清理整棵进程树。
+- **登录后不再被暂显为 Community**:CLI 登录后权限就绪前,Pro 用户不会被短暂判成社区版。
+- **诊断更清楚**:分别报告「网络可达」与「登录鉴权」,并且绝不输出任何令牌或身份信息。
+
+- **Leaner file search with retrievable full results**: search adds "list matching files only" and "count per file" modes for cheap location before drilling into content; when the inline result is truncated, the full result is written to a temp file you can retrieve.
+- **More reliable conversation saves and corrupted-history recovery**: the conversation store now uses a cross-process lock and atomic replacement, reports errors honestly instead of leaving a half-written file, and can recover titles and content from parseable legacy history (with a backup before overwrite).
+- **Delegated experts use their own skills**: a delegated agent now runs under its own authorizations rather than the agent that started the turn.
+- **Safer Notebook Copilot**: each edit/execution is bound to the currently pinned notebook and verified cells, safely refuses when that information is stale, and saves atomically with an integrity check — so switching tabs or a sync can't redirect an action to a different notebook.
+- **Windows stability**: fixed root/drive paths that could stop the kernel from starting (including workspaces saved from `E:\` and historically corrupted to a bare `E:`), and clean whole-process-tree cleanup on kernel interrupt.
+- **No brief "Community" after sign-in**: Pro users are no longer momentarily treated as Community while permissions initialize after a CLI login.
+- **Clearer diagnostics**: network reachability and login authentication are reported separately, and no token or identity information is ever printed.
+
 ## 0.3.17 — 2026-07-24
 
 - **更聪明的会话标题**:新会话在第一轮完成后由模型生成一个简洁标题(侧边栏动画更新),不再只是截断你的第一句话;并保护无法读取的历史、恢复会话标题。
