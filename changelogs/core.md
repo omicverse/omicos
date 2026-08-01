@@ -7,6 +7,28 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.20 — 2026-08-01
+
+- **修复:某些情况下助手「什么都没回」**——一次内部写入竞争会在回答开始输出之前就让整轮失败;现在这类非关键写入失败不再中断本轮。
+- **修复:非默认工作区里的图表打不开**——图片现在按会话自己的工作区解析,而不是内核启动时的固定目录(文件一直好好在磁盘上)。
+
+- **Fixed: the assistant occasionally "returned nothing"** — an internal write race could fail the whole turn before the answer began streaming; such non-critical write failures no longer interrupt the turn.
+- **Fixed: figures wouldn't open in a non-default workspace** — figures now resolve against the conversation's own workspace rather than the kernel's fixed startup directory (the files were always safely on disk).
+
+## 0.3.19 — 2026-07-31
+
+- **目录同步大幅省流量**:agent/skill 清单同步改为协商 gzip 压缩(同一份清单从 28KB 降到约 6KB),内容没变时用条件请求换回空响应,不再重复下载已有字节。
+- **服务端主动推送目录更新**:管理端改动后,在线内核会被直接通知并立即同步对应类别,不必等下一次轮询;定时轮询保留为兜底。
+- **续期不再顺带重拉整个目录**:只有权益真的变动(升级/降级/新购一个研究领域)才立即重同步,权益不变时不再无谓重拉。
+- **每个请求带上版本号**:内核访问云端时带上 `omicos-core/<版本>`,便于线上排查区分内核版本。
+- **Notebook Copilot 锁定当前选中单元格**:每轮以编辑器里选中的单元格为准,过期坐标直接拒绝而非猜测;单元格编号改为与编辑器一致的从 1 开始。
+
+- **Much leaner catalog sync**: agent/skill catalog sync now negotiates gzip (a catalog dropping from ~28KB to ~6KB) and uses conditional requests to get an empty response when nothing changed, instead of re-downloading bytes it already has.
+- **Server-pushed catalog updates**: after an admin change, online kernels are notified directly and sync the affected category immediately, without waiting for the next poll; periodic polling remains as a fallback.
+- **Renewal no longer re-pulls the whole catalog**: a full re-sync happens only when entitlements actually change (upgrade / downgrade / buying a new research domain), not on every credential renewal.
+- **A version header on every request**: the kernel now identifies itself as `omicos-core/<version>` when calling the cloud, making it possible to tell kernel versions apart when investigating issues.
+- **Notebook Copilot locks to the selected cell**: each turn targets the cell selected in the editor and refuses stale coordinates instead of guessing; cell numbers now start at 1 to match the editor.
+
 ## 0.3.18 — 2026-07-26
 
 - **文件搜索更省、结果可完整取回**:搜索新增「只列匹配文件」「按文件计数」两种模式,便于先廉价定位再钻入内容;当内联结果被截断时,完整结果会写到临时文件供取回。
