@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.21 — 2026-08-03
+
+- **远程内核更新后不再误报「已更新」**:更新判断改为探测「实际在跑的运行时」版本,而不是磁盘上的可执行文件——新文件已就位、但内核进程还是旧版本时,连接界面现在会正确进入更新流程;同时修复了终止信号未被转发、导致原生内核进程被落下、继续占用端口的问题。
+- **迭代发现(campaign)三方面改进**:正确性——补齐了此前未真正生效的几处判据、修正标准化相关的判定失真、并区分「结果是自己测出来的还是从文献读到的」;性能——大幅优化拟合与整批读取的耗时,大规模候选空间也能跑;工作流——探索性工作时会主动开始记录,新建记录不再强制先声明优化目标。
+- **Windows 稳定性**:修复一处会导致 Windows 版内核编译不出来的问题。
+
+- **Remote kernels no longer falsely report "up to date"** — the update check now probes the *running* runtime's version rather than the on-disk executable, so when a new file is in place but the kernel process is still the old version, the connection screen correctly enters the update flow; also fixes termination signals not being forwarded, which could leave the native kernel process orphaned and holding its port.
+- **Iterative-discovery (campaign) improvements across three areas** — correctness: several criteria that weren't actually taking effect are now wired in, a normalization-related distortion is fixed, and results now distinguish "measured here" from "read from the literature"; performance: fitting and full-record reads are much faster, scaling to large candidate spaces; workflow: exploratory work now starts a record on its own, and creating a record no longer forces you to declare an optimization goal up front.
+- **Windows stability** — fixed an issue that could prevent the Windows kernel from building.
+
 ## 0.3.20 — 2026-08-01
 
 - **修复:某些情况下助手「什么都没回」**——一次内部写入竞争会在回答开始输出之前就让整轮失败;现在这类非关键写入失败不再中断本轮。
