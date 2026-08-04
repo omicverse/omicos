@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.22 — 2026-08-04
+
+- **新模型不再退化成 32K 上下文**:供应商 `/models` 返回的能力信息此前被丢弃,导致每个新模型都落回通用 32K 默认窗口;现在保留一小组通用能力元数据(不含定价等易变字段），新模型的真实上下文窗口得以正确显示。
+- **排队消息不再丢附加图片**:排队期间贴的图片此前会在恢复排队消息时被悄悄覆盖丢失;现已修复,并顺带整理了 CLI 与 App 之间的队列/跨端会话对齐。
+- **图表 PDF 里的文字可再编辑**:自动导出的图表 PDF 改用 TrueType 字体,在 Illustrator 等工具里文字可编辑(此前为不可编辑的 Type 3)。
+- **目录「刷新」按钮真正刷新**:手动刷新不再被后台的缓存捷径接住,现在保证真的向服务端请求一次。
+- **新增按连接的远程 OAuth**:可直接在某台已连接的远程内核上完成 OAuth 登录,凭据由那台机器自己持有和续期。
+- **安全恢复「无主」会话**:账号隔离上线前留下的旧会话有了安全的重新认领路径,仅在确认数据从未被别的账号共用时才认领,属于别人的会话保持原样。
+- **停止远程内核时清理更彻底**:改为对整个进程组发信号,顺带收掉旧版包装脚本遗留的孤儿内核进程。
+
+- **New models no longer degrade to a 32K context** — capability info from the provider's `/models` endpoint was being discarded, so every new model fell back to a generic 32K window; a small set of general capability metadata (no volatile fields like pricing) is now retained, so new models show their real context window.
+- **Queued messages no longer drop attached images** — images added while a message was queued could be silently overwritten and lost when the queued message was restored; fixed, along with tidying up queue / cross-device session alignment between the CLI and app.
+- **Text in exported chart PDFs is editable again** — auto-exported chart PDFs now use TrueType fonts, so text is editable in tools like Illustrator (previously non-editable Type 3).
+- **The catalog "Refresh" button actually refreshes** — a manual refresh is no longer caught by the background cache shortcut and now always asks the server.
+- **Per-connection remote OAuth** — you can complete an OAuth sign-in directly on a connected remote kernel, with the credentials held and renewed by that machine.
+- **Safe recovery of "ownerless" conversations** — older conversations left before account isolation now have a safe re-claim path, claimed only when the data was never shared with another account; conversations confirmed to belong to someone else are left untouched.
+- **Cleaner shutdown of remote kernels** — stopping a remote kernel now signals the whole process group and also reaps orphaned kernel processes left by an older wrapper script.
+
 ## 0.3.21 — 2026-08-03
 
 - **远程内核更新后不再误报「已更新」**:更新判断改为探测「实际在跑的运行时」版本,而不是磁盘上的可执行文件——新文件已就位、但内核进程还是旧版本时,连接界面现在会正确进入更新流程;同时修复了终止信号未被转发、导致原生内核进程被落下、继续占用端口的问题。
