@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.23 — 2026-08-05
+
+- **长任务不再因反复压缩上下文而中途卡死**:上下文压缩此前每轮硬性最多 2 次,即使一次压缩已经把上下文大幅缩小,仍可能因"压完还是偏大"直接把这一轮判死;现在改为根据"压缩是否真的在起作用"来决定是否继续,并修复了一处会把关键查找信息一并压掉的路径。
+- **并行/嵌套工具的进度归因更准**:进度显示为每次工具执行保留正确归因,不再把并行或嵌套工具的进度错挂到别处。
+- **更安全地检查与恢复「无主」会话**:对没有明确归属的旧会话提供只读检查与安全的重新认领,仅在确认这份数据从未被别的账号共用过时才认领,确认属于别人的会话保持不动。
+
+- **Long tasks no longer stall on repeated context compaction** — context compaction was capped at 2 attempts per turn, so even when a single pass had already shrunk the context substantially, the turn could still be killed for being "too large after compacting"; it now continues based on whether compaction is actually making progress, and a path that could compact away key lookup information is fixed.
+- **More accurate progress attribution for parallel/nested tools** — the progress display keeps the correct attribution for each tool execution instead of mis-attaching parallel or nested tool progress.
+- **Safer inspection and recovery of "ownerless" conversations** — older conversations without a clear owner get a read-only inspection and a safe re-claim path, claimed only when the data was never shared with another account; conversations confirmed to belong to someone else are left untouched.
+
 ## 0.3.22 — 2026-08-04
 
 - **新模型不再退化成 32K 上下文**:供应商 `/models` 返回的能力信息此前被丢弃,导致每个新模型都落回通用 32K 默认窗口;现在保留一小组通用能力元数据(不含定价等易变字段），新模型的真实上下文窗口得以正确显示。
