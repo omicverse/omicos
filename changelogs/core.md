@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.24 — 2026-08-06
+
+- **远程内核的文件下载改为流式传输**:远程内核下载文件时改经 WebSocket 桥接流式传输,大文件不再一次性占用内存。
+- **模型 API 契约对齐**:请求/响应字段按各家当前的接口契约校准,减少新模型上的兼容问题。
+- **并发远程启动不再互相覆盖**:每次远程启动的日志与 PID 文件按启动唯一命名,并发启动不再抢占彼此的 PID;失败的启动会在退出时清理自己的临时文件。
+- **目录订阅缓存状态更一致**:保持订阅缓存的一致性,避免刷新时状态错乱。
+
+- **Streamed file downloads from remote kernels** — downloading a file from a remote kernel now streams over the WebSocket bridge, so large files no longer have to be held in memory all at once.
+- **Model API contract alignment** — request/response fields are calibrated to each provider's current API contract, reducing compatibility issues with new models.
+- **Concurrent remote launches no longer clobber each other** — each remote launch's log and PID file is uniquely named per launch, so concurrent launches don't steal each other's PID; a failed launch cleans up its own temp files on exit.
+- **More consistent catalog subscription cache** — subscription cache state is kept consistent to avoid it getting confused on refresh.
+
 ## 0.3.23 — 2026-08-05
 
 - **长任务不再因反复压缩上下文而中途卡死**:上下文压缩此前每轮硬性最多 2 次,即使一次压缩已经把上下文大幅缩小,仍可能因"压完还是偏大"直接把这一轮判死;现在改为根据"压缩是否真的在起作用"来决定是否继续,并修复了一处会把关键查找信息一并压掉的路径。
