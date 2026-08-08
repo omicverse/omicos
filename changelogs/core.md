@@ -7,6 +7,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.25 — 2026-08-08
+
+- **修复 Anthropic OAuth(Claude Code 形态)登录**:按 Claude Code 的请求形态发起 Anthropic OAuth,登录不再失败;中继探测也改用当前活动的 Anthropic 模型。
+- **CLI 连对本地 Core、跟随其上报端口**:CLI 复用预期的本地 Core 实例并跟随它实际上报的端口(端口即使未变也能唤醒监听),避免连错实例或端口漂移。
+- **工作区可新建文件夹**:工作区选择器/文件浏览器现在能直接创建目录。
+- **远程更新时保护进行中的工作**;回放的 SSH 导出改走命名连接。
+- **文件保存/重命名/移动按会话工作区隔离**:保存、重命名、移动文件时的相对路径按当前会话自己的工作区解析(与打开文件一致)——从图表打开的 notebook 会存回该会话的工作区,而不是内核启动目录;越界写入保护照旧,会话内写入无法逃出其工作区。
+
+- **Fixed Anthropic OAuth (Claude Code style) sign-in** — Anthropic OAuth is now initiated in the shape Claude Code expects, so sign-in no longer fails; relay probing also uses the currently active Anthropic model.
+- **The CLI connects to the right local Core and follows its reported port** — the CLI reuses the intended local Core instance and follows the port it actually reports (waking the listener even when the port is unchanged), avoiding wrong-instance connections and port drift.
+- **Create folders in the workspace** — the workspace picker / file browser can now create directories directly.
+- **In-progress work is protected during remote updates**; replay's SSH export now goes over a named connection.
+- **File save / rename / move are scoped to the conversation's workspace** — relative paths for saving, renaming, and moving files now resolve against the current conversation's own workspace (matching how files are opened) — a notebook opened from a figure is saved back into that conversation's workspace rather than the kernel's startup directory; the existing out-of-bounds write protection still applies, so writes within a conversation cannot escape its workspace.
+
 ## 0.3.24 — 2026-08-06
 
 - **远程内核的文件下载改为流式传输**:远程内核下载文件时改经 WebSocket 桥接流式传输,大文件不再一次性占用内存。
