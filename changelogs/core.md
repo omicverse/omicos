@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.26 — 2026-08-10
+
+- **上下文用量统计更准**:token 统计按实际生效的历史上报,与真正送进 prompt 的内容一致。
+- **CLI 选择器滚动时保持高亮**:滚动候选列表时当前选中项不再消失。
+- **SSH 分叉会话保留上下文**:从 SSH 远程连接分叉会话时,继承的上下文得以保留。
+
+- **More accurate context-usage stats** — token counts are reported against the history that actually takes effect, matching what is really sent into the prompt.
+- **The CLI picker keeps its highlight while scrolling** — the current selection no longer disappears when scrolling the candidate list.
+- **SSH forked conversations keep their context** — forking a conversation from an SSH remote connection now preserves the inherited context.
+
 ## 0.3.25 — 2026-08-08
 
 - **修复 Anthropic OAuth(Claude Code 形态)登录**:按 Claude Code 的请求形态发起 Anthropic OAuth,登录不再失败;中继探测也改用当前活动的 Anthropic 模型。
