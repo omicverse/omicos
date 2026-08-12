@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.27 — 2026-08-11
+
+- **HE 切片查看器改为真·深度缩放**:此前把整张切片渲染成一张定分辨率图片、前端用 CSS 放大,超过约 2 倍就发糊;现在改为按需生成对应层级的清晰瓦片,像 NDP.view / QuPath 那样平滑放大。
+- **流式工作区上传**:大文件上传改为流式,不再一次性占用内存。
+- **支持 DeepSeek V4 的推理模式**:可通过自定义供应商启用 DeepSeek V4 的 reasoning。
+- **Windows 解释器选择器能找到 conda 环境**:在 Windows 上正确发现 conda 环境。
+- **自更新更稳**:重启前先恢复被替换的可执行文件路径(仅在确认新文件存在后处理),避免更新后找不到自身。
+- **会话上下文解析修复**:更准确地准备约束引用、复位新一轮状态并收敛缓存清理范围。
+- **CLI 与 Web 之间交接工作区与会话**。
+
+- **True deep-zoom in the HE slide viewer** — previously the whole slide was rendered to a single fixed-resolution image and enlarged with CSS, which got blurry past ~2×; it now serves sharp tiles at the appropriate level on demand, zooming smoothly like NDP.view / QuPath.
+- **Streamed workspace uploads** — large-file uploads now stream instead of being held in memory all at once.
+- **DeepSeek V4 reasoning support** — DeepSeek V4's reasoning mode can be enabled via custom providers.
+- **The Windows interpreter picker finds conda environments** — conda envs are now discovered correctly on Windows.
+- **More robust self-update** — the replaced executable path is restored before restart (only once the new file is confirmed present), so the app can always find itself after an update.
+- **Conversation context resolution fixes** — constraint references are prepared more accurately, per-turn state is reset, and cache cleanup is scoped more tightly.
+- **Workspace and session hand-off between the CLI and the web app**.
+
 ## 0.3.26 — 2026-08-10
 
 - **上下文用量统计更准**:token 统计按实际生效的历史上报,与真正送进 prompt 的内容一致。
