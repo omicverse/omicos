@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.28 — 2026-08-12
+
+- **按项目划分的记忆与召回**:记忆可以按项目归档、按项目召回,资料随当前模型组织。
+- **可中断当前工作区内核**:新增"中断活动工作区内核"的能力,长任务可以及时打断。
+- **历史检索的权限判定更合理**:检索自己历史的权限改为按你在任意研究域里持有的最高档位判定——持 Pro 的用户不会因某个领域的档位过期而被误判成免费、进而拒绝访问自己的历史。
+- **桌面更新健康检查对中国大陆网络更友好**:诊断改为同时探测国内更新节点并与海外节点竞速,任一可达即视为正常(此前只探测海外节点,国内网络会一律误报"无法连接更新主机",而更新其实经国内节点正常)。
+
+- **Per-project memory and recall** — memories can be filed and recalled per project, with the dossier organized around the current model.
+- **Interruptible active-workspace kernel** — a new "interrupt the active workspace kernel" capability lets you stop long-running tasks promptly.
+- **Fairer entitlement check for history search** — permission to search your own history is now decided by the highest tier you hold across any research domain, so a Pro user isn't misread as free (and denied their own history) just because one domain's tier has lapsed.
+- **Desktop update health check is friendlier to networks in mainland China** — the diagnostic now also probes the in-region update node and races it against the overseas one, treating either as healthy; previously it probed only the overseas node and would always report "cannot reach the update host" from within China even though updates were served fine in-region.
+
 ## 0.3.27 — 2026-08-11
 
 - **HE 切片查看器改为真·深度缩放**:此前把整张切片渲染成一张定分辨率图片、前端用 CSS 放大,超过约 2 倍就发糊;现在改为按需生成对应层级的清晰瓦片,像 NDP.view / QuPath 那样平滑放大。
