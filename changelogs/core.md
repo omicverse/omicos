@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.29 — 2026-08-14
+
+- **对齐各模型当前的推理接口契约**:请求/响应字段按各家最新的 reasoning 接口契约校准。
+- **工具调用身份在审批前后保持一致**:经过审批后工具调用的身份不再错乱,进度与结果正确对应。
+- **会话 ID 使用完整 UUID**:会话标识使用完整 UUIDv4,降低碰撞风险。
+- **浏览器文件路径的查询参数正确解码**:浏览器文件路径中经表单编码的查询参数(如路径里的空格)现在能正确解码。
+- **为 Python 运行时下发渲染授权**:图形渲染所需的授权凭据会下发给 Python 运行时。
+- **可挂接外部管理的 SSH 运行时**:支持接入由外部管理的 SSH 运行时。
+- **Windows:不再被残留的服务锁卡住**:能识别已退出的服务锁持有者,启动不再被过期锁阻塞。
+
+- **Aligned with each model's current reasoning API contract** — request/response fields are calibrated to each provider's latest reasoning contract.
+- **Consistent tool-call identity across approval** — a tool call's identity is no longer scrambled after approval, so progress and results map correctly.
+- **Full UUID session IDs** — sessions now use a full UUIDv4 identifier, reducing collision risk.
+- **Correct decoding of browser file-path query parameters** — form-encoded query parameters in browser file paths (such as spaces in a path) are now decoded correctly.
+- **Rendering authority for the Python runtime** — the credential needed for graphics rendering is provided to the Python runtime.
+- **Attach an externally managed SSH runtime** — you can now hook up an SSH runtime managed outside the app.
+- **Windows: no longer stuck on a stale serve lock** — an exited serve-lock holder is detected, so startup isn't blocked by a leftover lock.
+
 ## 0.3.28 — 2026-08-12
 
 - **按项目划分的记忆与召回**:记忆可以按项目归档、按项目召回,资料随当前模型组织。
