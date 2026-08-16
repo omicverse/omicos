@@ -7,6 +7,22 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.30 — 2026-08-15
+
+- **新增 Agent2Agent(A2A)v1.0 协议**:内置 A2A 服务端(基于 JSON-RPC 2.0,支持消息发送与流式、任务查询/列举/取消/订阅、扩展 agent-card)、agent-card 发现、鉴权与文件/推送;也可作为客户端把外部 agent 当作工具调用。
+- **A2A 外呼单独审批分级**:调用外部 A2A agent 会把对话/分析内容发给第三方,现改为独立的审批级别,自动模式下也会先暂停等你确认(与 MCP 一致),而不再被当作只读操作静默执行。
+- **A2A 前向兼容加固**:对方使用更新版本的协议、回以本版本尚不认识的取值时,不再整条解析失败,而是当作"未知"继续处理。
+- **DeepSeek V4 更稳**:保留其工具调用的推理历史,并加入按模型的首请求配置,绝不把初始化阶段的中间答案当作最终结果返回。
+- **会话历史查询新增"仅运行时状态"选项**:存活轮询只需运行时状态时不再重复加载整段历史。
+- **`omicos serve` 的复用提示在终端里可见**:当已有健康实例、第二个 serve 复用并退出时,提示不再被吞掉,也不会把终端留在原始模式。
+
+- **New Agent2Agent (A2A) v1.0 protocol** — a built-in A2A server (JSON-RPC 2.0: message send and streaming, task get/list/cancel/subscribe, extended agent-card), agent-card discovery, authentication, and files/push; the app can also act as a client and call external agents as tools.
+- **Separate approval tier for outbound A2A calls** — calling an external A2A agent sends conversation/analysis content to a third party, so these now have their own approval tier and pause for confirmation even in automatic mode (like MCP), instead of being treated as a silent read-only operation.
+- **Hardened A2A forward compatibility** — when a peer on a newer protocol version replies with values this build doesn't recognize, the whole message no longer fails to parse; unknown values are treated as "unknown" and processing continues.
+- **Steadier DeepSeek V4** — reasoning history for its tool calls is preserved, and a per-model first-request profile is added; intermediate bootstrap answers are never returned to you as the final result.
+- **A "runtime-only" option for session-history queries** — liveness polling that only needs runtime state no longer reloads the whole history.
+- **The `omicos serve` reuse notice is visible in the terminal** — when a healthy instance already exists and a second serve reuses it and exits, the notice is no longer swallowed and the terminal isn't left in raw mode.
+
 ## 0.3.29 — 2026-08-14
 
 - **对齐各模型当前的推理接口契约**:请求/响应字段按各家最新的 reasoning 接口契约校准。
