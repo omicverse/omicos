@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.31 — 2026-08-16
+
+- **图像生成按目录声明的接口路由,支持更多供应商**:此前图像生成只在少数供应商上可用,其它能出图的供应商会中途失败;现在改为按目录中声明的图像生成接口路由,凡是支持出图的供应商都可用。
+- **SSH 运行时的所有权与更新生命周期加固**:强化了 SSH 运行时的生命周期与受管更新的稳健性,并隔离不同账号的远程运行时。
+- **修复 exFAT 磁盘上的渲染授权发布**:在 exFAT 文件系统上,图形渲染所需的授权凭据现在能正确发布。
+
+- **Image generation routes by the catalog-declared API, covering more providers** — image generation previously worked only on a few providers and failed partway on others that can actually produce images; it now routes by the image-generation API declared in the catalog, so any provider that supports it works.
+- **Hardened SSH-runtime ownership and update lifecycle** — the SSH runtime's lifecycle and managed-update robustness are strengthened, and remote runtimes are isolated across accounts.
+- **Fixed rendering-authority publishing on exFAT** — on exFAT filesystems, the credential needed for graphics rendering is now published correctly.
+
 ## 0.3.30 — 2026-08-15
 
 - **新增 Agent2Agent(A2A)v1.0 协议**:内置 A2A 服务端(基于 JSON-RPC 2.0,支持消息发送与流式、任务查询/列举/取消/订阅、扩展 agent-card)、agent-card 发现、鉴权与文件/推送;也可作为客户端把外部 agent 当作工具调用。
