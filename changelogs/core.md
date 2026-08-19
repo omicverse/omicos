@@ -7,6 +7,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.32 — 2026-08-18
+
+- **并发远程会话的 SSH 账号状态相互隔离**:同时连接多个远程 Core 会话时,各自的 SSH 账号状态不再相互串扰,彼此独立。
+- **触及安全上限时明确告知**:某个回合因触及安全上限而停止时,会明确说明原因,而不再静默结束。
+
+- **SSH account state is isolated across concurrent remote sessions** — when several remote Core sessions are connected at once, each keeps its own SSH account state instead of interfering with the others.
+- **Clear notice when a safety limit is reached** — when a turn stops because it hit a safety limit, that reason is now stated explicitly rather than the turn ending silently.
+
 ## 0.3.31 — 2026-08-16
 
 - **图像生成按目录声明的接口路由,支持更多供应商**:此前图像生成只在少数供应商上可用,其它能出图的供应商会中途失败;现在改为按目录中声明的图像生成接口路由,凡是支持出图的供应商都可用。
