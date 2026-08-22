@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.33 — 2026-08-21
+
+- **配额感知的免费模型路由**:按各账号/供应商的剩余配额自动挑选可用的免费模型,配额用尽的不再被反复选中。
+- **Google 个人账号登录改用 Antigravity**:设置里显示为 Antigravity OAuth,授权改为在官方回调页粘贴授权码,并可从 Antigravity CLI(`agy`)或企业版 Gemini CLI 凭据导入;个人 Google AI Pro/Ultra/免费账号不再走 Gemini CLI。
+- **经本地转发时不再把"模型在思考"误判为断线**:此前本地模型在建链、重试或尚未输出首字时,远端收不到任何帧,即使连接正常也会在 180 秒后误报连接超时;现在把"连接是否存活"与"模型是否有进度"分开计时,只有真正的模型输出才算进度。旧版本内核仍按原有超时行为工作。
+- **应用更新比较改用语义化版本**:判断是否有新版本时按 SemVer 大小比较,不再按字符串,避免 0.3.9 被误判为高于 0.3.10。
+- **安全:不再误取消他人的计算作业**:shell 拒绝直接执行 `scancel`,取消作业只允许针对本会话自己提交的任务。
+- **工具报错更清楚**:参数出错时会指出具体是哪个参数不对、以及哪个传入项从未被使用。
+- **供应商修复**:OpenAI key 校验与运行时解析口径对齐;对齐最新的推理参数协议。
+
+- **Quota-aware free-model routing** — free models are picked automatically based on each account/provider's remaining quota, and ones whose quota is used up are no longer repeatedly selected.
+- **Google personal-account sign-in moved to Antigravity** — shown as Antigravity OAuth in settings, authorization is now done by pasting the code on the official callback page, and credentials can be imported from the Antigravity CLI (`agy`) or an enterprise Gemini CLI; personal Google AI Pro/Ultra/free accounts no longer go through the Gemini CLI.
+- **"Model is thinking" is no longer mistaken for a disconnect over local forwarding** — previously, while a local model was connecting, retrying, or had not yet produced its first token, the remote end received no frames and would falsely report a connection timeout after 180s even when the link was fine; connection liveness and model progress are now timed separately, and only real model output counts as progress. Older kernels keep their previous timeout behavior.
+- **App-update comparison now uses semantic versioning** — "is there a newer version" is decided by SemVer ordering rather than string comparison, so 0.3.9 is no longer treated as higher than 0.3.10.
+- **Safety: no longer cancels someone else's compute jobs** — the shell refuses to run `scancel` directly, and job cancellation is restricted to jobs submitted by the current session.
+- **Clearer tool errors** — on a bad argument, it now points out which argument is wrong and which passed-in field was never used.
+- **Provider fixes** — OpenAI key validation is aligned with how the runtime parses it, and request parameters are aligned with the latest reasoning-parameter protocol.
+
 ## 0.3.32 — 2026-08-18
 
 - **并发远程会话的 SSH 账号状态相互隔离**:同时连接多个远程 Core 会话时,各自的 SSH 账号状态不再相互串扰,彼此独立。
