@@ -7,6 +7,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.34 — 2026-08-22
+
+- **发消息更快**:每条消息不再重复支付回合开始的固定开销——图像宿主改用 stale-while-revalidate、目录改用缓存,减少每次发消息时的重复加载与序列化。
+- **冷启动与模型选择更快**:选择器新增快速路径,worker 提示词精简,启动负载改为预执行,降低首次启动与选择阶段的延迟。
+
+- **Faster message sending** — the fixed per-turn startup cost is no longer paid on every message: the image host uses stale-while-revalidate and the catalog is cached, cutting repeated loading and serialization on each send.
+- **Faster cold start and model selection** — a selector fast-path, trimmed worker prompts, and pre-executed startup work reduce first-launch and selection latency.
+
 ## 0.3.33 — 2026-08-21
 
 - **配额感知的免费模型路由**:按各账号/供应商的剩余配额自动挑选可用的免费模型,配额用尽的不再被反复选中。
