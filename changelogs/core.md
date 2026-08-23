@@ -7,6 +7,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.35 — 2026-08-22
+
+- **保留实时的模型元数据**:模型信息会随运行时状态一并保存与展示,不再在运行过程中丢失。
+- **修复计划令牌的主动刷新**:刷新前的等待时长不再为负(加了下限),缓冲时间改由真实的令牌有效期推导,避免过早或过于频繁地刷新。
+
+- **Live model metadata is preserved** — model information is now saved and shown alongside runtime state instead of being lost mid-run.
+- **Fixed proactive plan-token refresh** — the pre-refresh wait is no longer negative (a floor was added), and the buffer is derived from the token's real time-to-live, avoiding refreshes that are too early or too frequent.
+
 ## 0.3.34 — 2026-08-22
 
 - **发消息更快**:每条消息不再重复支付回合开始的固定开销——图像宿主改用 stale-while-revalidate、目录改用缓存,减少每次发消息时的重复加载与序列化。
