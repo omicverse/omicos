@@ -7,6 +7,12 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.36 — 2026-08-24
+
+- **审阅者可单独指定模型**:代码/内容审阅可以独立配置所用的供应商与模型,与主对话模型解耦——例如用一个模型对话、另一个模型做审阅。
+
+- **The reviewer can use its own model** — code/content review can be configured with its own provider and model, decoupled from the main conversation model (e.g. chat with one model while a different model reviews).
+
 ## 0.3.35 — 2026-08-22
 
 - **保留实时的模型元数据**:模型信息会随运行时状态一并保存与展示,不再在运行过程中丢失。
