@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.37 — 2026-08-25
+
+- **笔记本导出会披露所用技能的来源**:通过内核运行时导出时,导出内容会说明本次运行打包了哪些技能及其出处,便于溯源与复现。
+- **Windows 路径显示更干净**:隐藏 Windows 上的 `\\?\` 前缀,工作区路径更易读。
+- **执行前即可获取共享变量信息**:为内核的共享变量新增预检元数据,执行前就能拿到相关信息。
+- **修复经本地转发时的账号选择**:走「经本地转发」建链时,引导阶段的账号选择与运行时保持一致。
+
+- **Notebook export discloses the skills it used** — when exporting through the kernel runtime, the export states which skills were packaged for the run and where they came from, aiding traceability and reproducibility.
+- **Cleaner path display on Windows** — the `\\?\` prefix is hidden, so workspace paths read more cleanly.
+- **Shared-variable info available before execution** — preflight metadata is added for the kernel's shared variables, so their details are available before a run starts.
+- **Fixed account selection over local forwarding** — when connecting via local forwarding, the account chosen during bootstrap now matches the runtime.
+
 ## 0.3.36 — 2026-08-24
 
 - **审阅者可单独指定模型**:代码/内容审阅可以独立配置所用的供应商与模型,与主对话模型解耦——例如用一个模型对话、另一个模型做审阅。
