@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.38 — 2026-08-27
+
+- **审阅可独立设置推理强度与服务档位**:代码/内容审阅可单独指定推理强度与服务档位,与主对话解耦(延续审阅可用自己的供应商与模型)。
+- **修复本地转发的连接恢复**:中继现在能恢复一代尚未被接受的执行器,不再因此卡住。
+- **暴露是否已配置视觉能力**:可查询视觉(vision)配置是否存在,便于按有无视觉能力做相应处理。
+
+- **Independent reasoning effort and service tier for review** — code/content review can set its own reasoning effort and service tier, decoupled from the main conversation (continuing on from review being able to use its own provider and model).
+- **Fixed connection recovery over local forwarding** — the relay can now recover an executor generation that was not yet accepted, instead of getting stuck on it.
+- **Vision-capability presence is exposed** — whether a vision configuration exists can be queried, so behavior can adapt to whether vision is configured.
+
 ## 0.3.37 — 2026-08-25
 
 - **笔记本导出会披露所用技能的来源**:通过内核运行时导出时,导出内容会说明本次运行打包了哪些技能及其出处,便于溯源与复现。
