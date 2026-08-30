@@ -7,6 +7,22 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.39 — 2026-08-29
+
+- **支持 GLM-5.3 系列**:按该系列模型的请求语义正确对接。
+- **每回合的持久记忆相互隔离**:各回合的持久记忆互不串扰。
+- **SSH 增强**:支持 SOCKS5 的 ProxyCommand,并能正确识别已配置的系统服务。
+- **修复自定义模型的推理强度转发**:自定义模型的推理强度会正确传递,并对齐各供应商的推理参数。
+- **大响应下不再丢失报错**:大响应事件里的错误信息会被保留。
+- **修复 macOS exFAT 上的渲染授权发布**:在 exFAT 卷上,图形渲染所需的授权凭据现在能正确发布。
+
+- **GLM-5.3 family support** — requests are formed with the correct semantics for these models.
+- **Per-turn durable memory is isolated** — each turn's durable memory no longer bleeds into other turns.
+- **SSH enhancements** — a SOCKS5 ProxyCommand is supported, and configured system services are identified correctly.
+- **Fixed reasoning-effort forwarding for custom models** — a custom model's reasoning effort is passed through correctly, and reasoning parameters are aligned across providers.
+- **Errors are no longer lost on large responses** — error information inside large response events is preserved.
+- **Fixed rendering-authority publishing on macOS exFAT** — on exFAT volumes, the credential needed for graphics rendering is now published correctly.
+
 ## 0.3.38 — 2026-08-27
 
 - **审阅可独立设置推理强度与服务档位**:代码/内容审阅可单独指定推理强度与服务档位,与主对话解耦(延续审阅可用自己的供应商与模型)。
