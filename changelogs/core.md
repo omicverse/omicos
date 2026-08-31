@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.3.40 — 2026-08-30
+
+- **超大分析记录上传改为分块**:超大的 trajectory 上传会自动分块,不再因体积过大而失败。
+- **修复子代理委派与 A2A 审批**:子代理委派现在能正确收敛,A2A 审批轮询行为也已修正。
+- **连接时保留已安装的内置环境**:合并已安装的内置环境,连接后环境不再丢失。
+- **安全:只停自己的远程内核**:校验与停止远程内核时只作用于自己拥有的实例,不会误动他人的。
+
+- **Chunked upload for oversized analysis records** — very large trajectory uploads are automatically chunked so they no longer fail on size.
+- **Fixed sub-agent delegation and A2A approval** — sub-agent delegation now converges correctly, and A2A approval polling behaves as expected.
+- **Installed bundled environment is preserved on connect** — the installed bundled environment is merged in, so it isn't lost after connecting.
+- **Safety: only your own remote kernels are stopped** — verifying and stopping remote kernels acts only on instances you own, never on someone else's.
+
 ## 0.3.39 — 2026-08-29
 
 - **支持 GLM-5.3 系列**:按该系列模型的请求语义正确对接。
