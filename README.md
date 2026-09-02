@@ -2,7 +2,7 @@
   <img src="assets/omicos-logo.png" alt="omicOS" width="140">
 </p>
 
-<h1 align="center">omicOS · Release Notes</h1>
+<h1 align="center">omicOS</h1>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@omicverse/omicos"><img src="https://img.shields.io/npm/v/@omicverse/omicos?logo=npm&color=cb3837" alt="npm version"></a>
