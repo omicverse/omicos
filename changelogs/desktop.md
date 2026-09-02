@@ -1,12 +1,18 @@
-# omicos 桌面 App 更新记录 / Changelog
+# omicOS 桌面 App 更新记录 / Changelog
 
-Windows / macOS 桌面客户端(应用外壳)。从 [omicos.cn](https://omicos.cn) 下载,应用内自动更新。
-The Windows / macOS desktop client (the app shell). Download from [omicos.cn](https://omicos.cn); it updates in-app.
+Windows / macOS 桌面客户端。它是一个会**自动更新的外壳**,内置分析内核(omicos-core)与网页端(webui),两者各自静默 OTA 升级。
+The Windows / macOS desktop client. It is an **auto-updating shell** that bundles the analysis kernel (omicos-core) and the web UI (webui), both of which upgrade silently via OTA.
 
-> 桌面外壳、网页端、内核是三条独立的发版线。你在 App 里看到的大部分功能更新其实来自**网页端**(见 [webui.md](webui.md))与**内核**(见 [core.md](core.md)),它们随 App 静默更新;本页只记录**桌面外壳本身**(安装器、自动更新、系统集成等)的变化。
->
-> The desktop shell, web UI, and kernel are three independent release lines. Most feature updates you see in the app actually come from the **web UI** (see [webui.md](webui.md)) and the **kernel** (see [core.md](core.md)), delivered silently with the app; this page tracks changes to the **desktop shell itself** (installer, auto-update, OS integration).
+> 从 [omicos.cn](https://omicos.cn) 下载,应用内自动更新。
+> Download from [omicos.cn](https://omicos.cn); it updates itself in place.
 
 ---
 
-_桌面外壳的逐版本记录正在整理中,将从这里开始补充。/ A per-version history of the desktop shell is being compiled and will be added here._
+绝大多数用户可见的变化来自**内核**与**网页端**,请查看它们的更新记录:
+Almost all user-facing changes come from the **kernel** and the **web UI** — see their changelogs:
+
+- 内核 / Kernel — [`core.md`](core.md)
+- 网页端 / Web UI — [`webui.md`](webui.md)
+
+外壳本身(安装器、自动更新、窗口 / 托盘、系统集成)很少单独发版;当某项变化确实属于桌面外壳时,会在上面两份记录里注明「需重装桌面端」或「桌面版」。此文件将在外壳出现独立于内核 / 网页端的用户可见变化时开始逐版记录。
+The shell itself (installer, auto-update, window / tray, OS integration) rarely ships on its own; when a change genuinely belongs to the desktop shell it is flagged as "desktop reinstall required" or "(desktop)" in the two changelogs above. This file will start listing per-version entries once the shell has user-facing changes independent of the kernel / web UI.
