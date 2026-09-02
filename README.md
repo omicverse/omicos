@@ -4,6 +4,16 @@
 
 <h1 align="center">omicOS · Release Notes</h1>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@omicverse/omicos"><img src="https://img.shields.io/npm/v/@omicverse/omicos?logo=npm&color=cb3837" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@omicverse/omicos"><img src="https://img.shields.io/npm/dm/@omicverse/omicos?color=cb3837" alt="npm downloads"></a>
+  <img src="https://img.shields.io/node/v/@omicverse/omicos?color=00795c" alt="node version">
+  <img src="https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-informational" alt="platforms">
+  <a href="https://docs.omicos.cn/en/"><img src="https://img.shields.io/badge/docs-omicos.cn-00795c" alt="docs"></a>
+  <a href="https://omicos.cn"><img src="https://img.shields.io/badge/website-omicos.cn-00795c" alt="website"></a>
+  <a href="NOTICE.md"><img src="https://img.shields.io/badge/license-Proprietary-lightgrey" alt="license"></a>
+</p>
+
 **omicOS** is an agent-driven omics-analysis platform. This repository publishes **release notes only** — so you can see what each update changes, subscribe to new releases, and report issues.
 
 ## Installation
