@@ -1,8 +1,10 @@
-# omicOS · Release Notes
+<p align="center">
+  <img src="assets/omicos-logo.png" alt="omicOS" width="140">
+</p>
+
+<h1 align="center">omicOS · Release Notes</h1>
 
 **omicOS** is an agent-driven omics-analysis platform. This repository publishes **release notes only** — so you can see what each update changes, subscribe to new releases, and report issues.
-
-> ⚠️ omicOS is a **commercial, closed-source product**. This repository contains **no source code** and grants no license to any omicOS software — only user-facing release notes and documentation links.
 
 ## Installation
 
