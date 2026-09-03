@@ -7,6 +7,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.1 — 2026-09-03
+
+- **修复:SSH 连接能从断开的传输中恢复**,断链后不再卡死。
+- **修复:更安全地创建上传目录**,避免上传文件时的目录问题。
+
+- **Fixed: SSH connections recover from a dropped transport** instead of getting stuck after a disconnect.
+- **Fixed: upload directories are created more safely**, avoiding directory issues when uploading files.
+
 ## 0.4.0 — 2026-09-02
 
 - **新增划词翻译**:选中文字即可翻译,内置 DeepL + 无密钥 Google 兜底;都不可用时回退到当前对话自己的模型,而不是打到无密钥端点。
