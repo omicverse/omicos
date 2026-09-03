@@ -7,6 +7,26 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.0 — 2026-09-02
+
+- **新增划词翻译**:选中文字即可翻译,内置 DeepL + 无密钥 Google 兜底;都不可用时回退到当前对话自己的模型,而不是打到无密钥端点。
+- **单元格可向查看器发布一个结构**,由内核对该「揭示」签名后再呈现。
+- **命名的远程模型归属路由**:远程模型按命名归属正确路由。
+- **安全加固**:强化了界面,并把审阅收敛到当前会话的作用域。
+- **H&E 病理切片**:改在会话自己的内核里裁剪瓦片;openslide 打不开的切片自动回退到 tiffslide。
+- **模型/供应商修正**:DeepSeek 思考模式跳过多余的启动预载;修正 Qwen3.8 Flash 的上下文回退。
+- **稳定性**:中继在并发接受超时后可恢复;「会话不存在」返回明确的未找到而非可重试错误;暴露技能目录的授权状态。
+- **CLI**:流式输出时不再有跳动的彩色动画刷新。
+
+- **New selection translation** — select text to translate, with built-in DeepL plus a keyless Google fallback; when neither is available it falls back to the current conversation's own model instead of hitting a keyless endpoint.
+- **A cell can publish a structure to the viewer**, with the kernel signing the reveal before it is shown.
+- **Named remote-model ownership routing** — remote models route correctly by their named ownership.
+- **Security hardening** — hardened interface surfaces and scoped review to the current conversation.
+- **H&E pathology slides** — tiles are now cropped in the conversation's own kernel; slides that openslide can't open fall back to tiffslide.
+- **Model/provider fixes** — DeepSeek thinking skips a redundant startup preload; corrected the Qwen3.8 Flash context fallback.
+- **Stability** — the relay recovers after concurrent accept timeouts; "conversation not found" returns a clear not-found instead of a retryable error; the skill-catalog entitlement is exposed.
+- **CLI** — no more flickering color animation during streaming output.
+
 ## 0.3.40 — 2026-08-30
 
 - **超大分析记录上传改为分块**:超大的 trajectory 上传会自动分块,不再因体积过大而失败。
