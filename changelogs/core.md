@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.2 — 2026-09-07
+
+- **新增:可恢复的任务与审批快照**——中断后能从快照恢复未完成的任务与待审批项。
+- **新增:全供应商的缓存 token 用量统计**(此前只统计 Anthropic)。
+- **新增:支持 GPT-6 Astra 的请求约定。**
+- **修复:OpenCode 的模型路由与请求头。**
+- **修复:CLI 重连游标限定到各自的事件流**,不再跨流错位。
+- **修复:限制卡住的离线上传**,不再无限占用。
+- **修复:供应商相关文案调整。**
+
+- **New: recoverable task and approval snapshots** — unfinished tasks and pending approvals can be restored from a snapshot after an interruption.
+- **New: cache-token usage recorded for all providers** (previously only Anthropic).
+- **New: support for GPT-6 Astra's request conventions.**
+- **Fixed: OpenCode model routing and request headers.**
+- **Fixed: CLI reconnect cursors are scoped to their own event stream**, so they no longer cross streams.
+- **Fixed: stuck offline uploads are bounded** instead of holding on indefinitely.
+- **Fixed: provider-related wording.**
+
 ## 0.4.1 — 2026-09-03
 
 - **修复:SSH 连接能从断开的传输中恢复**,断链后不再卡死。
