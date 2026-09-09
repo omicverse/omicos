@@ -7,6 +7,22 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.3 — 2026-09-08
+
+- **证据模式改为按本轮真实的工具调用记录核验来源**:不再只听模型自述——检索工具真正返回过的 PMID、数据引用真正读过的变量、读写过的文件与执行过的代码都会被逐条对照:工具没返回过的 PMID 标「未核验」、PubMed 标注撤稿的标「已撤稿」、数据依据没落到真实变量的标「未落地」;引用的标题/作者/年份直接取自工具记录而非模型转述。正文或本轮写出的文件里若声称「未使用某输入」而记录显示读取过,会作为「来源矛盾」报出;运行时看不到的读取只标「未知」。轻/标准/严谨三档从此真正不同;证据模式开着但门控未通过(非 Pro 或非组学)时会明说,而不再静默当普通回合。
+- **审阅重构**:审阅改为在命名空间副本里的只读核验,150 秒硬预算内完成,不再重跑整轮分析。
+- **用户约束随委派与重试原样传递**,放宽约束的委派会被拒绝。
+- **单元格里的 `sys.exit()` 只终止该单元格**,不再杀掉共享内核 worker。
+- **安全:记忆缓存按账号隔离。**
+- **修复**:工作区 Python 选择;远程转发的就绪确认与恢复归属。
+
+- **Evidence mode verifies sources against the turn's real tool-call record** — instead of trusting the model's own account: PMIDs actually returned by search tools, variables actually read by data citations, and files/code actually touched are each cross-checked. A PMID no tool returned is marked "unverified", one PubMed lists as retracted "retracted", and a data claim not backed by a real variable "not grounded"; a citation's title/author/year is taken from the tool record, not the model's paraphrase. If the text or a file written this turn claims "did not use" an input the record shows was read, that surfaces as a "source contradiction"; reads the runtime can't see are marked "unknown". The light / standard / rigorous tiers now genuinely differ; when evidence mode is on but the entitlement gate isn't met (non-Pro or non-omics), it says so instead of silently running as a normal turn.
+- **Reviewer refactor** — review is now read-only verification in a namespaced copy, completed within a 150s hard budget, without re-running the whole turn's analysis.
+- **User constraints pass through delegation and retry verbatim**, and constraint-relaxing delegations are rejected.
+- **A cell's `sys.exit()` now ends only that cell**, not the shared kernel worker.
+- **Security: memory caches are isolated per account.**
+- **Fixes**: workspace Python selection; remote-forwarding readiness confirmation and recovery ownership.
+
 ## 0.4.2 — 2026-09-07
 
 - **新增:可恢复的任务与审批快照**——中断后能从快照恢复未完成的任务与待审批项。
