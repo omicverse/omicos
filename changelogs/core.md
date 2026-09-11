@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.4 — 2026-09-10
+
+- **新增:可配置的流停滞上限**——通过 `OMICOS_STREAM_READ_TIMEOUT_SECONDS` 调整判定「断流」前的等待时长。
+- **修复:断流的终态错误会带上完整的错误因果链**,日志也补上供应商/模型,便于定位问题。
+- **修复:notebook 导出的保真度。**
+- **修复:CLI 里的 @提及。**
+
+- **New: configurable stream-stall limit** — set `OMICOS_STREAM_READ_TIMEOUT_SECONDS` to tune how long to wait before a stream is treated as stalled.
+- **Fixed: a stalled stream's terminal error now carries the full error cause chain**, and logs include the provider/model, making failures easier to diagnose.
+- **Fixed: notebook export fidelity.**
+- **Fixed: @-mentions in the CLI.**
+
 ## 0.4.3 — 2026-09-08
 
 - **证据模式改为按本轮真实的工具调用记录核验来源**:不再只听模型自述——检索工具真正返回过的 PMID、数据引用真正读过的变量、读写过的文件与执行过的代码都会被逐条对照:工具没返回过的 PMID 标「未核验」、PubMed 标注撤稿的标「已撤稿」、数据依据没落到真实变量的标「未落地」;引用的标题/作者/年份直接取自工具记录而非模型转述。正文或本轮写出的文件里若声称「未使用某输入」而记录显示读取过,会作为「来源矛盾」报出;运行时看不到的读取只标「未知」。轻/标准/严谨三档从此真正不同;证据模式开着但门控未通过(非 Pro 或非组学)时会明说,而不再静默当普通回合。
