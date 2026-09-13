@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.5 — 2026-09-12
+
+- **新增:晶体结构查看器与光谱工作台**——材料方向的可视化界面与配套能力。
+- **长时间的执行不再因执行超时被打断**:运行很久的代码现在可随时检查进度而不触发执行超时;从有限选项集里做选择的提示也不再受超时影响。
+- **内核更稳定**:工作区检查始终在其自己的内核上进行;修复共享内核就绪、工作区内核重启;变量检查不再对 pandas 做深度扫描。
+- **修复**:SSH 目标恢复;模型思考历史与上下文的处理。
+
+- **New: crystal-structure viewer and spectra workbench** — visualization surfaces and supporting capabilities for materials work.
+- **Long-running executions are no longer cut off by execution timeouts** — code that runs for a long time can now be inspected mid-run without tripping the timeout, and prompts for choosing from a finite set of options are no longer affected by it.
+- **Steadier kernels** — workspace inspection stays on its own kernel; fixes for shared-kernel readiness and workspace-kernel restart; variable inspection no longer does deep pandas scans.
+- **Fixes** — SSH target recovery; handling of the model's thinking history and context.
+
 ## 0.4.4 — 2026-09-10
 
 - **新增:可配置的流停滞上限**——通过 `OMICOS_STREAM_READ_TIMEOUT_SECONDS` 调整判定「断流」前的等待时长。
