@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.6 — 2026-09-14
+
+- **新增:原生「桌面操作」工具集**——让内核所在的机器能看屏幕、点击、输入(see-click-type),用于驱动桌面软件。
+- **证据模式向所有 Pro 成员开放**:不再仅限组学领域,任何领域的 Pro 用户都可使用。
+- **PDF 精确解析(MinerU)**:默认对整份文档做精确解析,并以本地解析器作为下限保证。
+- **压缩相关**:DeepSeek 的思考模式在上下文压缩后仍保持;自动压缩后会保留一条用户消息。
+- **内核**:发现已注册的 Python 内核;取消卡住的 Unix 执行并释放旧会话;收敛 notebook 源码搜索并流式返回工具完成状态。
+- **连接 / 供应商**:接受连接出错后仍保留 SSH 监听;拒绝已退役的 Moonshot 请求;修复 BioNeMo 认证探测。
+- **修复**:同步遇到无法读取的会话时跳过该会话,而不是中止整轮同步。
+
+- **New: a native "desktop control" toolset** — lets the machine hosting the kernel see the screen, click, and type (see-click-type), for driving desktop software.
+- **Evidence mode is open to all Pro members** — no longer limited to the omics domain; Pro users in any domain can use it.
+- **Precise PDF parsing (MinerU)** — precise parsing of the whole document by default, with a local parser as a guaranteed floor.
+- **Compaction** — DeepSeek's thinking mode is preserved across context compaction, and a user message is kept after automatic compaction.
+- **Kernel** — discover already-registered Python kernels; cancel stuck Unix executions and release the old session; bound notebook source searches and stream tool-completion status.
+- **Connections / providers** — SSH listeners are preserved after an accept error; retired Moonshot requests are rejected; the BioNeMo auth probe is fixed.
+- **Fixed** — sync now skips a session it can't read instead of aborting the whole sync pass.
+
 ## 0.4.5 — 2026-09-12
 
 - **新增:晶体结构查看器与光谱工作台**——材料方向的可视化界面与配套能力。
