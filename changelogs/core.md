@@ -7,6 +7,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.7 — 2026-09-18
+
+- **内核:执行更一致可控**——统一执行回执、限定检查范围、支持定向取消,执行状态更清晰。
+- **供应商**:确保 Responses 接口完成;保留 Gemini 的工具签名;拒绝已退役的供应商路由。
+- **SSH:重连时保留身份标识**,不再因重连丢失会话归属。
+- **性能**:Jupyter 内核规格探测缓存在内核列表之后;内核统计限定到当前工作区。
+- **修复:编辑预算后的目标提示。**
+
+- **Kernel: more consistent, controllable execution** — unified execution receipts, bounded inspection, and targeted cancellation for clearer execution state.
+- **Providers** — ensure Responses-API completion; preserve Gemini tool signatures; reject retired provider routes.
+- **SSH: reconnect preserves identity** — a reconnect no longer loses the conversation's ownership.
+- **Performance** — the Jupyter kernelspec probe is cached behind the kernel list; kernel stats are scoped to the current workspace.
+- **Fixed: goal prompts after a budget edit.**
+
 ## 0.4.6 — 2026-09-14
 
 - **新增:原生「桌面操作」工具集**——让内核所在的机器能看屏幕、点击、输入(see-click-type),用于驱动桌面软件。
