@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.8 — 2026-09-20
+
+- **新增 Paper2Agent**:把一篇论文的 MCP 包作为服务器安装,并可分享给实验室(lab)团队使用。
+- **新增:用 @ 提及 MCP 服务器**,并可为服务器设置显示名。
+- **修复:分析记录(trajectory)的写入对取消操作安全**,并会正确向上报告 I/O 错误。
+- **一组修复**:拒绝空的模型补全;恢复文本形式的工具调用;修正工具结果消息的名称;保留 Token 计划的推理档位。
+
+- **New: Paper2Agent** — install a paper's MCP package as a server, and share it with your lab team.
+- **New: @-mention MCP servers** — reference an MCP server with @, and give servers display names.
+- **Fixed: trajectory writes are cancellation-safe** and now propagate I/O errors correctly.
+- **A batch of fixes** — reject empty model completions; recover textual tool invocations; fix tool-result message names; preserve the reasoning level under a Token plan.
+
 ## 0.4.7 — 2026-09-18
 
 - **内核:执行更一致可控**——统一执行回执、限定检查范围、支持定向取消,执行状态更清晰。
