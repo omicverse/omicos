@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.9 — 2026-09-22
+
+- **新增:社区目录 MCP 包**——可直接安装经过审核的社区目录 MCP 包。
+- **模型:reasoning 覆盖更广**——xAI 的 reasoning 阶梯扩展到 Grok 4.7,model-aware reasoning 也覆盖更多新目录条目。
+- **修复:不再重放已持久化的回合失败**(persisted turn failures)。
+- **修复:Windows 上的 Token 文件替换**——改用 std 替换、移动被替换文件,规避长路径问题。
+
+- **New: community-catalog MCP packages** — install reviewed MCP packages straight from the community catalog.
+- **Models: broader reasoning coverage** — xAI's reasoning ladder now extends to Grok 4.7, and model-aware reasoning covers more new catalog entries.
+- **Fixed: persisted turn failures are no longer replayed.**
+- **Fixed: token-file replacement on Windows** — replace via std and move the superseded file to sidestep long-path issues.
+
 ## 0.4.8 — 2026-09-20
 
 - **新增 Paper2Agent**:把一篇论文的 MCP 包作为服务器安装,并可分享给实验室(lab)团队使用。
