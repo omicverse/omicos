@@ -7,6 +7,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.10 — 2026-09-27
+
+- **新增 Figure Studio(OmicOS 原生图表工作台)**——内嵌的图表助手/工作台:导入面板、AI 编辑、素材增删、导出与回放(replay);Core 重启后可恢复会话。
+- **新增:聊天里的链接预览**(link previews)。
+- **模型:更新 reasoning 契约与 OpenAI 路由**——支持当前 TokenHub 的 reasoning 契约,并路由到当前的 OpenAI 模型。
+- **修复:取消的回合**正确绑定并持久化其终态 trajectory 状态。
+- **修复:空的执行选择器。**
+
+- **New: Figure Studio — an OmicOS-native figure workbench** — an embedded figure assistant/workbench: import panels, edit with AI, add/remove assets, export and replay; sessions recover after a Core restart.
+- **New: link previews in chat.**
+- **Models: updated reasoning contracts and OpenAI routing** — support the current TokenHub reasoning contracts and route to current OpenAI models.
+- **Fixed: cancelled turns** now bind and persist their final trajectory state correctly.
+- **Fixed: the empty execution selector.**
+
 ## 0.4.9 — 2026-09-22
 
 - **新增:社区目录 MCP 包**——可直接安装经过审核的社区目录 MCP 包。
