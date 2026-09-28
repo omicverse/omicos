@@ -7,6 +7,12 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.11 — 2026-09-28
+
+- **Figure Studio 重做为原生实现**——图表工作台改由独立的原生渲染引擎(`omicos-figure-engine`)驱动,更稳定、更可靠。
+
+- **Figure Studio rebuilt on a native engine** — the figure workbench is now powered by a standalone native rendering engine (`omicos-figure-engine`) for better stability and reliability.
+
 ## 0.4.10 — 2026-09-27
 
 - **新增 Figure Studio(OmicOS 原生图表工作台)**——内嵌的图表助手/工作台:导入面板、AI 编辑、素材增删、导出与回放(replay);Core 重启后可恢复会话。
