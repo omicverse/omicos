@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.12 — 2026-09-30
+
+- **修复:GPT-6.1 的 Sol 协议与上下文默认值。**
+- **修复:保留网关的模型命名空间**,并对齐 commandcode 的模型标识。
+- **修复:对齐订阅计划的模型别名**,确保各档位可用的模型名一致。
+
+- **Fixed: GPT-6.1 Sol protocol and context defaults.**
+- **Fixed: gateway model namespaces are preserved**, and the commandcode model id is aligned.
+- **Fixed: subscription-plan model aliases aligned** so the model names available on each plan are consistent.
+
 ## 0.4.11 — 2026-09-28
 
 - **Figure Studio 重做为原生实现**——图表工作台改由独立的原生渲染引擎(`omicos-figure-engine`)驱动,更稳定、更可靠。
