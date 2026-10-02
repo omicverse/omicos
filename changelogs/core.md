@@ -7,6 +7,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.13 — 2026-10-02
+
+- **Figure Studio:更丰富的面板与标注**——SVG 面板光栅化;PDF 面板改用 PDFium 渲染(不再显示灰块);支持线条标注、虚线、斜体,PDF 内支持加粗。
+- **证据:保留结论并可回放来源。**
+- **修复:CLI 轮询与重连恢复更可靠。**
+- **修复:relay 恢复空闲归属,并等待重新挂接。**
+- **模型:修复 Cerebras 的 reasoning 传输。**
+
+- **Figure Studio: richer panels and annotations** — SVG panels are rasterized; PDF panels now render via PDFium (no more grey box); line annotations, dashes, and italics are supported, with bold inside PDFs.
+- **Evidence: conclusions are preserved and sources can be replayed.**
+- **Fixed: more reliable CLI polling and reconnect recovery.**
+- **Fixed: relay recovers idle ownership and waits for reattachment.**
+- **Models: fixed Cerebras reasoning transport.**
+
 ## 0.4.12 — 2026-09-30
 
 - **修复:GPT-6.1 的 Sol 协议与上下文默认值。**
