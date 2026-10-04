@@ -7,6 +7,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.14 — 2026-10-03
+
+- **修复:协议流完成的终态处理**,流式回合能正确收尾。
+- **模型:修复 Groq 的 reasoning 传输。**
+- **Figure Studio:图表资产记录会报告其自身尺寸**,面板排版更准确。
+
+- **Fixed: protocol stream completion (terminal states)** so streamed turns finish correctly.
+- **Models: fixed Groq reasoning transport.**
+- **Figure Studio: a figure's asset record now reports its own size**, for more accurate panel layout.
+
 ## 0.4.13 — 2026-10-02
 
 - **Figure Studio:更丰富的面板与标注**——SVG 面板光栅化;PDF 面板改用 PDFium 渲染(不再显示灰块);支持线条标注、虚线、斜体,PDF 内支持加粗。
