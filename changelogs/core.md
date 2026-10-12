@@ -7,6 +7,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.16 — 2026-10-11
+
+- **MCP:精选服务器的 Python 依赖直接装进当前内核**——目录会带上条目的运行环境,`kernel_pip` 作为能力对外公布,订阅安装会回报结果。
+- **同步更稳、更省流量**——不再反复下载、上传服务器永远不会接受的内容。
+- **远程稳健性**——保留远程历史窗口与错误状态;后续建议保留其任务定义;云登录的网络失败与其它失败区分开。
+- **模型**:修正 Haiku 5.5 的 thinking 请求;保留 MiniMax 预览版的 reasoning 设置与历史。
+
+- **MCP: a curated server's Python dependencies install into the active kernel** — catalog responses carry the entry's environment, `kernel_pip` is advertised as a capability, and subscription installs report their results.
+- **More robust, lower-bandwidth sync** — it no longer re-downloads and re-uploads content the server will never accept.
+- **Remote robustness** — remote history windows and error status are preserved; follow-up suggestions keep their task definitions; cloud-login network failures are distinguished from other failures.
+- **Models**: corrected Haiku 5.5 thinking requests; preserved MiniMax preview reasoning settings and history.
+
 ## 0.4.15 — 2026-10-08
 
 - **新增 `.omicos` 复现工作区容器**——支持 license 校验、解密与导入,便于打包与分享可复现的分析工作区。
