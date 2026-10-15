@@ -7,6 +7,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.17 — 2026-10-14
+
+- **移动端同步更及时**——进行中的回合约每 2 秒推送一次,不再重复发送被拒绝的内容,并新增工具结果预览与进程事件。
+- **上下文压缩更稳**——手动压缩的超大摘要可恢复,回退更安全,摘要提示词不再带入图片字节。
+- **SSH 更稳健**——网络故障后恢复空闲隧道,认证被拒后停止重试,被中断的认证可重试。
+- **模型**:支持 Mistral 对话流中的 reasoning 并跨回合回放其原生 thinking;拒绝已退役的登录模型;周期性用量限制不再重试。
+- **更多修复**:证据解析失败后回合可恢复;环回内核请求绕过代理;HTTP 失败诊断带上安全的路由上下文。
+
+- **More timely mobile sync** — in-progress turns are pushed about every 2 seconds, refused content is no longer resent, and tool-result previews and process events are added.
+- **More robust context compaction** — oversized manual summaries are recovered, the fallback is safer, and image bytes stay out of the summary prompt.
+- **More robust SSH** — idle tunnels recover after network failures, recovery stops after an auth rejection, and interrupted authentication can be retried.
+- **Models**: Mistral reasoning works in chat streams with native thinking replayed across turns; retired login models are rejected; periodic usage limits are no longer retried.
+- **More fixes**: turns recover after evidence-parsing failures; loopback kernel requests bypass the proxy; HTTP failure diagnostics include safe route context.
+
 ## 0.4.16 — 2026-10-11
 
 - **MCP:精选服务器的 Python 依赖直接装进当前内核**——目录会带上条目的运行环境,`kernel_pip` 作为能力对外公布,订阅安装会回报结果。
