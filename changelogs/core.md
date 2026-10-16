@@ -7,6 +7,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.18 — 2026-10-15
+
+- **同步更省流量**——体积超限且内容未变的对话镜像不再反复下载、重试。
+- **模型**:修复 Grok Responses 接口下搜索工具的名称冲突(原生搜索与历史行为不受影响)。
+
+- **Lower-bandwidth sync** — an oversized but unchanged conversation mirror is no longer re-downloaded and retried.
+- **Models**: fixed a search-tool name conflict on Grok's Responses API (native search and historical behavior are unaffected).
+
 ## 0.4.17 — 2026-10-14
 
 - **移动端同步更及时**——进行中的回合约每 2 秒推送一次,不再重复发送被拒绝的内容,并新增工具结果预览与进程事件。
