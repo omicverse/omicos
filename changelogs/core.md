@@ -7,6 +7,24 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.4.19 — 2026-10-18
+
+- **新增子对话**——模型可提出建议任务,一键开成子对话(可分叉或全新开始);子对话完成后把报告写回原对话,原对话也能给子对话发消息;设了 /goal 的对话会在子对话报告后自动继续;闲置 2 小时的子对话内核自动回收。
+- **新增回合任务清单**——模型在多步任务中维护一张清单并实时更新进度。
+- **研究记忆树**——每个账号一棵跨对话的树,按需展开、搜索与自动归位;「用我的模型更新」只在拉取到最新树后运行,并计入其 token 用量。
+- **SSH 更稳健**——离线安装改用镜像下载并保留主机别名;重连前先校验目标、补回缺失的凭据;慢速下载不再阻塞中继请求;放弃的握手会被取消。
+- **联网与环境**——可选的 DeepSeek 搜索与抓取(上游失败与无结果区分开);每个工作区记住所选的 R 环境。
+- **同步更省流量**——超限的对话镜像在内容变化前不再下载,失败的下载会退避。
+- **修复**:手动压缩被截断的摘要可恢复;Codex 登录回调不再被无关请求打断;只读模式在执行时拒绝代码运行。
+
+- **New: child conversations** — the model can propose a suggested task and open it as a child conversation in one click (forked or fresh). A finished child writes its report back to the parent, the parent can message the child, a parent with a /goal carries on once a child reports, and a child's kernel is reclaimed after 2 idle hours.
+- **New: per-turn task list** — on multi-step work the model keeps a checklist and updates its progress live.
+- **Research memory tree** — one cross-conversation tree per account, expanded, searched and placed automatically; 「用我的模型更新」 only runs on the latest tree and counts toward that model's token usage.
+- **More robust SSH** — offline installs download from a mirror and keep the host alias; reconnects check the target and restore missing credentials first; a slow download no longer blocks relay requests; abandoned handshakes are cancelled.
+- **Search & environments** — optional DeepSeek search and fetch (an upstream failure is now told apart from no results); each workspace remembers its chosen R environment.
+- **Lower-bandwidth sync** — an oversized conversation mirror is not downloaded until its content changes, and failed downloads back off.
+- **Fixes**: a truncated manual-compaction summary can be recovered; the Codex sign-in callback is no longer interrupted by unrelated requests; read-only mode refuses code execution at run time.
+
 ## 0.4.18 — 2026-10-15
 
 - **同步更省流量**——体积超限且内容未变的对话镜像不再反复下载、重试。
