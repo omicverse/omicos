@@ -8,6 +8,246 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.2.79 — 2026-10-18
+
+- **子对话与建议任务**——模型可以把一件能单独完成的事提成「建议任务」，一键开成子对话；子对话做完会把报告写回原对话，你也可以在原对话里给它发消息。设了目标(/goal)的对话会在子对话报告后自动接着做。
+- **回合任务清单**——做多步任务时，模型会在对话里列一张清单并随进度逐项勾掉。
+- **以上两项需要本机 Core 0.4.19 及以上**——点左下角「更新」即可升级。
+- **智能体与技能目录改为「列表 + 右侧详情」**——点一项即可看到它能做什么，以及近期的使用情况。
+- **设置 → 「隐私与数据」新增「允许用我的使用数据改进 OmicOS」**——默认关闭，随时可以改。
+- **其它**——可选的 DeepSeek 联网搜索；每个工作区记住所选的 R 环境；文件浏览器在列目录失败后能恢复，切换对话后不再残留旧预览。
+
+- **Child conversations and suggested tasks** — the model can propose a self-contained piece of work as a suggested task and open it as a child conversation in one click. The child's report lands back in the parent, and you can message the child from the parent; a parent with a /goal carries on by itself once a child reports.
+- **Per-turn task list** — on multi-step work the model keeps a checklist in the conversation and ticks items off as it goes.
+- **Both need local Core 0.4.19 or newer** — use 「更新」 at the bottom left to upgrade.
+- **The agent and skill catalog is now a list with a detail pane** — pick one to see what it does and how it has been used recently.
+- **Settings → 「隐私与数据」 adds 「允许用我的使用数据改进 OmicOS」** — off by default, and you can change it at any time.
+- **Also** — optional DeepSeek web search; each workspace remembers its chosen R environment; the file browser recovers after a failed listing and no longer leaves a stale preview when you switch chats.
+
+## 0.2.78 — 2026-10-15
+
+- **海外加载更稳**——静态资源节点连不上时，页面会自动改从备用地址加载，不再停在「加载没能完成」。
+- **「机器容量」卡片说清原因**——区分 Core 连不上、响应超时、版本过旧和暂无读数，不再一律显示「无法连接」。
+- **修复 PDF 查看器因版本不一致打不开的问题。**
+- **已下线的模型不再被选中或用于发送。**
+
+- **Steadier loading from overseas** — if the static asset edge cannot be reached, the page now loads from a fallback address instead of stopping at "loading didn't finish".
+- **The machine capacity card says why** — it now distinguishes Core unreachable, a timeout, an outdated Core and no reading yet, instead of always showing "cannot be reached".
+- **Fixed the PDF viewer failing to open because of a version mismatch.**
+- **Retired models are no longer selected or used for sending.**
+
+## 0.2.77 — 2026-10-13
+
+- **云同步停止时会说明原因**——当这台设备的同步被服务端暂停时，顶部会出现提示，请你更新到最新客户端，并说明本地数据不受影响。
+- **修复本地 Core 被反复重启的问题。**
+- **已删除项目的同步不再卡住**——针对已删除项目的改名或移入操作会提示未应用，然后继续同步其它内容。
+- **修复登录授权(OAuth)状态与实际连接不一致的问题。**
+
+- **Cloud sync now tells you when it has stopped** — if sync is paused for this device by the server, a banner asks you to update to the latest client and notes that local data is kept.
+- **Fixed the local Core being restarted repeatedly.**
+- **Sync no longer stalls on deleted projects** — a rename or move into a project that no longer exists is reported as not applied, and sync carries on.
+- **Fixed OAuth sign-in state drifting from the actual connection.**
+
+## 0.2.76 — 2026-10-12
+
+- **网页版加载更快**——脚本与样式重新从静态资源节点加载。
+- **SSH 远端对话更稳**——修复并发刷新时旧结果覆盖新结果、连接恢复后仍残留「离线」错误而无法输入的问题；重连后不再误报断开。
+- **桌面端里工作区文件链接留在应用内打开。**
+- **Figure Studio 缺少 Tavotto 运行时时**——会直接给出跳转到设置的入口。
+
+- **Faster web loading** — scripts and styles are served from the static asset edge again.
+- **Steadier SSH remote conversations** — fixed stale refresh results overwriting newer ones and an "offline" error lingering after the connection came back and blocking input; reconnects no longer show a false disconnect.
+- **Workspace file links stay inside the desktop app.**
+- **When Figure Studio is missing the Tavotto runtime** — it now offers a jump straight to settings.
+
+## 0.2.75 — 2026-10-09
+
+- **修复侧栏「更多」点了没反应**——面板其实已渲染，只是被侧栏裁掉；现在点开即见，收进去的「智能体」「工具」「终端」「变量」「环境」也重新可达。
+
+- **Fixed 「更多」 doing nothing in the left rail** — the panel was rendering but clipped by the rail; it now opens properly, so 「智能体」, 「工具」, 「终端」, 「变量」 and 「环境」 are reachable again.
+
+## 0.2.74 — 2026-10-09
+
+- **左侧栏瘦身**——「智能体」「工具」「终端」「变量」「环境」收进侧栏底部的「更多」(「···」)；常驻的只剩「分析」「笔记本」「Figure Studio」「商城」「团队」。原有的档位与功能限制不变。
+
+- **A shorter left rail** — 「智能体」, 「工具」, 「终端」, 「变量」 and 「环境」 now live under 「更多」 (the 「···」 at the foot of the rail); 「分析」, 「笔记本」, 「Figure Studio」, 「商城」 and 「团队」 stay pinned. Existing plan and feature gates are unchanged.
+
+## 0.2.73 — 2026-10-09
+
+- **「画布」回到工具页**——修复 0.2.72 丢失画布入口的问题，多图拼版、标注、裁剪、导出都在原处。Figure Studio 需要额外的 Tavotto 运行时，在它就绪前原生画布始终可用。
+
+- **「画布」is back on the tools page** — fixes 0.2.72 dropping the canvas entry; multi-panel layout, annotations, cropping and export are where they were. Figure Studio needs an extra Tavotto runtime, and until it is in place the native canvas always works.
+
+## 0.2.72 — 2026-10-09
+
+- **商城新增「课程与工作空间」**——可以购买论文 1:1 复现的工作空间，付款后导入到本机目录，随包附带的课程对话点「打开对话」即可继续看。导入需要本机 Core 0.4.15 及以上。
+- **Figure Studio 独立成页**——自带编辑器、Tavotto 智能体面板和 Tavotto MCP 入口，可以把工作区图片导入画布。
+- **对话可靠性修复**——明确失败的子代理不再显示为成功；冷重连后不再出现两条回答；云端会话的上下文统计恢复显示。
+- **侧边聊天支持语音输入**——识别的文字填进草稿，不会自动发送；浅色主题下发送按钮显示正常。
+- **窄输入区收成图标**——宽度不够时按钮隐去文字、只留图标，提示和无障碍名称保留。
+- **其它**——启动登录更稳；浅色主题下工作区预览里的嵌套代码不再看不清。
+
+- **The store gains 「课程与工作空间」** — buy a 1:1 paper-reproduction workspace, import it into a local directory after payment, and open the bundled course conversations with 「打开对话」. Import needs local Core 0.4.15 or newer.
+- **Figure Studio is now its own page** — with the editor, the Tavotto agent panel and the Tavotto MCP entry, plus importing workspace images onto the canvas.
+- **Conversation reliability fixes** — a sub-agent that failed no longer shows as successful; a cold reconnect no longer produces a duplicate answer; context statistics are back for cloud sessions.
+- **Voice input in side chat** — recognised text goes into the draft and is not sent automatically; the send button now renders correctly in the light theme.
+- **A narrow composer collapses to icons** — controls drop their labels when space is tight, keeping tooltips and accessible names.
+- **Also** — steadier startup sign-in; nested code in the light theme's workspace preview is readable again.
+
+## 0.2.71 — 2026-10-03
+
+- **实验室版报价写清楚了**——卡片和购买弹窗显示该账号适用「学术价」还是「标准价」、每席单价、年付/月付和最少席位数。学术优惠按购买账号的机构与邮箱识别，同一团队成员可能看到不同报价。
+- **修复设置里 OAuth 登录状态显示错误**——切换运行时或供应商后，迟到的响应不再写进错误的卡片；自定义供应商的草稿只在切换供应商时清空。
+- **远端连接的 OAuth 对话框更稳**——关闭后不会被迟到的响应重新弹出，也不会重复轮询。
+
+- **Lab plan pricing is explicit** — the card and purchase dialog show whether this account gets the academic or standard price, the per-seat price, yearly/monthly, and the seat minimum. Academic pricing follows the buying account's institution and email, so teammates may see different quotes.
+- **Fixed OAuth sign-in in settings showing the wrong state** — after switching runtime or provider, late responses no longer write into the wrong card; a custom provider's draft is cleared only when the provider changes.
+- **A steadier remote-connection OAuth dialog** — a closed dialog is no longer revived by a late response, and polls no longer overlap.
+
+## 0.2.70 — 2026-10-02
+
+- **画布可以放进你自己的图**——拖入文件、「从电脑导入」或「从工作区打开」；PDF 和 SVG 正常渲染，面板按图本身的比例显示。
+- **画布新增标注与页面设置**——文字、方框、箭头、引线和裁剪；「页面」里可选版面尺寸、背景色、标尺和网格吸附(不进导出)。画布助手可以照着导入的图用合成数据重写绘图脚本。
+- **证据模式回复更干净**——机器可读的记录不再显示为原始 JSON。
+- **以上画布功能需要 Core 0.4.13 及以上**——0.4.11 / 0.4.12 上画布仍可用，但 PDF/SVG 面板显示为灰块。
+
+- **Bring your own figure into the canvas** — drop a file, "Import from computer" or "Open from workspace"; PDF and SVG render properly and panels keep the figure's own proportions.
+- **Canvas annotations and page settings** — text, boxes, arrows, leader lines and cropping; the Page tab offers page sizes, background colour, rulers and grid snapping (never exported). The figure assistant can rewrite a plotting script from an imported figure using synthetic data.
+- **Cleaner evidence-mode replies** — machine-readable records no longer appear as raw JSON.
+- **These canvas features need Core 0.4.13 or newer** — on 0.4.11 / 0.4.12 the canvas still works, but PDF/SVG panels show as grey blocks.
+
+## 0.2.69 — 2026-10-01
+
+- **画布支持多图拼版**——一页放多张图，可拖动、缩放或按毫米精确定位，调层级、锁比例、固定、一键平铺，改页面尺寸；每一步都可撤销。需要 Core 0.4.11 及以上。
+- **小改进**——打开对话时显示「正在打开」；「免费模型」视图说明它与普通入口共用供应商和 API Key；内置 PDF 查看器起不来时退回逐页渲染并注明是降级显示。
+
+- **Multi-figure layout on the canvas** — put several figures on one page; drag, resize or position them in millimetres, reorder, lock aspect ratio, pin, tile into a grid, and change the page size. Every step can be undone. Needs Core 0.4.11 or newer.
+- **Smaller improvements** — the conversation list shows "opening" while a chat loads; the "Free models" view explains it shares the provider and API key with the normal one; when the built-in PDF viewer cannot start, the preview renders pages itself and says it is a degraded view.
+
+## 0.2.68 — 2026-09-28
+
+- **画布编辑器重做**——分析出的图可以直接改标题、轴标签、刻度、图例的文字、字号、颜色和位置，由内核真实重绘。需要 Core 0.4.11 及以上。
+- **输入框语音听写**——按住说话，松开转成可编辑文字，不会自动发送。macOS 需要更新到下一个桌面端版本才能使用。
+- **聊天链接显示预览卡片。**
+- **其它**——模型选择器只显示当前模型真实支持的思考档位；修复切换对话后发送目标跑错、以及 macOS 窗口拖拽区域失效的问题。
+
+- **A rebuilt canvas editor** — edit an analysis figure's title, axis labels, ticks and legend (text, size, colour, position) in place, re-rendered by the core. Needs Core 0.4.11 or newer.
+- **Dictation in the composer** — hold to speak, release for editable text; nothing is sent automatically. On macOS this needs the next desktop build.
+- **Links in chat show a preview card.**
+- **Also** — the model picker shows only the reasoning levels the current model supports; fixed the send target following the wrong conversation after switching chats, and window dragging on macOS.
+
+## 0.2.67 — 2026-09-22
+
+- **设置 → MCP 服务器新增「Paper2Agent 社区」**——浏览社区发布的论文工具，下载后先核对 SHA-256 再一键安装，装好在对话里 @ 即可使用，也可分享给实验室。需要 Core 0.4.9 及以上；安装会运行第三方代码，哈希只验证文件与目录记录一致。
+- **免费云端模型出错时说清楚**——被限流或暂不可用时给出说明和「去配置 API Key」的入口；选中免费模型时提示其共享额度与高峰限流。
+
+- **Settings → MCP servers adds a "Paper2Agent community" tab** — browse community paper tooling, verify the SHA-256 on download, install in one step, @-mention it in chat, and optionally share it with your lab. Needs Core 0.4.9 or newer; installing runs third-party code, and the hash only proves the file matches the catalog record.
+- **The free cloud model explains failures** — when rate-limited or unavailable it says so and offers to configure your own API key; while selected, a note explains its shared budget and peak-hour limits.
+
+## 0.2.66 — 2026-09-20
+
+- **@ 可以点名 MCP 服务器**——被 @ 的服务器会作为明确指示进入本轮，委派给子智能体时也会带上。界面上统一使用服务器自己声明的名称和 MCP 标识。
+- **Paper2Agent**——从输入框的「+」把论文的配套代码装成 MCP 服务器；设置里标明每个服务器的来源，论文安装的可以分享给实验室或撤回。
+- **修复状态读取失败时误显示「正在启动本地运行时」。**
+- **其它修复**——模型菜单的键盘导航与滚动；已退役模型不再出现在选择器中；以及若干显示问题。
+
+- **@ can name an MCP server** — a mentioned server enters the turn as an explicit instruction and travels with delegated tasks. The interface now uses each server's declared name and a single MCP mark.
+- **Paper2Agent** — install a paper's companion code as an MCP server from the composer's 「+」; settings show where each server came from, and paper-installed servers can be shared with your lab or withdrawn.
+- **Fixed a failed status read showing as "starting the local runtime".**
+- **Other fixes** — keyboard navigation and scrolling in the model menu; retired models no longer appear in the picker; several display fixes.
+
+## 0.2.65 — 2026-09-15
+
+- **PDF 精准解析**——设置的搜索页可以填写 MinerU Token，用于更精确地解析 PDF 的版面、公式和表格；不填则自动使用本地解析。
+- **环境选择器显示已注册的 Python 内核。**
+- **首次打开 PDF 更快。**
+- **已下线的 Moonshot 模型不再可选。**
+
+- **Precise PDF parsing** — the Search page in settings accepts a MinerU token for more precise parsing of PDF layout, formulas and tables; without one, PDFs use the local parser automatically.
+- **The environment picker lists registered Python kernels.**
+- **The first PDF opens faster.**
+- **Retired Moonshot models can no longer be selected.**
+
+## 0.2.64 — 2026-09-13
+
+- **材料科学工作台**——新增晶体结构查看器和谱图工作台，支持原位(operando)热图与等效电路。
+- **设置新增「桌面代理」**——可为本地 Core 及其运行的工具单独设置 HTTP(S) 代理，并支持检测系统代理。
+- **修复工作区内核控制按钮和已配置模型从选择器消失的问题。**
+- **分享工作区变量前会先提醒。**
+
+- **Materials workbench** — a crystal structure viewer and a spectra workbench with operando heatmaps and equivalent-circuit fitting.
+- **Settings adds 「桌面代理」** — set an HTTP(S) proxy just for the local Core and the tools it runs, with system proxy detection.
+- **Fixed workspace kernel controls and configured models disappearing from the picker.**
+- **You are warned before sharing workspace variables.**
+
+## 0.2.63 — 2026-09-11
+
+- **对话搜索**——按标题搜索全部项目的对话(含已归档)。
+- **修复内联图片路径被错误拼接到输出目录的问题。**
+
+- **Conversation search** — search conversations by title across all projects, archived ones included.
+- **Fixed inline image paths being wrongly joined to the output directory.**
+
+## 0.2.62 — 2026-09-09
+
+- **切换 Python 环境更可靠**——选择新环境后工作目录与内核同步切换，远端解释器不匹配时会直接报错。
+- **连接状态更准确**——输入框不再把等待提交误报为「远程离线」。
+- **修复分子查看器后台同步卡住、导致新对话发不出去的问题。**
+- **证据模式**——列出没能落实的来源，并标出未核验或已撤稿的引用。
+
+- **More reliable Python environment switching** — the working directory and kernel follow a newly chosen environment, and a mismatched remote interpreter is reported as an error.
+- **More accurate connection status** — the composer no longer reports a pending submit as "remote offline".
+- **Fixed molecule viewer sync hanging and blocking new conversations.**
+- **Evidence mode** — lists sources that could not be grounded and flags unverified or retracted citations.
+
+## 0.2.61 — 2026-09-08
+
+- **按账号隔离本地数据**——切换账号或退出后，本地记忆状态随之重置，不会带到另一个账号。
+- **修复同时提及项目文件和本轮输出文件时，项目文件路径被加错前缀的问题。**
+- **修复笔记本侧栏与 Copilot 面板的宽度和标签显示。**
+
+- **Local data scoped to the account** — switching accounts or signing out now resets local memory state, so it does not carry over to another account.
+- **Fixed project file paths getting the wrong prefix when a message mentions both project files and this turn's output files.**
+- **Fixed the notebook sidebar and Copilot panel width and labels.**
+
+## 0.2.60 — 2026-09-07
+
+- **宠物伙伴**——新增 XiXi、HuaHua、MoMo 三只应用内伙伴。
+- **对话导航栏**——每条用户消息一个刻度，预览只显示你发的内容。
+- **模型目录更新**——新增 GPT-6 Astra、Grok 4.6、Gemini 3.8 Flash 与 OpenCode Zen/Go；新装默认使用 OmicOS 云端模型。
+- **登录与连接修复**——退出后重新登录不再变成「未登录」；模型偏好同步失败时不再误显示已保存；附件按会话所在工作区上传。
+
+- **Companions** — three in-app companions: XiXi, HuaHua and MoMo.
+- **Conversation navigation bar** — one tick per user message, with previews showing only what you sent.
+- **Model catalog update** — adds GPT-6 Astra, Grok 4.6, Gemini 3.8 Flash and OpenCode Zen/Go; fresh setups default to the OmicOS cloud model.
+- **Sign-in and connection fixes** — signing back in after logout no longer shows "not signed in"; a failed model preference sync no longer shows as saved; attachments upload to the conversation's own workspace.
+
+## 0.2.59 — 2026-09-04
+
+- **「雪白」主题配色更柔和**——用调校过的中性色替代纯灰。
+- **修复**——附件保留原始文件名；流式输出时也遵循工具显示样式；文件操作始终限定在工作区内。
+
+- **A softer Snow theme** — a tuned neutral palette replaces pure grey.
+- **Fixes** — attachments keep their original filenames; the tool display style is honoured while streaming; file actions stay bound to the workspace.
+
+## 0.2.58 — 2026-09-03
+
+- **「订阅服务」更名为「商城」**——并新增「服务器」页签，可选购合作方提供的云服务器。
+
+- **「订阅服务」 is now 「商城」** — with a new 「服务器」 tab offering cloud servers from a partner.
+
+## 0.2.57 — 2026-09-03
+
+- **工具面板由对话驱动**——智能体作答时自动打开对应面板，并接上内核里已加载的数据；也可以从对话记录里重新打开。
+- **划词翻译**——选中文字即可翻译(PDF 里也可以)，注明所用模型，并有 DeepL/Google 兜底。
+- **分子查看器**——新增剖面、标注和光照，智能体发出的视图命令能正确作用到查看器。
+- **新增「雪白」浅色主题。**
+
+- **Tool panels follow the conversation** — the matching panel opens when its agent answers and picks up data already loaded in the kernel; you can also reopen it from the transcript.
+- **Selection translate** — select text to translate it (in PDFs too), with the model named and DeepL/Google as fallback.
+- **Molecule viewer** — adds cutaways, captions and lighting, and the agent's view commands now reach the viewer.
+- **A new Snow (「雪白」) light theme.**
+
 ## 0.2.56 — 2026-08-28
 
 - **审阅(自动纠错)模型选择器补上了「思考强度 / 速度」两行控制**,此前一直写死为「当前模型不支持」。现在与主对话选择器共用同一套解析:跟随对话模型时显示实际生效的档位,固定了审阅模型则显示该模型的目录默认值;审阅器的档位单独存储,不会改到主对话。(需内核 0.3.36。)
