@@ -7,6 +7,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.0 — 2026-10-19
+
+- **研究记忆召回**——每轮自动召回与当前问题最相关的完整记忆(本对话的研究方向、相关方向，以及你的纠正、生效中的规则、环境事实与偏好)，回答开头就能看到召回了什么。
+- **建议任务更主动**——模型会主动提出可以开成子对话的后续任务。
+- **同步更省流量**——云端镜像不再重复下载本机已有的对话；登录失效时暂停后台同步。
+- **技能下载更稳**——慢速下载可以完成，失败的下载会退避重试；技能与智能体同步不再重复进行，付费技能不再在锁定版与完整版之间来回切换。
+- **修复**：损坏的模型目录缓存可自动恢复；缺少目录信息时上下文长度的估计更准确；断开的中继连接会被及时关闭。
+
+- **Research memory recall** — every turn recalls the most relevant memories in full (this conversation's research direction, related directions, and your corrections, active rules, environment facts and preferences), and you can see what was recalled at the start of the answer.
+- **More proactive suggested tasks** — the model proposes follow-up work that can be opened as a child conversation.
+- **Lower-bandwidth sync** — the cloud mirror no longer re-downloads conversations already on this machine, and background sync pauses when the sign-in is rejected.
+- **Sturdier skill downloads** — slow downloads can finish and failed ones back off; skill and agent sync no longer runs twice at once, and paid skills no longer flip between the locked and full versions.
+- **Fixes**: a corrupted model-catalog cache recovers on its own; context-length fallbacks are more accurate when catalog metadata is missing; detached relay connections are closed.
+
 ## 0.4.19 — 2026-10-18
 
 - **新增子对话**——模型可提出建议任务,一键开成子对话(可分叉或全新开始);子对话完成后把报告写回原对话,原对话也能给子对话发消息;设了 /goal 的对话会在子对话报告后自动继续;闲置 2 小时的子对话内核自动回收。
