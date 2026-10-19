@@ -8,6 +8,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.5 — 2026-10-19
+
+### 中文
+- 执行轨迹详情按字段展示参数，正文支持标题、列表和表格，代码单独呈现。
+- 支持展开详情阅读长文档，也可切换到原文查看原始参数和结果。
+
+### English
+- Trajectory details display parameters as fields, render document headings, lists and tables, and separate code blocks.
+- Expand details to read longer documents, or switch to Raw to inspect the original arguments and results.
+
 ## 0.3.4 — 2026-10-19
 
 ### 中文
