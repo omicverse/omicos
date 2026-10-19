@@ -8,6 +8,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.2 — 2026-10-19
+
+- 左上角品牌标识更清晰：加大图标并提高浅色、深色主题下的对比度。
+- 收起的图标导航栏更窄，为内容留出更多空间；保留便于点击的按钮和原有展开宽度。
+
+- A clearer brand mark: a larger icon with stronger contrast in light and dark themes.
+- A narrower collapsed navigation rail leaves more room for content while keeping comfortable click targets and the existing expanded width.
+
 ## 0.3.1 — 2026-10-19
 
 - 在「设置 → 外观」选择侧边栏常驻入口，偏好保存在当前设备；「更多」菜单改善了深色配色和小窗口显示。
