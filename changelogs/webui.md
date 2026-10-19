@@ -8,6 +8,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.4 — 2026-10-19
+
+### 中文
+- 执行轨迹采用单行事件和紧凑搜索栏，按轮次标记，点击事件后再展开详情，为阅读留出更多空间。
+- 加载页面改为展示 OmicOS 使用小提示，涵盖快捷键、工具调用和分屏操作。
+
+### English
+- A cleaner trajectory view with single-line events, turn boundaries, a compact search bar, and details that open on selection.
+- Loading screens now show OmicOS usage tips for keyboard shortcuts, tool calls, and split views.
+
 ## 0.3.3 — 2026-10-19
 
 - 点击当前「对话」标签，可在对话与执行轨迹之间切换，查看消息、工具调用、参数和结果。
