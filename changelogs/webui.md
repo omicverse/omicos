@@ -8,6 +8,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.1 — 2026-10-19
+
+- 在「设置 → 外观」选择侧边栏常驻入口，偏好保存在当前设备；「更多」菜单改善了深色配色和小窗口显示。
+- 智能体团队与对话协作列表使用和目录一致的专属图标。
+- 多行排队消息保持单行预览，操作按钮不再被挤出窗口；已缓存模型也显示最新目录名称和停用提示。
+
+- Choose sidebar entries in Settings → Appearance, saved on this device. The More menu is clearer in dark themes and fits smaller windows.
+- Agent team and conversation collaboration lists use the same individual logos as the catalog.
+- Queued multiline messages stay on one preview line so controls remain visible. Cached models show the latest catalog names and retirement notices.
+
 ## 0.3.0 — 2026-10-19
 
 - **对话侧栏改版**——每个对话一行，状态一眼可见(运行中转圈、待你确认橙点、未读绿点)；可按项目、工作区或时间分组，顶部用「全部 / 运行中 / 未读 / 待确认」快速筛选。
