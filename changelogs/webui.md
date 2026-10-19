@@ -8,6 +8,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.6 — 2026-10-19
+
+### 中文
+- 新建任务页面加入轻盈的序列字符背景动效，适配深浅色主题，并保持输入区域清晰。
+- 动效仅在空白对话中显示，后台暂停，并遵循系统的减少动态效果设置。
+
+### English
+- New tasks feature a subtle sequence-inspired animated backdrop that adapts to light and dark themes while keeping the input area clear.
+- The backdrop appears only in empty conversations, pauses in the background, and respects reduced-motion preferences.
+
 ## 0.3.5 — 2026-10-19
 
 ### 中文
