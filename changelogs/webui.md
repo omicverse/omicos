@@ -8,6 +8,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.3 — 2026-10-19
+
+- 点击当前「对话」标签，可在对话与执行轨迹之间切换，查看消息、工具调用、参数和结果。
+- 执行轨迹支持搜索、按轮次浏览和实时更新；查看时任务继续运行，需要确认时可直接返回对话处理。
+
+- Click the active Chat tab to switch between the conversation and its trajectory, with messages, tool calls, arguments and results.
+- Search and browse live events by turn while tasks keep running, with a direct return to the conversation when approval is needed.
+
 ## 0.3.2 — 2026-10-19
 
 - 左上角品牌标识更清晰：加大图标并提高浅色、深色主题下的对比度。
