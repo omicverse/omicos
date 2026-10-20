@@ -53,7 +53,7 @@ npx @omicverse/omicos
 |---|---|---|---|
 | **omicos-core** | 分析内核 / 运行时(命令行 `omicos`,桌面 App 内置)<br>Analysis kernel / runtime (`omicos` CLI, bundled in the desktop app) | **0.5.1** · 2026-10-20 | [changelogs/core.md](changelogs/core.md) |
 | **omicos webui** | 浏览器 / 桌面 App 内的界面,静默 OTA 更新<br>The in-browser / in-desktop interface, delivered silently via OTA | **0.3.10** · 2026-10-20 | [changelogs/webui.md](changelogs/webui.md) |
-| **omicos desktop** | Windows / macOS 桌面客户端(外壳)<br>Windows / macOS desktop client (the shell) | 暂无独立记录<br>No separate notes yet | [changelogs/desktop.md](changelogs/desktop.md) |
+| **omicos desktop** | Windows / macOS 桌面客户端(外壳)<br>Windows / macOS desktop client (the shell) | **0.1.24** · 2026-10-20 | [changelogs/desktop.md](changelogs/desktop.md) |
 <!-- versions:end -->
 
 The three release lines ship independently (kernel, web UI, and desktop shell), so their version numbers are not shared.
