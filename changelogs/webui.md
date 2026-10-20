@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.9 — 2026-10-20
+
+- 编辑精选自动发现与你研究方向相关的新课题，可查看论文来源并新建讨论；研究历史较少时提供随机探索。
+- 精选按天缓存，普通版、Plus、Pro、Lab 每日分别可生成 3、10、25、30 批；生成失败不计次数。
+- 新建任务页可直接选择运行位置和工作空间。
+
+- Editorial picks automatically suggest new topics for your research, with source papers and a new-discussion shortcut. New researchers can explore a random selection.
+- Picks are cached daily. Generate 3, 10, 25 or 30 batches per day on Community, Plus, Pro or Lab; failed generations do not count.
+- Choose the execution location and workspace directly from a new task.
+
 ## 0.3.8 — 2026-10-20
 
 - 个人信息页可查看云算力余额和使用流水；充值仅向获准账号开放，云端执行暂未开放。
