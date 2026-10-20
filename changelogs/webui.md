@@ -1,3 +1,5 @@
+<!-- 由 scripts/release-notes.mjs 从 releases/webui/ 生成,请勿直接编辑。 / Generated from releases/webui/ by scripts/release-notes.mjs — do not edit. -->
+
 # omicos 网页端(webui)更新记录 / Changelog
 
 浏览器 / 桌面 App 内的界面。随桌面 App 静默 OTA 更新,无需手动操作。
@@ -10,51 +12,41 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ## 0.3.8 — 2026-10-20
 
-### 中文
 - 个人信息页可查看云算力余额和使用流水；充值仅向获准账号开放，云端执行暂未开放。
 - 建议任务卡支持展示独立任务背景，远程工作区中的子任务继续在原工作区运行。
 
-### English
 - View cloud compute credits and usage history in your profile. Recharge is limited to approved accounts; cloud execution is not yet open.
 - Suggested task cards show standalone task context, while subtasks in remote workspaces stay in their original workspace.
 
 ## 0.3.7 — 2026-10-19
 
-### 中文
 - 首页新增科研方向建议和编辑精选，可查看借鉴来源、验证思路，并一键带入对话讨论。
 - 推荐按天缓存，重复打开更快；后台更新时保留已有内容，也可随时手动刷新。
 
-### English
 - Explore research directions and editorial picks on the home page, inspect their sources and validation ideas, and bring a suggestion into a conversation.
 - Daily recommendation caching makes repeat visits faster. Existing suggestions stay visible during updates, with manual refresh available.
 
 ## 0.3.6 — 2026-10-19
 
-### 中文
 - 新建任务页面加入轻盈的序列字符背景动效，适配深浅色主题，并保持输入区域清晰。
 - 动效仅在空白对话中显示，后台暂停，并遵循系统的减少动态效果设置。
 
-### English
 - New tasks feature a subtle sequence-inspired animated backdrop that adapts to light and dark themes while keeping the input area clear.
 - The backdrop appears only in empty conversations, pauses in the background, and respects reduced-motion preferences.
 
 ## 0.3.5 — 2026-10-19
 
-### 中文
 - 执行轨迹详情按字段展示参数，正文支持标题、列表和表格，代码单独呈现。
 - 支持展开详情阅读长文档，也可切换到原文查看原始参数和结果。
 
-### English
 - Trajectory details display parameters as fields, render document headings, lists and tables, and separate code blocks.
 - Expand details to read longer documents, or switch to Raw to inspect the original arguments and results.
 
 ## 0.3.4 — 2026-10-19
 
-### 中文
 - 执行轨迹采用单行事件和紧凑搜索栏，按轮次标记，点击事件后再展开详情，为阅读留出更多空间。
 - 加载页面改为展示 OmicOS 使用小提示，涵盖快捷键、工具调用和分屏操作。
 
-### English
 - A cleaner trajectory view with single-line events, turn boundaries, a compact search bar, and details that open on selection.
 - Loading screens now show OmicOS usage tips for keyboard shortcuts, tool calls, and split views.
 

@@ -1,3 +1,5 @@
+<!-- 由 scripts/release-notes.mjs 从 releases/core/ 生成,请勿直接编辑。 / Generated from releases/core/ by scripts/release-notes.mjs — do not edit. -->
+
 # omicos-core 更新记录 / Changelog
 
 分析内核 / 运行时(命令行 `omicos`,桌面 App 内置)。多数情况下内置自动更新器会静默升级,无需手动操作。
@@ -582,6 +584,7 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 ## 0.3.16 — 2026-07-23
 
 - 本次更新修复了服务器连接 bug。
+
 - This update fixes a server connection bug.
 
 ## 0.3.15 — 2026-07-22
