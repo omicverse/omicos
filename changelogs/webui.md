@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.10 — 2026-10-20
+
+- 已开通云端算力的账户可在云端任务中查看本地文件的上传进度，按需购买结果下载额度，并管理云端缓存（续期或提前删除）。
+- 对话中提出的转云方案会显示为卡片，点击即可打开审查页确认；未开通的账户会看到“尚未开放”的提示。
+
+- Accounts with cloud compute enabled can follow local file upload progress in Cloud tasks, buy more result downloads when needed, and manage cached cloud files (extend or delete early).
+- Cloud placement proposals in a conversation now appear as cards that open the review page for confirmation. Accounts without access see that cloud compute is not yet available.
+
 ## 0.3.9 — 2026-10-20
 
 - 编辑精选自动发现与你研究方向相关的新课题，可查看论文来源并新建讨论；研究历史较少时提供随机探索。

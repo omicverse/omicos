@@ -986,10 +986,22 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.9",
+    "latest": "0.3.10",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.10",
+        "date": "2026-10-20",
+        "zh": [
+          "已开通云端算力的账户可在云端任务中查看本地文件的上传进度，按需购买结果下载额度，并管理云端缓存（续期或提前删除）。",
+          "对话中提出的转云方案会显示为卡片，点击即可打开审查页确认；未开通的账户会看到“尚未开放”的提示。"
+        ],
+        "en": [
+          "Accounts with cloud compute enabled can follow local file upload progress in Cloud tasks, buy more result downloads when needed, and manage cached cloud files (extend or delete early).",
+          "Cloud placement proposals in a conversation now appear as cards that open the review page for confirmation. Accounts without access see that cloud compute is not yet available."
+        ]
+      },
       {
         "version": "0.3.9",
         "date": "2026-10-20",
