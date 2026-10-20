@@ -9,6 +9,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.1 — 2026-10-20
+
+- **云端算力（按账户逐步开放）**——已开通的账户可以把计算任务放到云端运行：确认后自动上传所选的本地文件（支持断点续传），结果自动回传原工作区；大文件可直接传到云存储，提交与回传失败时会自动退避重试。
+- **建议任务**——子对话默认全新开启并附带背景说明，不再复制整段父对话；子对话完成后，即使父对话没有设置目标也会继续推进。
+- **图表**——在流程分支、结构关系等场景，模型会直接用流程图作答。
+- **修复**：SSH 连接下点击“开始”不再提示找不到对话；macOS 上快照内核首次运行代码不再立即退出。
+
+- **Cloud compute (opening account by account)** — accounts with access can run compute tasks in the cloud: selected local files upload automatically after confirmation (resumable), and results return to the original workspace. Large files can go straight to cloud storage, and failed submissions or returns back off and retry.
+- **Suggested tasks** — child conversations start fresh with a background brief instead of copying the whole parent conversation, and a finished child continues the parent even when the parent has no goal set.
+- **Diagrams** — the model answers with a flowchart where branches or structure are easier to see as a diagram.
+- **Fixes**: clicking "Start" over an SSH connection no longer reports a missing conversation; the snapshot kernel on macOS no longer exits on its first run.
+
 ## 0.5.0 — 2026-10-19
 
 - **研究记忆召回**——每轮自动召回与当前问题最相关的完整记忆(本对话的研究方向、相关方向，以及你的纠正、生效中的规则、环境事实与偏好)，回答开头就能看到召回了什么。
