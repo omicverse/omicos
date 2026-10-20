@@ -986,10 +986,24 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.8",
+    "latest": "0.3.9",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.9",
+        "date": "2026-10-20",
+        "zh": [
+          "编辑精选自动发现与你研究方向相关的新课题，可查看论文来源并新建讨论；研究历史较少时提供随机探索。",
+          "精选按天缓存，普通版、Plus、Pro、Lab 每日分别可生成 3、10、25、30 批；生成失败不计次数。",
+          "新建任务页可直接选择运行位置和工作空间。"
+        ],
+        "en": [
+          "Editorial picks automatically suggest new topics for your research, with source papers and a new-discussion shortcut. New researchers can explore a random selection.",
+          "Picks are cached daily. Generate 3, 10, 25 or 30 batches per day on Community, Plus, Pro or Lab; failed generations do not count.",
+          "Choose the execution location and workspace directly from a new task."
+        ]
+      },
       {
         "version": "0.3.8",
         "date": "2026-10-20",
