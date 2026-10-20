@@ -1,0 +1,31 @@
+name: publish
+
+# Creates the GitHub Release (tag `<line>-<version>`) for the newest version of
+# each line that has GitHub Releases, if it doesn't exist yet. Idempotent: a
+# push that adds no new version does nothing.
+
+on:
+  push:
+    branches: [main]
+    paths: ["releases/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  releases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/release-notes.mjs check
+      - run: node scripts/release-notes.mjs publish
+        env:
+          GH_TOKEN: ${{ github.token }}

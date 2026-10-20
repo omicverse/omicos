@@ -1,0 +1,1838 @@
+{
+  "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
+  "core": {
+    "name": "omicos-core",
+    "latest": "0.5.0",
+    "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
+    "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
+    "releases": [
+      {
+        "version": "0.5.0",
+        "date": "2026-10-19",
+        "zh": [
+          "**研究记忆召回**——每轮自动召回与当前问题最相关的完整记忆(本对话的研究方向、相关方向，以及你的纠正、生效中的规则、环境事实与偏好)，回答开头就能看到召回了什么。",
+          "**建议任务更主动**——模型会主动提出可以开成子对话的后续任务。",
+          "**同步更省流量**——云端镜像不再重复下载本机已有的对话；登录失效时暂停后台同步。",
+          "**技能下载更稳**——慢速下载可以完成，失败的下载会退避重试；技能与智能体同步不再重复进行，付费技能不再在锁定版与完整版之间来回切换。",
+          "**修复**：损坏的模型目录缓存可自动恢复；缺少目录信息时上下文长度的估计更准确；断开的中继连接会被及时关闭。"
+        ],
+        "en": [
+          "**Research memory recall** — every turn recalls the most relevant memories in full (this conversation's research direction, related directions, and your corrections, active rules, environment facts and preferences), and you can see what was recalled at the start of the answer.",
+          "**More proactive suggested tasks** — the model proposes follow-up work that can be opened as a child conversation.",
+          "**Lower-bandwidth sync** — the cloud mirror no longer re-downloads conversations already on this machine, and background sync pauses when the sign-in is rejected.",
+          "**Sturdier skill downloads** — slow downloads can finish and failed ones back off; skill and agent sync no longer runs twice at once, and paid skills no longer flip between the locked and full versions.",
+          "**Fixes**: a corrupted model-catalog cache recovers on its own; context-length fallbacks are more accurate when catalog metadata is missing; detached relay connections are closed."
+        ]
+      },
+      {
+        "version": "0.4.19",
+        "date": "2026-10-18",
+        "zh": [
+          "**新增子对话**——模型可提出建议任务,一键开成子对话(可分叉或全新开始);子对话完成后把报告写回原对话,原对话也能给子对话发消息;设了 /goal 的对话会在子对话报告后自动继续;闲置 2 小时的子对话内核自动回收。",
+          "**新增回合任务清单**——模型在多步任务中维护一张清单并实时更新进度。",
+          "**研究记忆树**——每个账号一棵跨对话的树,按需展开、搜索与自动归位;「用我的模型更新」只在拉取到最新树后运行,并计入其 token 用量。",
+          "**SSH 更稳健**——离线安装改用镜像下载并保留主机别名;重连前先校验目标、补回缺失的凭据;慢速下载不再阻塞中继请求;放弃的握手会被取消。",
+          "**联网与环境**——可选的 DeepSeek 搜索与抓取(上游失败与无结果区分开);每个工作区记住所选的 R 环境。",
+          "**同步更省流量**——超限的对话镜像在内容变化前不再下载,失败的下载会退避。",
+          "**修复**:手动压缩被截断的摘要可恢复;Codex 登录回调不再被无关请求打断;只读模式在执行时拒绝代码运行。"
+        ],
+        "en": [
+          "**New: child conversations** — the model can propose a suggested task and open it as a child conversation in one click (forked or fresh). A finished child writes its report back to the parent, the parent can message the child, a parent with a /goal carries on once a child reports, and a child's kernel is reclaimed after 2 idle hours.",
+          "**New: per-turn task list** — on multi-step work the model keeps a checklist and updates its progress live.",
+          "**Research memory tree** — one cross-conversation tree per account, expanded, searched and placed automatically; 「用我的模型更新」 only runs on the latest tree and counts toward that model's token usage.",
+          "**More robust SSH** — offline installs download from a mirror and keep the host alias; reconnects check the target and restore missing credentials first; a slow download no longer blocks relay requests; abandoned handshakes are cancelled.",
+          "**Search & environments** — optional DeepSeek search and fetch (an upstream failure is now told apart from no results); each workspace remembers its chosen R environment.",
+          "**Lower-bandwidth sync** — an oversized conversation mirror is not downloaded until its content changes, and failed downloads back off.",
+          "**Fixes**: a truncated manual-compaction summary can be recovered; the Codex sign-in callback is no longer interrupted by unrelated requests; read-only mode refuses code execution at run time."
+        ]
+      },
+      {
+        "version": "0.4.18",
+        "date": "2026-10-15",
+        "zh": [
+          "**同步更省流量**——体积超限且内容未变的对话镜像不再反复下载、重试。",
+          "**模型**:修复 Grok Responses 接口下搜索工具的名称冲突(原生搜索与历史行为不受影响)。"
+        ],
+        "en": [
+          "**Lower-bandwidth sync** — an oversized but unchanged conversation mirror is no longer re-downloaded and retried.",
+          "**Models**: fixed a search-tool name conflict on Grok's Responses API (native search and historical behavior are unaffected)."
+        ]
+      },
+      {
+        "version": "0.4.17",
+        "date": "2026-10-14",
+        "zh": [
+          "**移动端同步更及时**——进行中的回合约每 2 秒推送一次,不再重复发送被拒绝的内容,并新增工具结果预览与进程事件。",
+          "**上下文压缩更稳**——手动压缩的超大摘要可恢复,回退更安全,摘要提示词不再带入图片字节。",
+          "**SSH 更稳健**——网络故障后恢复空闲隧道,认证被拒后停止重试,被中断的认证可重试。",
+          "**模型**:支持 Mistral 对话流中的 reasoning 并跨回合回放其原生 thinking;拒绝已退役的登录模型;周期性用量限制不再重试。",
+          "**更多修复**:证据解析失败后回合可恢复;环回内核请求绕过代理;HTTP 失败诊断带上安全的路由上下文。"
+        ],
+        "en": [
+          "**More timely mobile sync** — in-progress turns are pushed about every 2 seconds, refused content is no longer resent, and tool-result previews and process events are added.",
+          "**More robust context compaction** — oversized manual summaries are recovered, the fallback is safer, and image bytes stay out of the summary prompt.",
+          "**More robust SSH** — idle tunnels recover after network failures, recovery stops after an auth rejection, and interrupted authentication can be retried.",
+          "**Models**: Mistral reasoning works in chat streams with native thinking replayed across turns; retired login models are rejected; periodic usage limits are no longer retried.",
+          "**More fixes**: turns recover after evidence-parsing failures; loopback kernel requests bypass the proxy; HTTP failure diagnostics include safe route context."
+        ]
+      },
+      {
+        "version": "0.4.16",
+        "date": "2026-10-11",
+        "zh": [
+          "**MCP:精选服务器的 Python 依赖直接装进当前内核**——目录会带上条目的运行环境,`kernel_pip` 作为能力对外公布,订阅安装会回报结果。",
+          "**同步更稳、更省流量**——不再反复下载、上传服务器永远不会接受的内容。",
+          "**远程稳健性**——保留远程历史窗口与错误状态;后续建议保留其任务定义;云登录的网络失败与其它失败区分开。",
+          "**模型**:修正 Haiku 5.5 的 thinking 请求;保留 MiniMax 预览版的 reasoning 设置与历史。"
+        ],
+        "en": [
+          "**MCP: a curated server's Python dependencies install into the active kernel** — catalog responses carry the entry's environment, `kernel_pip` is advertised as a capability, and subscription installs report their results.",
+          "**More robust, lower-bandwidth sync** — it no longer re-downloads and re-uploads content the server will never accept.",
+          "**Remote robustness** — remote history windows and error status are preserved; follow-up suggestions keep their task definitions; cloud-login network failures are distinguished from other failures.",
+          "**Models**: corrected Haiku 5.5 thinking requests; preserved MiniMax preview reasoning settings and history."
+        ]
+      },
+      {
+        "version": "0.4.15",
+        "date": "2026-10-08",
+        "zh": [
+          "**新增 `.omicos` 复现工作区容器**——支持 license 校验、解密与导入,便于打包与分享可复现的分析工作区。",
+          "**Figure Studio:接入 Tavotto 宿主并持久化画布**;回放 sidecar 绑定到其捕获的图。",
+          "**工具调用更稳**——被切片的参数流不再产生成千上万个无名调用;被输出预算截断的调用不再被误报。",
+          "**委派与记忆**——因循环被拒的委派不再反复发出;绑定项目的对话不再收到用不上的记忆;agent 名单完整送达选择器。",
+          "**notebook 与解释器**:路径定位、输出目录解析与系统错误码更稳健。",
+          "**一批修复**:双身份回执应答、订阅计划上下文回退、保留失败委派回执、技能恢复诊断。"
+        ],
+        "en": [
+          "**New: `.omicos` reproduction-workspace container** — license verification, decryption, and import, for packaging and sharing reproducible analysis workspaces.",
+          "**Figure Studio: Tavotto host integration with canvas persistence**; replay sidecars are bound to the figure they captured.",
+          "**More robust tool calls** — a sliced argument stream no longer becomes thousands of unnamed calls; a call truncated by the output budget is no longer misreported.",
+          "**Delegation & memory** — delegations rejected for a cycle are not reissued; a project-bound conversation no longer receives memory it cannot use; the full agent roster reaches the selector.",
+          "**Notebook & interpreter**: more robust path resolution, output-directory handling, and stable system error codes.",
+          "**A batch of fixes**: dual-identity receipt requests, subscription-plan context fallback, preserved failed-delegation receipts, and skill-recovery diagnostics."
+        ]
+      },
+      {
+        "version": "0.4.14",
+        "date": "2026-10-03",
+        "zh": [
+          "**修复:协议流完成的终态处理**,流式回合能正确收尾。",
+          "**模型:修复 Groq 的 reasoning 传输。**",
+          "**Figure Studio:图表资产记录会报告其自身尺寸**,面板排版更准确。"
+        ],
+        "en": [
+          "**Fixed: protocol stream completion (terminal states)** so streamed turns finish correctly.",
+          "**Models: fixed Groq reasoning transport.**",
+          "**Figure Studio: a figure's asset record now reports its own size**, for more accurate panel layout."
+        ]
+      },
+      {
+        "version": "0.4.13",
+        "date": "2026-10-02",
+        "zh": [
+          "**Figure Studio:更丰富的面板与标注**——SVG 面板光栅化;PDF 面板改用 PDFium 渲染(不再显示灰块);支持线条标注、虚线、斜体,PDF 内支持加粗。",
+          "**证据:保留结论并可回放来源。**",
+          "**修复:CLI 轮询与重连恢复更可靠。**",
+          "**修复:relay 恢复空闲归属,并等待重新挂接。**",
+          "**模型:修复 Cerebras 的 reasoning 传输。**"
+        ],
+        "en": [
+          "**Figure Studio: richer panels and annotations** — SVG panels are rasterized; PDF panels now render via PDFium (no more grey box); line annotations, dashes, and italics are supported, with bold inside PDFs.",
+          "**Evidence: conclusions are preserved and sources can be replayed.**",
+          "**Fixed: more reliable CLI polling and reconnect recovery.**",
+          "**Fixed: relay recovers idle ownership and waits for reattachment.**",
+          "**Models: fixed Cerebras reasoning transport.**"
+        ]
+      },
+      {
+        "version": "0.4.12",
+        "date": "2026-09-30",
+        "zh": [
+          "**修复:GPT-6.1 的 Sol 协议与上下文默认值。**",
+          "**修复:保留网关的模型命名空间**,并对齐 commandcode 的模型标识。",
+          "**修复:对齐订阅计划的模型别名**,确保各档位可用的模型名一致。"
+        ],
+        "en": [
+          "**Fixed: GPT-6.1 Sol protocol and context defaults.**",
+          "**Fixed: gateway model namespaces are preserved**, and the commandcode model id is aligned.",
+          "**Fixed: subscription-plan model aliases aligned** so the model names available on each plan are consistent."
+        ]
+      },
+      {
+        "version": "0.4.11",
+        "date": "2026-09-28",
+        "zh": [
+          "**Figure Studio 重做为原生实现**——图表工作台改由独立的原生渲染引擎(`omicos-figure-engine`)驱动,更稳定、更可靠。"
+        ],
+        "en": [
+          "**Figure Studio rebuilt on a native engine** — the figure workbench is now powered by a standalone native rendering engine (`omicos-figure-engine`) for better stability and reliability."
+        ]
+      },
+      {
+        "version": "0.4.10",
+        "date": "2026-09-27",
+        "zh": [
+          "**新增 Figure Studio(OmicOS 原生图表工作台)**——内嵌的图表助手/工作台:导入面板、AI 编辑、素材增删、导出与回放(replay);Core 重启后可恢复会话。",
+          "**新增:聊天里的链接预览**(link previews)。",
+          "**模型:更新 reasoning 契约与 OpenAI 路由**——支持当前 TokenHub 的 reasoning 契约,并路由到当前的 OpenAI 模型。",
+          "**修复:取消的回合**正确绑定并持久化其终态 trajectory 状态。",
+          "**修复:空的执行选择器。**"
+        ],
+        "en": [
+          "**New: Figure Studio — an OmicOS-native figure workbench** — an embedded figure assistant/workbench: import panels, edit with AI, add/remove assets, export and replay; sessions recover after a Core restart.",
+          "**New: link previews in chat.**",
+          "**Models: updated reasoning contracts and OpenAI routing** — support the current TokenHub reasoning contracts and route to current OpenAI models.",
+          "**Fixed: cancelled turns** now bind and persist their final trajectory state correctly.",
+          "**Fixed: the empty execution selector.**"
+        ]
+      },
+      {
+        "version": "0.4.9",
+        "date": "2026-09-22",
+        "zh": [
+          "**新增:社区目录 MCP 包**——可直接安装经过审核的社区目录 MCP 包。",
+          "**模型:reasoning 覆盖更广**——xAI 的 reasoning 阶梯扩展到 Grok 4.7,model-aware reasoning 也覆盖更多新目录条目。",
+          "**修复:不再重放已持久化的回合失败**(persisted turn failures)。",
+          "**修复:Windows 上的 Token 文件替换**——改用 std 替换、移动被替换文件,规避长路径问题。"
+        ],
+        "en": [
+          "**New: community-catalog MCP packages** — install reviewed MCP packages straight from the community catalog.",
+          "**Models: broader reasoning coverage** — xAI's reasoning ladder now extends to Grok 4.7, and model-aware reasoning covers more new catalog entries.",
+          "**Fixed: persisted turn failures are no longer replayed.**",
+          "**Fixed: token-file replacement on Windows** — replace via std and move the superseded file to sidestep long-path issues."
+        ]
+      },
+      {
+        "version": "0.4.8",
+        "date": "2026-09-20",
+        "zh": [
+          "**新增 Paper2Agent**:把一篇论文的 MCP 包作为服务器安装,并可分享给实验室(lab)团队使用。",
+          "**新增:用 @ 提及 MCP 服务器**,并可为服务器设置显示名。",
+          "**修复:分析记录(trajectory)的写入对取消操作安全**,并会正确向上报告 I/O 错误。",
+          "**一组修复**:拒绝空的模型补全;恢复文本形式的工具调用;修正工具结果消息的名称;保留 Token 计划的推理档位。"
+        ],
+        "en": [
+          "**New: Paper2Agent** — install a paper's MCP package as a server, and share it with your lab team.",
+          "**New: @-mention MCP servers** — reference an MCP server with @, and give servers display names.",
+          "**Fixed: trajectory writes are cancellation-safe** and now propagate I/O errors correctly.",
+          "**A batch of fixes** — reject empty model completions; recover textual tool invocations; fix tool-result message names; preserve the reasoning level under a Token plan."
+        ]
+      },
+      {
+        "version": "0.4.7",
+        "date": "2026-09-18",
+        "zh": [
+          "**内核:执行更一致可控**——统一执行回执、限定检查范围、支持定向取消,执行状态更清晰。",
+          "**供应商**:确保 Responses 接口完成;保留 Gemini 的工具签名;拒绝已退役的供应商路由。",
+          "**SSH:重连时保留身份标识**,不再因重连丢失会话归属。",
+          "**性能**:Jupyter 内核规格探测缓存在内核列表之后;内核统计限定到当前工作区。",
+          "**修复:编辑预算后的目标提示。**"
+        ],
+        "en": [
+          "**Kernel: more consistent, controllable execution** — unified execution receipts, bounded inspection, and targeted cancellation for clearer execution state.",
+          "**Providers** — ensure Responses-API completion; preserve Gemini tool signatures; reject retired provider routes.",
+          "**SSH: reconnect preserves identity** — a reconnect no longer loses the conversation's ownership.",
+          "**Performance** — the Jupyter kernelspec probe is cached behind the kernel list; kernel stats are scoped to the current workspace.",
+          "**Fixed: goal prompts after a budget edit.**"
+        ]
+      },
+      {
+        "version": "0.4.6",
+        "date": "2026-09-14",
+        "zh": [
+          "**新增:原生「桌面操作」工具集**——让内核所在的机器能看屏幕、点击、输入(see-click-type),用于驱动桌面软件。",
+          "**证据模式向所有 Pro 成员开放**:不再仅限组学领域,任何领域的 Pro 用户都可使用。",
+          "**PDF 精确解析(MinerU)**:默认对整份文档做精确解析,并以本地解析器作为下限保证。",
+          "**压缩相关**:DeepSeek 的思考模式在上下文压缩后仍保持;自动压缩后会保留一条用户消息。",
+          "**内核**:发现已注册的 Python 内核;取消卡住的 Unix 执行并释放旧会话;收敛 notebook 源码搜索并流式返回工具完成状态。",
+          "**连接 / 供应商**:接受连接出错后仍保留 SSH 监听;拒绝已退役的 Moonshot 请求;修复 BioNeMo 认证探测。",
+          "**修复**:同步遇到无法读取的会话时跳过该会话,而不是中止整轮同步。"
+        ],
+        "en": [
+          "**New: a native \"desktop control\" toolset** — lets the machine hosting the kernel see the screen, click, and type (see-click-type), for driving desktop software.",
+          "**Evidence mode is open to all Pro members** — no longer limited to the omics domain; Pro users in any domain can use it.",
+          "**Precise PDF parsing (MinerU)** — precise parsing of the whole document by default, with a local parser as a guaranteed floor.",
+          "**Compaction** — DeepSeek's thinking mode is preserved across context compaction, and a user message is kept after automatic compaction.",
+          "**Kernel** — discover already-registered Python kernels; cancel stuck Unix executions and release the old session; bound notebook source searches and stream tool-completion status.",
+          "**Connections / providers** — SSH listeners are preserved after an accept error; retired Moonshot requests are rejected; the BioNeMo auth probe is fixed.",
+          "**Fixed** — sync now skips a session it can't read instead of aborting the whole sync pass."
+        ]
+      },
+      {
+        "version": "0.4.5",
+        "date": "2026-09-12",
+        "zh": [
+          "**新增:晶体结构查看器与光谱工作台**——材料方向的可视化界面与配套能力。",
+          "**长时间的执行不再因执行超时被打断**:运行很久的代码现在可随时检查进度而不触发执行超时;从有限选项集里做选择的提示也不再受超时影响。",
+          "**内核更稳定**:工作区检查始终在其自己的内核上进行;修复共享内核就绪、工作区内核重启;变量检查不再对 pandas 做深度扫描。",
+          "**修复**:SSH 目标恢复;模型思考历史与上下文的处理。"
+        ],
+        "en": [
+          "**New: crystal-structure viewer and spectra workbench** — visualization surfaces and supporting capabilities for materials work.",
+          "**Long-running executions are no longer cut off by execution timeouts** — code that runs for a long time can now be inspected mid-run without tripping the timeout, and prompts for choosing from a finite set of options are no longer affected by it.",
+          "**Steadier kernels** — workspace inspection stays on its own kernel; fixes for shared-kernel readiness and workspace-kernel restart; variable inspection no longer does deep pandas scans.",
+          "**Fixes** — SSH target recovery; handling of the model's thinking history and context."
+        ]
+      },
+      {
+        "version": "0.4.4",
+        "date": "2026-09-10",
+        "zh": [
+          "**新增:可配置的流停滞上限**——通过 `OMICOS_STREAM_READ_TIMEOUT_SECONDS` 调整判定「断流」前的等待时长。",
+          "**修复:断流的终态错误会带上完整的错误因果链**,日志也补上供应商/模型,便于定位问题。",
+          "**修复:notebook 导出的保真度。**",
+          "**修复:CLI 里的 @提及。**"
+        ],
+        "en": [
+          "**New: configurable stream-stall limit** — set `OMICOS_STREAM_READ_TIMEOUT_SECONDS` to tune how long to wait before a stream is treated as stalled.",
+          "**Fixed: a stalled stream's terminal error now carries the full error cause chain**, and logs include the provider/model, making failures easier to diagnose.",
+          "**Fixed: notebook export fidelity.**",
+          "**Fixed: @-mentions in the CLI.**"
+        ]
+      },
+      {
+        "version": "0.4.3",
+        "date": "2026-09-08",
+        "zh": [
+          "**证据模式改为按本轮真实的工具调用记录核验来源**:不再只听模型自述——检索工具真正返回过的 PMID、数据引用真正读过的变量、读写过的文件与执行过的代码都会被逐条对照:工具没返回过的 PMID 标「未核验」、PubMed 标注撤稿的标「已撤稿」、数据依据没落到真实变量的标「未落地」;引用的标题/作者/年份直接取自工具记录而非模型转述。正文或本轮写出的文件里若声称「未使用某输入」而记录显示读取过,会作为「来源矛盾」报出;运行时看不到的读取只标「未知」。轻/标准/严谨三档从此真正不同;证据模式开着但门控未通过(非 Pro 或非组学)时会明说,而不再静默当普通回合。",
+          "**审阅重构**:审阅改为在命名空间副本里的只读核验,150 秒硬预算内完成,不再重跑整轮分析。",
+          "**用户约束随委派与重试原样传递**,放宽约束的委派会被拒绝。",
+          "**单元格里的 `sys.exit()` 只终止该单元格**,不再杀掉共享内核 worker。",
+          "**安全:记忆缓存按账号隔离。**",
+          "**修复**:工作区 Python 选择;远程转发的就绪确认与恢复归属。"
+        ],
+        "en": [
+          "**Evidence mode verifies sources against the turn's real tool-call record** — instead of trusting the model's own account: PMIDs actually returned by search tools, variables actually read by data citations, and files/code actually touched are each cross-checked. A PMID no tool returned is marked \"unverified\", one PubMed lists as retracted \"retracted\", and a data claim not backed by a real variable \"not grounded\"; a citation's title/author/year is taken from the tool record, not the model's paraphrase. If the text or a file written this turn claims \"did not use\" an input the record shows was read, that surfaces as a \"source contradiction\"; reads the runtime can't see are marked \"unknown\". The light / standard / rigorous tiers now genuinely differ; when evidence mode is on but the entitlement gate isn't met (non-Pro or non-omics), it says so instead of silently running as a normal turn.",
+          "**Reviewer refactor** — review is now read-only verification in a namespaced copy, completed within a 150s hard budget, without re-running the whole turn's analysis.",
+          "**User constraints pass through delegation and retry verbatim**, and constraint-relaxing delegations are rejected.",
+          "**A cell's `sys.exit()` now ends only that cell**, not the shared kernel worker.",
+          "**Security: memory caches are isolated per account.**",
+          "**Fixes**: workspace Python selection; remote-forwarding readiness confirmation and recovery ownership."
+        ]
+      },
+      {
+        "version": "0.4.2",
+        "date": "2026-09-07",
+        "zh": [
+          "**新增:可恢复的任务与审批快照**——中断后能从快照恢复未完成的任务与待审批项。",
+          "**新增:全供应商的缓存 token 用量统计**(此前只统计 Anthropic)。",
+          "**新增:支持 GPT-6 Astra 的请求约定。**",
+          "**修复:OpenCode 的模型路由与请求头。**",
+          "**修复:CLI 重连游标限定到各自的事件流**,不再跨流错位。",
+          "**修复:限制卡住的离线上传**,不再无限占用。",
+          "**修复:供应商相关文案调整。**"
+        ],
+        "en": [
+          "**New: recoverable task and approval snapshots** — unfinished tasks and pending approvals can be restored from a snapshot after an interruption.",
+          "**New: cache-token usage recorded for all providers** (previously only Anthropic).",
+          "**New: support for GPT-6 Astra's request conventions.**",
+          "**Fixed: OpenCode model routing and request headers.**",
+          "**Fixed: CLI reconnect cursors are scoped to their own event stream**, so they no longer cross streams.",
+          "**Fixed: stuck offline uploads are bounded** instead of holding on indefinitely.",
+          "**Fixed: provider-related wording.**"
+        ]
+      },
+      {
+        "version": "0.4.1",
+        "date": "2026-09-03",
+        "zh": [
+          "**修复:SSH 连接能从断开的传输中恢复**,断链后不再卡死。",
+          "**修复:更安全地创建上传目录**,避免上传文件时的目录问题。"
+        ],
+        "en": [
+          "**Fixed: SSH connections recover from a dropped transport** instead of getting stuck after a disconnect.",
+          "**Fixed: upload directories are created more safely**, avoiding directory issues when uploading files."
+        ]
+      },
+      {
+        "version": "0.4.0",
+        "date": "2026-09-02",
+        "zh": [
+          "**新增划词翻译**:选中文字即可翻译,内置 DeepL + 无密钥 Google 兜底;都不可用时回退到当前对话自己的模型,而不是打到无密钥端点。",
+          "**单元格可向查看器发布一个结构**,由内核对该「揭示」签名后再呈现。",
+          "**命名的远程模型归属路由**:远程模型按命名归属正确路由。",
+          "**安全加固**:强化了界面,并把审阅收敛到当前会话的作用域。",
+          "**H&E 病理切片**:改在会话自己的内核里裁剪瓦片;openslide 打不开的切片自动回退到 tiffslide。",
+          "**模型/供应商修正**:DeepSeek 思考模式跳过多余的启动预载;修正 Qwen3.8 Flash 的上下文回退。",
+          "**稳定性**:中继在并发接受超时后可恢复;「会话不存在」返回明确的未找到而非可重试错误;暴露技能目录的授权状态。",
+          "**CLI**:流式输出时不再有跳动的彩色动画刷新。"
+        ],
+        "en": [
+          "**New selection translation** — select text to translate, with built-in DeepL plus a keyless Google fallback; when neither is available it falls back to the current conversation's own model instead of hitting a keyless endpoint.",
+          "**A cell can publish a structure to the viewer**, with the kernel signing the reveal before it is shown.",
+          "**Named remote-model ownership routing** — remote models route correctly by their named ownership.",
+          "**Security hardening** — hardened interface surfaces and scoped review to the current conversation.",
+          "**H&E pathology slides** — tiles are now cropped in the conversation's own kernel; slides that openslide can't open fall back to tiffslide.",
+          "**Model/provider fixes** — DeepSeek thinking skips a redundant startup preload; corrected the Qwen3.8 Flash context fallback.",
+          "**Stability** — the relay recovers after concurrent accept timeouts; \"conversation not found\" returns a clear not-found instead of a retryable error; the skill-catalog entitlement is exposed.",
+          "**CLI** — no more flickering color animation during streaming output."
+        ]
+      },
+      {
+        "version": "0.3.40",
+        "date": "2026-08-30",
+        "zh": [
+          "**超大分析记录上传改为分块**:超大的 trajectory 上传会自动分块,不再因体积过大而失败。",
+          "**修复子代理委派与 A2A 审批**:子代理委派现在能正确收敛,A2A 审批轮询行为也已修正。",
+          "**连接时保留已安装的内置环境**:合并已安装的内置环境,连接后环境不再丢失。",
+          "**安全:只停自己的远程内核**:校验与停止远程内核时只作用于自己拥有的实例,不会误动他人的。"
+        ],
+        "en": [
+          "**Chunked upload for oversized analysis records** — very large trajectory uploads are automatically chunked so they no longer fail on size.",
+          "**Fixed sub-agent delegation and A2A approval** — sub-agent delegation now converges correctly, and A2A approval polling behaves as expected.",
+          "**Installed bundled environment is preserved on connect** — the installed bundled environment is merged in, so it isn't lost after connecting.",
+          "**Safety: only your own remote kernels are stopped** — verifying and stopping remote kernels acts only on instances you own, never on someone else's."
+        ]
+      },
+      {
+        "version": "0.3.39",
+        "date": "2026-08-29",
+        "zh": [
+          "**支持 GLM-5.3 系列**:按该系列模型的请求语义正确对接。",
+          "**每回合的持久记忆相互隔离**:各回合的持久记忆互不串扰。",
+          "**SSH 增强**:支持 SOCKS5 的 ProxyCommand,并能正确识别已配置的系统服务。",
+          "**修复自定义模型的推理强度转发**:自定义模型的推理强度会正确传递,并对齐各供应商的推理参数。",
+          "**大响应下不再丢失报错**:大响应事件里的错误信息会被保留。",
+          "**修复 macOS exFAT 上的渲染授权发布**:在 exFAT 卷上,图形渲染所需的授权凭据现在能正确发布。"
+        ],
+        "en": [
+          "**GLM-5.3 family support** — requests are formed with the correct semantics for these models.",
+          "**Per-turn durable memory is isolated** — each turn's durable memory no longer bleeds into other turns.",
+          "**SSH enhancements** — a SOCKS5 ProxyCommand is supported, and configured system services are identified correctly.",
+          "**Fixed reasoning-effort forwarding for custom models** — a custom model's reasoning effort is passed through correctly, and reasoning parameters are aligned across providers.",
+          "**Errors are no longer lost on large responses** — error information inside large response events is preserved.",
+          "**Fixed rendering-authority publishing on macOS exFAT** — on exFAT volumes, the credential needed for graphics rendering is now published correctly."
+        ]
+      },
+      {
+        "version": "0.3.38",
+        "date": "2026-08-27",
+        "zh": [
+          "**审阅可独立设置推理强度与服务档位**:代码/内容审阅可单独指定推理强度与服务档位,与主对话解耦(延续审阅可用自己的供应商与模型)。",
+          "**修复本地转发的连接恢复**:中继现在能恢复一代尚未被接受的执行器,不再因此卡住。",
+          "**暴露是否已配置视觉能力**:可查询视觉(vision)配置是否存在,便于按有无视觉能力做相应处理。"
+        ],
+        "en": [
+          "**Independent reasoning effort and service tier for review** — code/content review can set its own reasoning effort and service tier, decoupled from the main conversation (continuing on from review being able to use its own provider and model).",
+          "**Fixed connection recovery over local forwarding** — the relay can now recover an executor generation that was not yet accepted, instead of getting stuck on it.",
+          "**Vision-capability presence is exposed** — whether a vision configuration exists can be queried, so behavior can adapt to whether vision is configured."
+        ]
+      },
+      {
+        "version": "0.3.37",
+        "date": "2026-08-25",
+        "zh": [
+          "**笔记本导出会披露所用技能的来源**:通过内核运行时导出时,导出内容会说明本次运行打包了哪些技能及其出处,便于溯源与复现。",
+          "**Windows 路径显示更干净**:隐藏 Windows 上的 `\\\\?\\` 前缀,工作区路径更易读。",
+          "**执行前即可获取共享变量信息**:为内核的共享变量新增预检元数据,执行前就能拿到相关信息。",
+          "**修复经本地转发时的账号选择**:走「经本地转发」建链时,引导阶段的账号选择与运行时保持一致。"
+        ],
+        "en": [
+          "**Notebook export discloses the skills it used** — when exporting through the kernel runtime, the export states which skills were packaged for the run and where they came from, aiding traceability and reproducibility.",
+          "**Cleaner path display on Windows** — the `\\\\?\\` prefix is hidden, so workspace paths read more cleanly.",
+          "**Shared-variable info available before execution** — preflight metadata is added for the kernel's shared variables, so their details are available before a run starts.",
+          "**Fixed account selection over local forwarding** — when connecting via local forwarding, the account chosen during bootstrap now matches the runtime."
+        ]
+      },
+      {
+        "version": "0.3.36",
+        "date": "2026-08-24",
+        "zh": [
+          "**审阅者可单独指定模型**:代码/内容审阅可以独立配置所用的供应商与模型,与主对话模型解耦——例如用一个模型对话、另一个模型做审阅。"
+        ],
+        "en": [
+          "**The reviewer can use its own model** — code/content review can be configured with its own provider and model, decoupled from the main conversation model (e.g. chat with one model while a different model reviews)."
+        ]
+      },
+      {
+        "version": "0.3.35",
+        "date": "2026-08-22",
+        "zh": [
+          "**保留实时的模型元数据**:模型信息会随运行时状态一并保存与展示,不再在运行过程中丢失。",
+          "**修复计划令牌的主动刷新**:刷新前的等待时长不再为负(加了下限),缓冲时间改由真实的令牌有效期推导,避免过早或过于频繁地刷新。"
+        ],
+        "en": [
+          "**Live model metadata is preserved** — model information is now saved and shown alongside runtime state instead of being lost mid-run.",
+          "**Fixed proactive plan-token refresh** — the pre-refresh wait is no longer negative (a floor was added), and the buffer is derived from the token's real time-to-live, avoiding refreshes that are too early or too frequent."
+        ]
+      },
+      {
+        "version": "0.3.34",
+        "date": "2026-08-22",
+        "zh": [
+          "**发消息更快**:每条消息不再重复支付回合开始的固定开销——图像宿主改用 stale-while-revalidate、目录改用缓存,减少每次发消息时的重复加载与序列化。",
+          "**冷启动与模型选择更快**:选择器新增快速路径,worker 提示词精简,启动负载改为预执行,降低首次启动与选择阶段的延迟。"
+        ],
+        "en": [
+          "**Faster message sending** — the fixed per-turn startup cost is no longer paid on every message: the image host uses stale-while-revalidate and the catalog is cached, cutting repeated loading and serialization on each send.",
+          "**Faster cold start and model selection** — a selector fast-path, trimmed worker prompts, and pre-executed startup work reduce first-launch and selection latency."
+        ]
+      },
+      {
+        "version": "0.3.33",
+        "date": "2026-08-21",
+        "zh": [
+          "**配额感知的免费模型路由**:按各账号/供应商的剩余配额自动挑选可用的免费模型,配额用尽的不再被反复选中。",
+          "**Google 个人账号登录改用 Antigravity**:设置里显示为 Antigravity OAuth,授权改为在官方回调页粘贴授权码,并可从 Antigravity CLI(`agy`)或企业版 Gemini CLI 凭据导入;个人 Google AI Pro/Ultra/免费账号不再走 Gemini CLI。",
+          "**经本地转发时不再把\"模型在思考\"误判为断线**:此前本地模型在建链、重试或尚未输出首字时,远端收不到任何帧,即使连接正常也会在 180 秒后误报连接超时;现在把\"连接是否存活\"与\"模型是否有进度\"分开计时,只有真正的模型输出才算进度。旧版本内核仍按原有超时行为工作。",
+          "**应用更新比较改用语义化版本**:判断是否有新版本时按 SemVer 大小比较,不再按字符串,避免 0.3.9 被误判为高于 0.3.10。",
+          "**安全:不再误取消他人的计算作业**:shell 拒绝直接执行 `scancel`,取消作业只允许针对本会话自己提交的任务。",
+          "**工具报错更清楚**:参数出错时会指出具体是哪个参数不对、以及哪个传入项从未被使用。",
+          "**供应商修复**:OpenAI key 校验与运行时解析口径对齐;对齐最新的推理参数协议。"
+        ],
+        "en": [
+          "**Quota-aware free-model routing** — free models are picked automatically based on each account/provider's remaining quota, and ones whose quota is used up are no longer repeatedly selected.",
+          "**Google personal-account sign-in moved to Antigravity** — shown as Antigravity OAuth in settings, authorization is now done by pasting the code on the official callback page, and credentials can be imported from the Antigravity CLI (`agy`) or an enterprise Gemini CLI; personal Google AI Pro/Ultra/free accounts no longer go through the Gemini CLI.",
+          "**\"Model is thinking\" is no longer mistaken for a disconnect over local forwarding** — previously, while a local model was connecting, retrying, or had not yet produced its first token, the remote end received no frames and would falsely report a connection timeout after 180s even when the link was fine; connection liveness and model progress are now timed separately, and only real model output counts as progress. Older kernels keep their previous timeout behavior.",
+          "**App-update comparison now uses semantic versioning** — \"is there a newer version\" is decided by SemVer ordering rather than string comparison, so 0.3.9 is no longer treated as higher than 0.3.10.",
+          "**Safety: no longer cancels someone else's compute jobs** — the shell refuses to run `scancel` directly, and job cancellation is restricted to jobs submitted by the current session.",
+          "**Clearer tool errors** — on a bad argument, it now points out which argument is wrong and which passed-in field was never used.",
+          "**Provider fixes** — OpenAI key validation is aligned with how the runtime parses it, and request parameters are aligned with the latest reasoning-parameter protocol."
+        ]
+      },
+      {
+        "version": "0.3.32",
+        "date": "2026-08-18",
+        "zh": [
+          "**并发远程会话的 SSH 账号状态相互隔离**:同时连接多个远程 Core 会话时,各自的 SSH 账号状态不再相互串扰,彼此独立。",
+          "**触及安全上限时明确告知**:某个回合因触及安全上限而停止时,会明确说明原因,而不再静默结束。"
+        ],
+        "en": [
+          "**SSH account state is isolated across concurrent remote sessions** — when several remote Core sessions are connected at once, each keeps its own SSH account state instead of interfering with the others.",
+          "**Clear notice when a safety limit is reached** — when a turn stops because it hit a safety limit, that reason is now stated explicitly rather than the turn ending silently."
+        ]
+      },
+      {
+        "version": "0.3.31",
+        "date": "2026-08-16",
+        "zh": [
+          "**图像生成按目录声明的接口路由,支持更多供应商**:此前图像生成只在少数供应商上可用,其它能出图的供应商会中途失败;现在改为按目录中声明的图像生成接口路由,凡是支持出图的供应商都可用。",
+          "**SSH 运行时的所有权与更新生命周期加固**:强化了 SSH 运行时的生命周期与受管更新的稳健性,并隔离不同账号的远程运行时。",
+          "**修复 exFAT 磁盘上的渲染授权发布**:在 exFAT 文件系统上,图形渲染所需的授权凭据现在能正确发布。"
+        ],
+        "en": [
+          "**Image generation routes by the catalog-declared API, covering more providers** — image generation previously worked only on a few providers and failed partway on others that can actually produce images; it now routes by the image-generation API declared in the catalog, so any provider that supports it works.",
+          "**Hardened SSH-runtime ownership and update lifecycle** — the SSH runtime's lifecycle and managed-update robustness are strengthened, and remote runtimes are isolated across accounts.",
+          "**Fixed rendering-authority publishing on exFAT** — on exFAT filesystems, the credential needed for graphics rendering is now published correctly."
+        ]
+      },
+      {
+        "version": "0.3.30",
+        "date": "2026-08-15",
+        "zh": [
+          "**新增 Agent2Agent(A2A)v1.0 协议**:内置 A2A 服务端(基于 JSON-RPC 2.0,支持消息发送与流式、任务查询/列举/取消/订阅、扩展 agent-card)、agent-card 发现、鉴权与文件/推送;也可作为客户端把外部 agent 当作工具调用。",
+          "**A2A 外呼单独审批分级**:调用外部 A2A agent 会把对话/分析内容发给第三方,现改为独立的审批级别,自动模式下也会先暂停等你确认(与 MCP 一致),而不再被当作只读操作静默执行。",
+          "**A2A 前向兼容加固**:对方使用更新版本的协议、回以本版本尚不认识的取值时,不再整条解析失败,而是当作\"未知\"继续处理。",
+          "**DeepSeek V4 更稳**:保留其工具调用的推理历史,并加入按模型的首请求配置,绝不把初始化阶段的中间答案当作最终结果返回。",
+          "**会话历史查询新增\"仅运行时状态\"选项**:存活轮询只需运行时状态时不再重复加载整段历史。",
+          "**`omicos serve` 的复用提示在终端里可见**:当已有健康实例、第二个 serve 复用并退出时,提示不再被吞掉,也不会把终端留在原始模式。"
+        ],
+        "en": [
+          "**New Agent2Agent (A2A) v1.0 protocol** — a built-in A2A server (JSON-RPC 2.0: message send and streaming, task get/list/cancel/subscribe, extended agent-card), agent-card discovery, authentication, and files/push; the app can also act as a client and call external agents as tools.",
+          "**Separate approval tier for outbound A2A calls** — calling an external A2A agent sends conversation/analysis content to a third party, so these now have their own approval tier and pause for confirmation even in automatic mode (like MCP), instead of being treated as a silent read-only operation.",
+          "**Hardened A2A forward compatibility** — when a peer on a newer protocol version replies with values this build doesn't recognize, the whole message no longer fails to parse; unknown values are treated as \"unknown\" and processing continues.",
+          "**Steadier DeepSeek V4** — reasoning history for its tool calls is preserved, and a per-model first-request profile is added; intermediate bootstrap answers are never returned to you as the final result.",
+          "**A \"runtime-only\" option for session-history queries** — liveness polling that only needs runtime state no longer reloads the whole history.",
+          "**The `omicos serve` reuse notice is visible in the terminal** — when a healthy instance already exists and a second serve reuses it and exits, the notice is no longer swallowed and the terminal isn't left in raw mode."
+        ]
+      },
+      {
+        "version": "0.3.29",
+        "date": "2026-08-14",
+        "zh": [
+          "**对齐各模型当前的推理接口契约**:请求/响应字段按各家最新的 reasoning 接口契约校准。",
+          "**工具调用身份在审批前后保持一致**:经过审批后工具调用的身份不再错乱,进度与结果正确对应。",
+          "**会话 ID 使用完整 UUID**:会话标识使用完整 UUIDv4,降低碰撞风险。",
+          "**浏览器文件路径的查询参数正确解码**:浏览器文件路径中经表单编码的查询参数(如路径里的空格)现在能正确解码。",
+          "**为 Python 运行时下发渲染授权**:图形渲染所需的授权凭据会下发给 Python 运行时。",
+          "**可挂接外部管理的 SSH 运行时**:支持接入由外部管理的 SSH 运行时。",
+          "**Windows:不再被残留的服务锁卡住**:能识别已退出的服务锁持有者,启动不再被过期锁阻塞。"
+        ],
+        "en": [
+          "**Aligned with each model's current reasoning API contract** — request/response fields are calibrated to each provider's latest reasoning contract.",
+          "**Consistent tool-call identity across approval** — a tool call's identity is no longer scrambled after approval, so progress and results map correctly.",
+          "**Full UUID session IDs** — sessions now use a full UUIDv4 identifier, reducing collision risk.",
+          "**Correct decoding of browser file-path query parameters** — form-encoded query parameters in browser file paths (such as spaces in a path) are now decoded correctly.",
+          "**Rendering authority for the Python runtime** — the credential needed for graphics rendering is provided to the Python runtime.",
+          "**Attach an externally managed SSH runtime** — you can now hook up an SSH runtime managed outside the app.",
+          "**Windows: no longer stuck on a stale serve lock** — an exited serve-lock holder is detected, so startup isn't blocked by a leftover lock."
+        ]
+      },
+      {
+        "version": "0.3.28",
+        "date": "2026-08-12",
+        "zh": [
+          "**按项目划分的记忆与召回**:记忆可以按项目归档、按项目召回,资料随当前模型组织。",
+          "**可中断当前工作区内核**:新增\"中断活动工作区内核\"的能力,长任务可以及时打断。",
+          "**历史检索的权限判定更合理**:检索自己历史的权限改为按你在任意研究域里持有的最高档位判定——持 Pro 的用户不会因某个领域的档位过期而被误判成免费、进而拒绝访问自己的历史。",
+          "**桌面更新健康检查对中国大陆网络更友好**:诊断改为同时探测国内更新节点并与海外节点竞速,任一可达即视为正常(此前只探测海外节点,国内网络会一律误报\"无法连接更新主机\",而更新其实经国内节点正常)。"
+        ],
+        "en": [
+          "**Per-project memory and recall** — memories can be filed and recalled per project, with the dossier organized around the current model.",
+          "**Interruptible active-workspace kernel** — a new \"interrupt the active workspace kernel\" capability lets you stop long-running tasks promptly.",
+          "**Fairer entitlement check for history search** — permission to search your own history is now decided by the highest tier you hold across any research domain, so a Pro user isn't misread as free (and denied their own history) just because one domain's tier has lapsed.",
+          "**Desktop update health check is friendlier to networks in mainland China** — the diagnostic now also probes the in-region update node and races it against the overseas one, treating either as healthy; previously it probed only the overseas node and would always report \"cannot reach the update host\" from within China even though updates were served fine in-region."
+        ]
+      },
+      {
+        "version": "0.3.27",
+        "date": "2026-08-11",
+        "zh": [
+          "**HE 切片查看器改为真·深度缩放**:此前把整张切片渲染成一张定分辨率图片、前端用 CSS 放大,超过约 2 倍就发糊;现在改为按需生成对应层级的清晰瓦片,像 NDP.view / QuPath 那样平滑放大。",
+          "**流式工作区上传**:大文件上传改为流式,不再一次性占用内存。",
+          "**支持 DeepSeek V4 的推理模式**:可通过自定义供应商启用 DeepSeek V4 的 reasoning。",
+          "**Windows 解释器选择器能找到 conda 环境**:在 Windows 上正确发现 conda 环境。",
+          "**自更新更稳**:重启前先恢复被替换的可执行文件路径(仅在确认新文件存在后处理),避免更新后找不到自身。",
+          "**会话上下文解析修复**:更准确地准备约束引用、复位新一轮状态并收敛缓存清理范围。",
+          "**CLI 与 Web 之间交接工作区与会话**。"
+        ],
+        "en": [
+          "**True deep-zoom in the HE slide viewer** — previously the whole slide was rendered to a single fixed-resolution image and enlarged with CSS, which got blurry past ~2×; it now serves sharp tiles at the appropriate level on demand, zooming smoothly like NDP.view / QuPath.",
+          "**Streamed workspace uploads** — large-file uploads now stream instead of being held in memory all at once.",
+          "**DeepSeek V4 reasoning support** — DeepSeek V4's reasoning mode can be enabled via custom providers.",
+          "**The Windows interpreter picker finds conda environments** — conda envs are now discovered correctly on Windows.",
+          "**More robust self-update** — the replaced executable path is restored before restart (only once the new file is confirmed present), so the app can always find itself after an update.",
+          "**Conversation context resolution fixes** — constraint references are prepared more accurately, per-turn state is reset, and cache cleanup is scoped more tightly.",
+          "**Workspace and session hand-off between the CLI and the web app**."
+        ]
+      },
+      {
+        "version": "0.3.26",
+        "date": "2026-08-10",
+        "zh": [
+          "**上下文用量统计更准**:token 统计按实际生效的历史上报,与真正送进 prompt 的内容一致。",
+          "**CLI 选择器滚动时保持高亮**:滚动候选列表时当前选中项不再消失。",
+          "**SSH 分叉会话保留上下文**:从 SSH 远程连接分叉会话时,继承的上下文得以保留。"
+        ],
+        "en": [
+          "**More accurate context-usage stats** — token counts are reported against the history that actually takes effect, matching what is really sent into the prompt.",
+          "**The CLI picker keeps its highlight while scrolling** — the current selection no longer disappears when scrolling the candidate list.",
+          "**SSH forked conversations keep their context** — forking a conversation from an SSH remote connection now preserves the inherited context."
+        ]
+      },
+      {
+        "version": "0.3.25",
+        "date": "2026-08-08",
+        "zh": [
+          "**修复 Anthropic OAuth(Claude Code 形态)登录**:按 Claude Code 的请求形态发起 Anthropic OAuth,登录不再失败;中继探测也改用当前活动的 Anthropic 模型。",
+          "**CLI 连对本地 Core、跟随其上报端口**:CLI 复用预期的本地 Core 实例并跟随它实际上报的端口(端口即使未变也能唤醒监听),避免连错实例或端口漂移。",
+          "**工作区可新建文件夹**:工作区选择器/文件浏览器现在能直接创建目录。",
+          "**远程更新时保护进行中的工作**;回放的 SSH 导出改走命名连接。",
+          "**文件保存/重命名/移动按会话工作区隔离**:保存、重命名、移动文件时的相对路径按当前会话自己的工作区解析(与打开文件一致)——从图表打开的 notebook 会存回该会话的工作区,而不是内核启动目录;越界写入保护照旧,会话内写入无法逃出其工作区。"
+        ],
+        "en": [
+          "**Fixed Anthropic OAuth (Claude Code style) sign-in** — Anthropic OAuth is now initiated in the shape Claude Code expects, so sign-in no longer fails; relay probing also uses the currently active Anthropic model.",
+          "**The CLI connects to the right local Core and follows its reported port** — the CLI reuses the intended local Core instance and follows the port it actually reports (waking the listener even when the port is unchanged), avoiding wrong-instance connections and port drift.",
+          "**Create folders in the workspace** — the workspace picker / file browser can now create directories directly.",
+          "**In-progress work is protected during remote updates**; replay's SSH export now goes over a named connection.",
+          "**File save / rename / move are scoped to the conversation's workspace** — relative paths for saving, renaming, and moving files now resolve against the current conversation's own workspace (matching how files are opened) — a notebook opened from a figure is saved back into that conversation's workspace rather than the kernel's startup directory; the existing out-of-bounds write protection still applies, so writes within a conversation cannot escape its workspace."
+        ]
+      },
+      {
+        "version": "0.3.24",
+        "date": "2026-08-06",
+        "zh": [
+          "**远程内核的文件下载改为流式传输**:远程内核下载文件时改经 WebSocket 桥接流式传输,大文件不再一次性占用内存。",
+          "**模型 API 契约对齐**:请求/响应字段按各家当前的接口契约校准,减少新模型上的兼容问题。",
+          "**并发远程启动不再互相覆盖**:每次远程启动的日志与 PID 文件按启动唯一命名,并发启动不再抢占彼此的 PID;失败的启动会在退出时清理自己的临时文件。",
+          "**目录订阅缓存状态更一致**:保持订阅缓存的一致性,避免刷新时状态错乱。"
+        ],
+        "en": [
+          "**Streamed file downloads from remote kernels** — downloading a file from a remote kernel now streams over the WebSocket bridge, so large files no longer have to be held in memory all at once.",
+          "**Model API contract alignment** — request/response fields are calibrated to each provider's current API contract, reducing compatibility issues with new models.",
+          "**Concurrent remote launches no longer clobber each other** — each remote launch's log and PID file is uniquely named per launch, so concurrent launches don't steal each other's PID; a failed launch cleans up its own temp files on exit.",
+          "**More consistent catalog subscription cache** — subscription cache state is kept consistent to avoid it getting confused on refresh."
+        ]
+      },
+      {
+        "version": "0.3.23",
+        "date": "2026-08-05",
+        "zh": [
+          "**长任务不再因反复压缩上下文而中途卡死**:上下文压缩此前每轮硬性最多 2 次,即使一次压缩已经把上下文大幅缩小,仍可能因\"压完还是偏大\"直接把这一轮判死;现在改为根据\"压缩是否真的在起作用\"来决定是否继续,并修复了一处会把关键查找信息一并压掉的路径。",
+          "**并行/嵌套工具的进度归因更准**:进度显示为每次工具执行保留正确归因,不再把并行或嵌套工具的进度错挂到别处。",
+          "**更安全地检查与恢复「无主」会话**:对没有明确归属的旧会话提供只读检查与安全的重新认领,仅在确认这份数据从未被别的账号共用过时才认领,确认属于别人的会话保持不动。"
+        ],
+        "en": [
+          "**Long tasks no longer stall on repeated context compaction** — context compaction was capped at 2 attempts per turn, so even when a single pass had already shrunk the context substantially, the turn could still be killed for being \"too large after compacting\"; it now continues based on whether compaction is actually making progress, and a path that could compact away key lookup information is fixed.",
+          "**More accurate progress attribution for parallel/nested tools** — the progress display keeps the correct attribution for each tool execution instead of mis-attaching parallel or nested tool progress.",
+          "**Safer inspection and recovery of \"ownerless\" conversations** — older conversations without a clear owner get a read-only inspection and a safe re-claim path, claimed only when the data was never shared with another account; conversations confirmed to belong to someone else are left untouched."
+        ]
+      },
+      {
+        "version": "0.3.22",
+        "date": "2026-08-04",
+        "zh": [
+          "**新模型不再退化成 32K 上下文**:供应商 `/models` 返回的能力信息此前被丢弃,导致每个新模型都落回通用 32K 默认窗口;现在保留一小组通用能力元数据(不含定价等易变字段），新模型的真实上下文窗口得以正确显示。",
+          "**排队消息不再丢附加图片**:排队期间贴的图片此前会在恢复排队消息时被悄悄覆盖丢失;现已修复,并顺带整理了 CLI 与 App 之间的队列/跨端会话对齐。",
+          "**图表 PDF 里的文字可再编辑**:自动导出的图表 PDF 改用 TrueType 字体,在 Illustrator 等工具里文字可编辑(此前为不可编辑的 Type 3)。",
+          "**目录「刷新」按钮真正刷新**:手动刷新不再被后台的缓存捷径接住,现在保证真的向服务端请求一次。",
+          "**新增按连接的远程 OAuth**:可直接在某台已连接的远程内核上完成 OAuth 登录,凭据由那台机器自己持有和续期。",
+          "**安全恢复「无主」会话**:账号隔离上线前留下的旧会话有了安全的重新认领路径,仅在确认数据从未被别的账号共用时才认领,属于别人的会话保持原样。",
+          "**停止远程内核时清理更彻底**:改为对整个进程组发信号,顺带收掉旧版包装脚本遗留的孤儿内核进程。"
+        ],
+        "en": [
+          "**New models no longer degrade to a 32K context** — capability info from the provider's `/models` endpoint was being discarded, so every new model fell back to a generic 32K window; a small set of general capability metadata (no volatile fields like pricing) is now retained, so new models show their real context window.",
+          "**Queued messages no longer drop attached images** — images added while a message was queued could be silently overwritten and lost when the queued message was restored; fixed, along with tidying up queue / cross-device session alignment between the CLI and app.",
+          "**Text in exported chart PDFs is editable again** — auto-exported chart PDFs now use TrueType fonts, so text is editable in tools like Illustrator (previously non-editable Type 3).",
+          "**The catalog \"Refresh\" button actually refreshes** — a manual refresh is no longer caught by the background cache shortcut and now always asks the server.",
+          "**Per-connection remote OAuth** — you can complete an OAuth sign-in directly on a connected remote kernel, with the credentials held and renewed by that machine.",
+          "**Safe recovery of \"ownerless\" conversations** — older conversations left before account isolation now have a safe re-claim path, claimed only when the data was never shared with another account; conversations confirmed to belong to someone else are left untouched.",
+          "**Cleaner shutdown of remote kernels** — stopping a remote kernel now signals the whole process group and also reaps orphaned kernel processes left by an older wrapper script."
+        ]
+      },
+      {
+        "version": "0.3.21",
+        "date": "2026-08-03",
+        "zh": [
+          "**远程内核更新后不再误报「已更新」**:更新判断改为探测「实际在跑的运行时」版本,而不是磁盘上的可执行文件——新文件已就位、但内核进程还是旧版本时,连接界面现在会正确进入更新流程;同时修复了终止信号未被转发、导致原生内核进程被落下、继续占用端口的问题。",
+          "**Windows 稳定性**:修复一处会导致 Windows 版内核编译不出来的问题。"
+        ],
+        "en": [
+          "**Remote kernels no longer falsely report \"up to date\"** — the update check now probes the *running* runtime's version rather than the on-disk executable, so when a new file is in place but the kernel process is still the old version, the connection screen correctly enters the update flow; also fixes termination signals not being forwarded, which could leave the native kernel process orphaned and holding its port.",
+          "**Windows stability** — fixed an issue that could prevent the Windows kernel from building."
+        ]
+      },
+      {
+        "version": "0.3.20",
+        "date": "2026-08-01",
+        "zh": [
+          "**修复:某些情况下助手「什么都没回」**——一次内部写入竞争会在回答开始输出之前就让整轮失败;现在这类非关键写入失败不再中断本轮。",
+          "**修复:非默认工作区里的图表打不开**——图片现在按会话自己的工作区解析,而不是内核启动时的固定目录(文件一直好好在磁盘上)。"
+        ],
+        "en": [
+          "**Fixed: the assistant occasionally \"returned nothing\"** — an internal write race could fail the whole turn before the answer began streaming; such non-critical write failures no longer interrupt the turn.",
+          "**Fixed: figures wouldn't open in a non-default workspace** — figures now resolve against the conversation's own workspace rather than the kernel's fixed startup directory (the files were always safely on disk)."
+        ]
+      },
+      {
+        "version": "0.3.19",
+        "date": "2026-07-31",
+        "zh": [
+          "**目录同步大幅省流量**:agent/skill 清单同步改为协商 gzip 压缩(同一份清单从 28KB 降到约 6KB),内容没变时用条件请求换回空响应,不再重复下载已有字节。",
+          "**服务端主动推送目录更新**:管理端改动后,在线内核会被直接通知并立即同步对应类别,不必等下一次轮询;定时轮询保留为兜底。",
+          "**续期不再顺带重拉整个目录**:只有权益真的变动(升级/降级/新购一个研究领域)才立即重同步,权益不变时不再无谓重拉。",
+          "**每个请求带上版本号**:内核访问云端时带上 `omicos-core/<版本>`,便于线上排查区分内核版本。",
+          "**Notebook Copilot 锁定当前选中单元格**:每轮以编辑器里选中的单元格为准,过期坐标直接拒绝而非猜测;单元格编号改为与编辑器一致的从 1 开始。"
+        ],
+        "en": [
+          "**Much leaner catalog sync**: agent/skill catalog sync now negotiates gzip (a catalog dropping from ~28KB to ~6KB) and uses conditional requests to get an empty response when nothing changed, instead of re-downloading bytes it already has.",
+          "**Server-pushed catalog updates**: after an admin change, online kernels are notified directly and sync the affected category immediately, without waiting for the next poll; periodic polling remains as a fallback.",
+          "**Renewal no longer re-pulls the whole catalog**: a full re-sync happens only when entitlements actually change (upgrade / downgrade / buying a new research domain), not on every credential renewal.",
+          "**A version header on every request**: the kernel now identifies itself as `omicos-core/<version>` when calling the cloud, making it possible to tell kernel versions apart when investigating issues.",
+          "**Notebook Copilot locks to the selected cell**: each turn targets the cell selected in the editor and refuses stale coordinates instead of guessing; cell numbers now start at 1 to match the editor."
+        ]
+      },
+      {
+        "version": "0.3.18",
+        "date": "2026-07-26",
+        "zh": [
+          "**文件搜索更省、结果可完整取回**:搜索新增「只列匹配文件」「按文件计数」两种模式,便于先廉价定位再钻入内容;当内联结果被截断时,完整结果会写到临时文件供取回。",
+          "**更可靠的会话保存与损坏历史恢复**:会话库写入加了跨进程锁与原子替换,保存失败时如实报错而非留下半截;并能从可解析的旧历史恢复标题与正文,覆盖前先备份。",
+          "**委派的专家用自己的技能**:被委派的 agent 现在按它自己的授权集运行,而不是发起这一轮的 agent 的。",
+          "**Notebook Copilot 更安全**:每次改写/执行都绑定到当前锁定的 notebook 与已校验的单元格,信息过期即安全拒绝,并采用带完整性校验的原子保存,避免切换标签或同步把操作误导到别的 notebook。",
+          "**Windows 稳定性**:修复根目录/驱动器路径导致内核起不来的问题(含从 `E:\\` 保存后被历史损坏成裸 `E:` 的工作区),内核中断时干净地清理整棵进程树。",
+          "**登录后不再被暂显为 Community**:CLI 登录后权限就绪前,Pro 用户不会被短暂判成社区版。",
+          "**诊断更清楚**:分别报告「网络可达」与「登录鉴权」,并且绝不输出任何令牌或身份信息。"
+        ],
+        "en": [
+          "**Leaner file search with retrievable full results**: search adds \"list matching files only\" and \"count per file\" modes for cheap location before drilling into content; when the inline result is truncated, the full result is written to a temp file you can retrieve.",
+          "**More reliable conversation saves and corrupted-history recovery**: the conversation store now uses a cross-process lock and atomic replacement, reports errors honestly instead of leaving a half-written file, and can recover titles and content from parseable legacy history (with a backup before overwrite).",
+          "**Delegated experts use their own skills**: a delegated agent now runs under its own authorizations rather than the agent that started the turn.",
+          "**Safer Notebook Copilot**: each edit/execution is bound to the currently pinned notebook and verified cells, safely refuses when that information is stale, and saves atomically with an integrity check — so switching tabs or a sync can't redirect an action to a different notebook.",
+          "**Windows stability**: fixed root/drive paths that could stop the kernel from starting (including workspaces saved from `E:\\` and historically corrupted to a bare `E:`), and clean whole-process-tree cleanup on kernel interrupt.",
+          "**No brief \"Community\" after sign-in**: Pro users are no longer momentarily treated as Community while permissions initialize after a CLI login.",
+          "**Clearer diagnostics**: network reachability and login authentication are reported separately, and no token or identity information is ever printed."
+        ]
+      },
+      {
+        "version": "0.3.17",
+        "date": "2026-07-24",
+        "zh": [
+          "**更聪明的会话标题**:新会话在第一轮完成后由模型生成一个简洁标题(侧边栏动画更新),不再只是截断你的第一句话;并保护无法读取的历史、恢复会话标题。",
+          "**文件搜索更快更干净,并修复超大会话拖垮云同步**:文件搜索 / 通配 / 列目录改用更强的引擎,统一忽略 `.omicos`、`node_modules`、`target` 等目录,搜索输出加了上限——修复了个别会话因体积异常膨胀(数百 MB)而云同步卡死的问题。",
+          "**同步自愈**:遇到异常巨大的单条记录时自动修复,不再无限重试、卡住整个同步。"
+        ],
+        "en": [
+          "**Smarter conversation titles**: a new conversation gets a concise model-generated title after its first turn (the sidebar animates the update), instead of just truncating your first message; unreadable history is protected and conversation titles are restored.",
+          "**Faster, cleaner file search, and a fix for oversized conversations stalling cloud sync**: file search / glob / list now use a stronger engine, consistently ignore directories like `.omicos`, `node_modules` and `target`, and cap search output — fixing cases where a conversation grew abnormally large (hundreds of MB) and jammed cloud sync.",
+          "**Self-healing sync**: an abnormally large single record is now repaired automatically instead of retrying forever and stalling the whole sync."
+        ]
+      },
+      {
+        "version": "0.3.16",
+        "date": "2026-07-23",
+        "zh": [
+          "本次更新修复了服务器连接 bug。"
+        ],
+        "en": [
+          "This update fixes a server connection bug."
+        ]
+      },
+      {
+        "version": "0.3.15",
+        "date": "2026-07-22",
+        "zh": [
+          "**MCP 服务器可以带界面了(MCP Apps)**:支持 MCP 服务器提供交互式界面并在对话中渲染;已渲染的界面在该回合结束后仍能继续调用其工具。",
+          "**可以用本地路径的 MCP 服务器**,并把原来含糊的「握手失败」换成明确的预检提示(目录是否存在、命令是否可执行等),不用再猜哪里配错了。",
+          "**一键安装精选的非 npm MCP 服务器**:无需打开终端;来源固定、安装前校验文件完整性,并会先征得你的同意。",
+          "**可安装的服务器目录改为云端下发**:新增服务器或修复失效的下载链接不再需要你升级客户端。",
+          "**自定义供应商的上下文窗口以你的设置为准**:此前若与某个内置模型同名,你填写的窗口会被内置值悄悄覆盖,现已修正。",
+          "**长时间运行更省资源**:修复「运行状态」进程采样在长期运行下的内存与文件句柄增长。"
+        ],
+        "en": [
+          "**MCP servers can now ship a UI (MCP Apps)**: MCP servers may provide an interactive interface rendered inside the conversation, and a rendered app can keep calling its tools after that turn ends.",
+          "**Use MCP servers from a local path**, with the vague \"handshake failed\" replaced by specific pre-flight checks (does the directory exist, is the command executable, …) so you no longer have to guess what's misconfigured.",
+          "**One-click install for curated non-npm MCP servers**: no terminal needed; sources are fixed, file integrity is verified before install, and your consent is requested first.",
+          "**The installable-server catalog is now served from the cloud**: adding a server or fixing a dead download link no longer requires you to update the client.",
+          "**A custom provider's context window now wins**: if it shared a name with a built-in model, your configured window was silently overridden — fixed.",
+          "**Lighter long-running resource use**: fixed memory and file-handle growth in the process sampler behind the runtime status view."
+        ]
+      },
+      {
+        "version": "0.3.14",
+        "date": "2026-07-21",
+        "zh": [
+          "**新增证据模式(Evidence mode)**:开启后,每个结论都用引用的文献或来自数据的具体数字支撑,并强制附上反方证据——新增引用文献、引用数据、查找反证三种能力,配合独立校验。面向 Pro 等级的组学(omics)分析。",
+          "**分域权益判定修正**:同时拥有不同研究域权益的用户(例如「人文社科 Pro、组学社区版」),现在能按当前所在域正确解锁该域的付费 agent 与 skill,不再被其他域的等级误挡。",
+          "**记忆系统重构**:记忆条目新增分类与「有效期」信息——失效的记忆是被标记为过期而非删除(文件保留作历史),默认只召回当前有效的事实;「常用」的记忆按最近一次被用到来衡量,越常用越保持在前,长期不用的逐渐淡出。",
+          "**其它稳定性**:已保存连接的打开更稳、轮次事件按会话隔离、内核根目录与新建对话默认目录分离。"
+        ],
+        "en": [
+          "**New: Evidence mode**: when on, every conclusion is backed by a cited reference or a concrete number from your data, and counter-evidence is required — adding cite-literature, cite-data and find-counter-evidence capabilities with an independent check. For Pro-tier omics analysis.",
+          "**Per-domain entitlement fix**: users who hold entitlements in different research domains (e.g. \"Humanities Pro, omics Community\") now correctly unlock a domain's paid agents and skills based on the domain they're in, instead of being blocked by another domain's tier.",
+          "**Memory system redesign**: memory entries gain a category and validity information — a superseded memory is marked expired rather than deleted (the file is kept as history), and only currently-valid facts are recalled by default; \"frequently used\" memories are measured by when they were last used, so the ones you rely on stay near the top while ignored ones fade out.",
+          "**Other stability**: steadier opening of saved connections, per-conversation isolation of turn events, and separation of the kernel's root directory from the default directory for new conversations."
+        ]
+      },
+      {
+        "version": "0.3.13",
+        "date": "2026-07-21",
+        "zh": [
+          "**会话行菜单**:每条会话可置顶 / 归档 / 标为未读,并跨设备同步。",
+          "**本地会话的模型也同步到云端**:在另一台设备打开同一会话时能看到相同的模型。",
+          "**修复:远程会话的「后续建议」不再报错**:SSH 隧道会话的后续建议面板此前总显示「建议暂不可用」,现已修正。"
+        ],
+        "en": [
+          "**Conversation row menu**: each conversation can be pinned / archived / marked unread, synced across devices.",
+          "**A local conversation's model now syncs to the cloud**: open the same conversation on another device and you'll see the same model.",
+          "**Fixed: \"follow-up suggestions\" no longer error on remote conversations**: the suggestions panel for SSH-tunnel conversations used to always show \"unavailable\"; fixed."
+        ]
+      },
+      {
+        "version": "0.3.12",
+        "date": "2026-07-20",
+        "zh": [
+          "**远程连接更稳定**:优化 SSH 远程内核的关闭、就绪判定与状态刷新,并按连接把工作区操作路由到正确的内核,减少抖动。",
+          "**安全增强**:强化 API 密钥的本地保护——密钥默认只保留在你本机,仅在你明确同意时才同步到远程服务器。",
+          "**「保存代码」修复**:修复在远程 / 云会话下导出代码时可能提示缺少某供应商 API Key 的问题(现经本机凭据完成导出)。",
+          "**kimi 思考档**:kimi-coding-plan 现支持三档思考强度。"
+        ],
+        "en": [
+          "**More stable remote connections**: improved shutdown, readiness detection and status refresh for SSH remote kernels, with per-connection routing of workspace actions to the right kernel.",
+          "**Security hardening**: stronger local protection of API keys — keys stay on your machine by default and are synced to a remote server only when you explicitly consent.",
+          "**\"Save code\" fix**: fixed a possible \"missing API key\" error when exporting code in a remote/cloud session (the export now uses this machine's credentials).",
+          "**kimi thinking levels**: kimi-coding-plan now supports its three thinking levels."
+        ]
+      },
+      {
+        "version": "0.3.11",
+        "date": "2026-07-18",
+        "zh": [
+          "**远程运行时与状态轮询更稳**:改进远程连接的运行时管理与状态查询,减少远程内核在连接、状态刷新上的抖动。",
+          "**新增 Grok OAuth 登录**,并修复将 Anthropic 作为自定义供应商配置时的问题。"
+        ],
+        "en": [
+          "**Steadier remote runtime & status polling**: improved runtime management and status queries for remote connections, reducing jitter on connect and status refresh.",
+          "**Added Grok OAuth sign-in**, and fixed configuring Anthropic as a custom provider."
+        ]
+      },
+      {
+        "version": "0.3.10",
+        "date": "2026-07-17",
+        "zh": [
+          "**看清内核「卡住还是在算」**:进程状态面板新增 AI 栈分析——采样共享 Python 内核的调用栈,再让你配置的模型解读它到底在忙什么(而不只是知道它还活着)。桌面端首次分析可经系统授权对话框临时提权(默认关闭)。",
+          "**worker 死亡不再偷偷重跑**:Python worker 执行中途死掉(如内存不足被杀)时,不再静默重启并把整段代码再跑一遍,而是如实报出。",
+          "**命令行 / 终端界面与网页端对齐**:发言人标签、复核 check 卡片、深度研究报告识别、计划模式等。",
+          "**更快打开长会话**、修复自动更新回退清单、会话同步改为增量推送、PDF 阅读工具鼓励通读全文。"
+        ],
+        "en": [
+          "**See whether a kernel is stuck or working**: the process panel adds an AI stack analysis — it samples the shared Python kernel's call stack and has your model explain what it is doing (not just that it is alive). On desktop the first analysis can request temporary elevation via a system dialog (off by default).",
+          "**No more silent re-runs on worker death**: when a Python worker dies mid-execution (e.g. killed for memory), the kernel now reports it honestly instead of silently restarting and re-running the whole cell.",
+          "**CLI / terminal UI aligned with the web app**: speaker labels, review check cards, deep-research report detection, plan mode, and more.",
+          "**Faster long-conversation opens**, a fix so the auto-update rollback list is preserved, incremental conversation sync, and a PDF reader that encourages reading the full document."
+        ]
+      },
+      {
+        "version": "0.3.9",
+        "date": "2026-07-16",
+        "zh": [
+          "**环境明明好了却说「没装环境」的问题修复**:内核是否能跑 Python 的判断会在真正拦下你之前重新探测,环境一好就自动放行(此前需重启才能恢复)。",
+          "**会话在「将运行它的机器」上创建、执行**:面向 SSH 远程时,会话不再诞生在错的机器上。",
+          "**进程监控只看自家进程**:共享 HPC 登录节点上运行时不再扫描整机进程,避免占用大量 CPU。",
+          "**自动更新支持回退到指定旧版本**、远程离线会话可在本地保留只读镜像、网络诊断可询问远程能否连云。"
+        ],
+        "en": [
+          "**Fix for \"environment not installed\" when it actually is**: the check for whether the kernel can run Python re-probes before it blocks you, and releases automatically once the environment is ready (previously a restart was required).",
+          "**Conversations are created and executed on the machine that will run them**: for SSH remotes, a conversation no longer starts on the wrong machine.",
+          "**Process monitoring watches only its own processes**: on shared HPC login nodes it no longer scans the whole machine, avoiding heavy CPU use.",
+          "**Auto-update can roll back to a named older version**, remote/offline conversations keep a read-only local mirror, and network diagnostics can ask the remote whether it can reach the cloud."
+        ]
+      },
+      {
+        "version": "0.3.8",
+        "date": "2026-07-16",
+        "zh": [
+          "**远程会话修复**:不再凭空生成打开为空的「幽灵会话」;对远程会话的操作正确作用到其所在机器。",
+          "**生物数据库自助密钥新增两项**:Hugging Face 令牌(病理 / 蛋白基础模型需要)与 openFDA 密钥(可选提额)。",
+          "**命令行终端输入体验稳定化**。"
+        ],
+        "en": [
+          "**Remote-conversation fixes**: no more empty \"ghost\" conversations, and actions on a remote conversation reach the machine that holds it.",
+          "**Two more self-serve database keys**: a Hugging Face token (for gated pathology/protein foundation models) and an openFDA key (optional, raises rate limits).",
+          "**Steadier CLI terminal input**."
+        ]
+      },
+      {
+        "version": "0.3.6",
+        "date": "2026-07-16",
+        "zh": [
+          "**连接 SSH 远程时又能看到远程会话**:侧栏可直接列出隧道另一端内核持有的会话。",
+          "**进程凭据缺失也能自愈**,不再卡在离线状态。"
+        ],
+        "en": [
+          "**Remote conversations visible again over SSH**: the sidebar can list conversations held by the kernel at the other end of the tunnel.",
+          "**Self-healing when a process credential is missing**, instead of getting stuck offline."
+        ]
+      },
+      {
+        "version": "0.3.5",
+        "date": "2026-07-14",
+        "zh": [
+          "**多工作区 + 会话级远程路由(重大更新)**:会话改为全局存储,任意目录启动都能看到本机所有会话;内核按工作区分池、按会话路由;SSH 远程改为每会话各自的目标(会话留本地、远程仅作执行器)。",
+          "**会话删除双向同步**:本机删的不再在别处「复活」,别处删的也能同步回来。",
+          "**网络诊断**:暴露本机真实出网状况(代理、TLS 信任根、系统时钟、按功能可达性),帮你定位「浏览器能连、omicOS 连不上」。",
+          "**稳定性**:依赖安装加真实超时避免卡死;修复若干登录 / 凭据导致的循环;缓存 conda 环境发现(此前每次都要等 9–12 秒)。"
+        ],
+        "en": [
+          "**Multi-workspace + per-conversation remote routing (major)**: conversations are now stored globally and visible from any launch directory; kernels are pooled per workspace and routed per conversation; SSH remotes become a per-conversation target (the conversation stays local, the remote is just an executor).",
+          "**Two-way conversation deletion**: a conversation you delete here no longer \"revives\" elsewhere, and deletions made elsewhere sync back.",
+          "**Network diagnostics**: surfaces this machine's real connectivity (proxy, TLS roots, clock, per-feature reachability) to explain \"the browser connects but omicOS can't\".",
+          "**Stability**: real timeouts on dependency installs to avoid hangs; several login/credential loops fixed; cached conda-environment discovery (previously a 9–12s wait each time)."
+        ]
+      },
+      {
+        "version": "0.3.4",
+        "date": "2026-07-14",
+        "zh": [
+          "**修复不完整的打包 skill 缓存**:若资源只下载了一半,不再被误当作「已是最新」。"
+        ],
+        "en": [
+          "**Fixed incomplete packaged-skill caches**: a half-downloaded resource tree is no longer treated as \"already up to date\"."
+        ]
+      },
+      {
+        "version": "0.3.3",
+        "date": "2026-07-12",
+        "zh": [
+          "**子调用「运行」行可查错、可回溯**:出上下文的子模型委派(网页抓取智能提取、PDF / 图像识别、整 agent worker)在界面显示为一行「运行」,此前失败只有一个点不开的红点;现在带上失败原因,并能回溯到发起它的父调用(如抓取失败可点开看 URL 与结果)。"
+        ],
+        "en": [
+          "**Clickable, traceable \"run\" rows for sub-calls**: out-of-context sub-model delegations (web-fetch extraction, PDF/image vision, whole-agent workers) show as a \"run\" row; failures used to be a red dot you couldn't open — now they carry the failure reason and link back to the parent call (e.g. a failed fetch opens its URL and result)."
+        ]
+      },
+      {
+        "version": "0.3.2",
+        "date": "2026-07-12",
+        "zh": [
+          "**并行工具调用不再互相串味**:修复 Codex / Gemini 在一次响应里发出多个并行工具调用时,参数被错误拼接、导致某个工具戴着另一个工具参数的问题(对深度研究影响最大)。",
+          "**上下文窗口修正**:将 Codex 的 gpt-5.5 上下文窗口离线回退值修正为 272k,避免自动压缩撑过真实窗口。"
+        ],
+        "en": [
+          "**Parallel tool calls no longer bleed into each other**: fixed Codex/Gemini so multiple parallel tool calls in one response don't get their arguments merged (which made a tool run with another tool's arguments) — most impactful for deep research.",
+          "**Context-window fix**: corrected the offline fallback for Codex gpt-5.5 to 272k so auto-compaction doesn't overshoot the real window."
+        ]
+      },
+      {
+        "version": "0.3.1",
+        "date": "2026-07-12",
+        "zh": [
+          "**Skill 可携带打包程序(opt-in)**:skill 现可声明一个打包运行时入口,让它携带可直接运行的程序;未声明的 skill 行为不变。"
+        ],
+        "en": [
+          "**Skills can carry a packaged runtime (opt-in)**: a skill may declare a packaged runtime entry point so it can ship a directly runnable program; skills that don't declare one behave as before."
+        ]
+      },
+      {
+        "version": "0.3.0",
+        "date": "2026-07-11",
+        "zh": [
+          "**多研究域支持**:内核按研究域分别拉取并缓存各自的 agent / skill 阵容,切换域即切换整套;组学(omics)默认行为与之前完全一致。",
+          "**深度研究能力(P0)**:新增并行网页抓取 / 批量搜索工具,内置严格的安全防护(防止访问内网 / 元数据地址、DNS 重绑定)与并发 / 内存上限,避免宽扇出把内核撑爆。",
+          "**云端能渲染 agent 自存的图**:agent 用自定义文件名 / 绝对路径保存的图,现在也能在手机 / 网页端正确显示(仅上传工作区内的真实图片,不改动消息内容)。",
+          "**云端会话过期能被感知**:会话过期时客户端会正确提示重新登录,而不是静默失败。",
+          "**生物数据库调用也走本地转发**:无外网的远程内核发起的生物库请求经本机(持有密钥与外网)回传执行,**真实密钥自始至终不离开本机**。",
+          "**新增 `fanout_only` agent 能力**:让特定 agent 只能扇出委派、不能回调,从根上消除深度研究的递归空转。"
+        ],
+        "en": [
+          "**Multi-domain support**: the kernel fetches and caches a separate agent/skill lineup per research domain and switches the whole lineup when you switch domains; the omics domain behaves exactly as before.",
+          "**Deep research (P0)**: new parallel web-fetch / batch-search tools with strict safety guards (blocking internal/metadata addresses and DNS rebinding) and concurrency/memory caps so a wide fan-out can't exhaust the kernel.",
+          "**The cloud can render figures an agent saved itself**: figures saved with custom names/absolute paths now display correctly on mobile/web (only real in-workspace images are uploaded; message content is untouched).",
+          "**Cloud session expiry is now surfaced**: when a session expires the client prompts a re-login instead of failing silently.",
+          "**Biology-database calls can route through your machine**: for an offline remote kernel, biology-database requests are relayed through this machine (which holds the keys and internet), and the **real keys never leave your computer**.",
+          "**New `fanout_only` agent capability**: lets a specific agent only fan out work and never call back, structurally eliminating recursive spinning in deep research."
+        ]
+      }
+    ]
+  },
+  "webui": {
+    "name": "omicos webui",
+    "latest": "0.3.8",
+    "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
+    "github_releases": null,
+    "releases": [
+      {
+        "version": "0.3.8",
+        "date": "2026-10-20",
+        "zh": [
+          "个人信息页可查看云算力余额和使用流水；充值仅向获准账号开放，云端执行暂未开放。",
+          "建议任务卡支持展示独立任务背景，远程工作区中的子任务继续在原工作区运行。"
+        ],
+        "en": [
+          "View cloud compute credits and usage history in your profile. Recharge is limited to approved accounts; cloud execution is not yet open.",
+          "Suggested task cards show standalone task context, while subtasks in remote workspaces stay in their original workspace."
+        ]
+      },
+      {
+        "version": "0.3.7",
+        "date": "2026-10-19",
+        "zh": [
+          "首页新增科研方向建议和编辑精选，可查看借鉴来源、验证思路，并一键带入对话讨论。",
+          "推荐按天缓存，重复打开更快；后台更新时保留已有内容，也可随时手动刷新。"
+        ],
+        "en": [
+          "Explore research directions and editorial picks on the home page, inspect their sources and validation ideas, and bring a suggestion into a conversation.",
+          "Daily recommendation caching makes repeat visits faster. Existing suggestions stay visible during updates, with manual refresh available."
+        ]
+      },
+      {
+        "version": "0.3.6",
+        "date": "2026-10-19",
+        "zh": [
+          "新建任务页面加入轻盈的序列字符背景动效，适配深浅色主题，并保持输入区域清晰。",
+          "动效仅在空白对话中显示，后台暂停，并遵循系统的减少动态效果设置。"
+        ],
+        "en": [
+          "New tasks feature a subtle sequence-inspired animated backdrop that adapts to light and dark themes while keeping the input area clear.",
+          "The backdrop appears only in empty conversations, pauses in the background, and respects reduced-motion preferences."
+        ]
+      },
+      {
+        "version": "0.3.5",
+        "date": "2026-10-19",
+        "zh": [
+          "执行轨迹详情按字段展示参数，正文支持标题、列表和表格，代码单独呈现。",
+          "支持展开详情阅读长文档，也可切换到原文查看原始参数和结果。"
+        ],
+        "en": [
+          "Trajectory details display parameters as fields, render document headings, lists and tables, and separate code blocks.",
+          "Expand details to read longer documents, or switch to Raw to inspect the original arguments and results."
+        ]
+      },
+      {
+        "version": "0.3.4",
+        "date": "2026-10-19",
+        "zh": [
+          "执行轨迹采用单行事件和紧凑搜索栏，按轮次标记，点击事件后再展开详情，为阅读留出更多空间。",
+          "加载页面改为展示 OmicOS 使用小提示，涵盖快捷键、工具调用和分屏操作。"
+        ],
+        "en": [
+          "A cleaner trajectory view with single-line events, turn boundaries, a compact search bar, and details that open on selection.",
+          "Loading screens now show OmicOS usage tips for keyboard shortcuts, tool calls, and split views."
+        ]
+      },
+      {
+        "version": "0.3.3",
+        "date": "2026-10-19",
+        "zh": [
+          "点击当前「对话」标签，可在对话与执行轨迹之间切换，查看消息、工具调用、参数和结果。",
+          "执行轨迹支持搜索、按轮次浏览和实时更新；查看时任务继续运行，需要确认时可直接返回对话处理。"
+        ],
+        "en": [
+          "Click the active Chat tab to switch between the conversation and its trajectory, with messages, tool calls, arguments and results.",
+          "Search and browse live events by turn while tasks keep running, with a direct return to the conversation when approval is needed."
+        ]
+      },
+      {
+        "version": "0.3.2",
+        "date": "2026-10-19",
+        "zh": [
+          "左上角品牌标识更清晰：加大图标并提高浅色、深色主题下的对比度。",
+          "收起的图标导航栏更窄，为内容留出更多空间；保留便于点击的按钮和原有展开宽度。"
+        ],
+        "en": [
+          "A clearer brand mark: a larger icon with stronger contrast in light and dark themes.",
+          "A narrower collapsed navigation rail leaves more room for content while keeping comfortable click targets and the existing expanded width."
+        ]
+      },
+      {
+        "version": "0.3.1",
+        "date": "2026-10-19",
+        "zh": [
+          "在「设置 → 外观」选择侧边栏常驻入口，偏好保存在当前设备；「更多」菜单改善了深色配色和小窗口显示。",
+          "智能体团队与对话协作列表使用和目录一致的专属图标。",
+          "多行排队消息保持单行预览，操作按钮不再被挤出窗口；已缓存模型也显示最新目录名称和停用提示。"
+        ],
+        "en": [
+          "Choose sidebar entries in Settings → Appearance, saved on this device. The More menu is clearer in dark themes and fits smaller windows.",
+          "Agent team and conversation collaboration lists use the same individual logos as the catalog.",
+          "Queued multiline messages stay on one preview line so controls remain visible. Cached models show the latest catalog names and retirement notices."
+        ]
+      },
+      {
+        "version": "0.3.0",
+        "date": "2026-10-19",
+        "zh": [
+          "**对话侧栏改版**——每个对话一行，状态一眼可见(运行中转圈、待你确认橙点、未读绿点)；可按项目、工作区或时间分组，顶部用「全部 / 运行中 / 未读 / 待确认」快速筛选。",
+          "**建议任务改成一行**——点「开始」就开成子对话，默认带上本对话的数据和变量；想先改一改，点「编辑任务」在原地修改后再开。",
+          "**智能体图标**——每个智能体都有了自己的图标，智能体列表的分类标题前也加上了图标，深浅色主题下都清晰。",
+          "**中断恢复更可靠**——网络抖动或切换后能接着显示同一轮回答，不再重复出现工具步骤；远程会话在刷新列表时保持绑定。",
+          "**其它**——画布按对话所在的文件夹找图，不再误报「文件缺失」；模型目录暂时取不到时会自动重试，且不改动你已选的模型。"
+        ],
+        "en": [
+          "**A redesigned conversation sidebar** — one line per conversation with its state at a glance (a spinner while running, an orange dot when it needs you, a green dot when unread). Group by project, workspace or time, and filter with All / Running / Unread / Needs you at the top.",
+          "**Suggested tasks are a single row** — Start opens it as a child conversation that brings this conversation's data and variables along; Edit brief lets you adjust the first message in place before starting.",
+          "**Agent icons** — every agent now has its own icon, and the agent list's category headers carry one too, legible in both light and dark themes.",
+          "**More reliable recovery** — after a network blip or a switch the same turn picks up without repeating tool steps, and remote conversations keep their binding while the list refreshes.",
+          "**Also** — the canvas finds figures relative to the conversation's folder, so it no longer reports them missing; when the model catalog is briefly unavailable it retries on its own without changing the model you picked."
+        ]
+      },
+      {
+        "version": "0.2.79",
+        "date": "2026-10-18",
+        "zh": [
+          "**子对话与建议任务**——模型可以把一件能单独完成的事提成「建议任务」，一键开成子对话；子对话做完会把报告写回原对话，你也可以在原对话里给它发消息。设了目标(/goal)的对话会在子对话报告后自动接着做。",
+          "**回合任务清单**——做多步任务时，模型会在对话里列一张清单并随进度逐项勾掉。",
+          "**以上两项需要本机 Core 0.4.19 及以上**——点左下角「更新」即可升级。",
+          "**智能体与技能目录改为「列表 + 右侧详情」**——点一项即可看到它能做什么，以及近期的使用情况。",
+          "**设置 → 「隐私与数据」新增「允许用我的使用数据改进 OmicOS」**——默认关闭，随时可以改。",
+          "**其它**——可选的 DeepSeek 联网搜索；每个工作区记住所选的 R 环境；文件浏览器在列目录失败后能恢复，切换对话后不再残留旧预览。"
+        ],
+        "en": [
+          "**Child conversations and suggested tasks** — the model can propose a self-contained piece of work as a suggested task and open it as a child conversation in one click. The child's report lands back in the parent, and you can message the child from the parent; a parent with a /goal carries on by itself once a child reports.",
+          "**Per-turn task list** — on multi-step work the model keeps a checklist in the conversation and ticks items off as it goes.",
+          "**Both need local Core 0.4.19 or newer** — use 「更新」 at the bottom left to upgrade.",
+          "**The agent and skill catalog is now a list with a detail pane** — pick one to see what it does and how it has been used recently.",
+          "**Settings → 「隐私与数据」 adds 「允许用我的使用数据改进 OmicOS」** — off by default, and you can change it at any time.",
+          "**Also** — optional DeepSeek web search; each workspace remembers its chosen R environment; the file browser recovers after a failed listing and no longer leaves a stale preview when you switch chats."
+        ]
+      },
+      {
+        "version": "0.2.78",
+        "date": "2026-10-15",
+        "zh": [
+          "**海外加载更稳**——静态资源节点连不上时，页面会自动改从备用地址加载，不再停在「加载没能完成」。",
+          "**「机器容量」卡片说清原因**——区分 Core 连不上、响应超时、版本过旧和暂无读数，不再一律显示「无法连接」。",
+          "**修复 PDF 查看器因版本不一致打不开的问题。**",
+          "**已下线的模型不再被选中或用于发送。**"
+        ],
+        "en": [
+          "**Steadier loading from overseas** — if the static asset edge cannot be reached, the page now loads from a fallback address instead of stopping at \"loading didn't finish\".",
+          "**The machine capacity card says why** — it now distinguishes Core unreachable, a timeout, an outdated Core and no reading yet, instead of always showing \"cannot be reached\".",
+          "**Fixed the PDF viewer failing to open because of a version mismatch.**",
+          "**Retired models are no longer selected or used for sending.**"
+        ]
+      },
+      {
+        "version": "0.2.77",
+        "date": "2026-10-13",
+        "zh": [
+          "**云同步停止时会说明原因**——当这台设备的同步被服务端暂停时，顶部会出现提示，请你更新到最新客户端，并说明本地数据不受影响。",
+          "**修复本地 Core 被反复重启的问题。**",
+          "**已删除项目的同步不再卡住**——针对已删除项目的改名或移入操作会提示未应用，然后继续同步其它内容。",
+          "**修复登录授权(OAuth)状态与实际连接不一致的问题。**"
+        ],
+        "en": [
+          "**Cloud sync now tells you when it has stopped** — if sync is paused for this device by the server, a banner asks you to update to the latest client and notes that local data is kept.",
+          "**Fixed the local Core being restarted repeatedly.**",
+          "**Sync no longer stalls on deleted projects** — a rename or move into a project that no longer exists is reported as not applied, and sync carries on.",
+          "**Fixed OAuth sign-in state drifting from the actual connection.**"
+        ]
+      },
+      {
+        "version": "0.2.76",
+        "date": "2026-10-12",
+        "zh": [
+          "**网页版加载更快**——脚本与样式重新从静态资源节点加载。",
+          "**SSH 远端对话更稳**——修复并发刷新时旧结果覆盖新结果、连接恢复后仍残留「离线」错误而无法输入的问题；重连后不再误报断开。",
+          "**桌面端里工作区文件链接留在应用内打开。**",
+          "**Figure Studio 缺少 Tavotto 运行时时**——会直接给出跳转到设置的入口。"
+        ],
+        "en": [
+          "**Faster web loading** — scripts and styles are served from the static asset edge again.",
+          "**Steadier SSH remote conversations** — fixed stale refresh results overwriting newer ones and an \"offline\" error lingering after the connection came back and blocking input; reconnects no longer show a false disconnect.",
+          "**Workspace file links stay inside the desktop app.**",
+          "**When Figure Studio is missing the Tavotto runtime** — it now offers a jump straight to settings."
+        ]
+      },
+      {
+        "version": "0.2.75",
+        "date": "2026-10-09",
+        "zh": [
+          "**修复侧栏「更多」点了没反应**——面板其实已渲染，只是被侧栏裁掉；现在点开即见，收进去的「智能体」「工具」「终端」「变量」「环境」也重新可达。"
+        ],
+        "en": [
+          "**Fixed 「更多」 doing nothing in the left rail** — the panel was rendering but clipped by the rail; it now opens properly, so 「智能体」, 「工具」, 「终端」, 「变量」 and 「环境」 are reachable again."
+        ]
+      },
+      {
+        "version": "0.2.74",
+        "date": "2026-10-09",
+        "zh": [
+          "**左侧栏瘦身**——「智能体」「工具」「终端」「变量」「环境」收进侧栏底部的「更多」(「···」)；常驻的只剩「分析」「笔记本」「Figure Studio」「商城」「团队」。原有的档位与功能限制不变。"
+        ],
+        "en": [
+          "**A shorter left rail** — 「智能体」, 「工具」, 「终端」, 「变量」 and 「环境」 now live under 「更多」 (the 「···」 at the foot of the rail); 「分析」, 「笔记本」, 「Figure Studio」, 「商城」 and 「团队」 stay pinned. Existing plan and feature gates are unchanged."
+        ]
+      },
+      {
+        "version": "0.2.73",
+        "date": "2026-10-09",
+        "zh": [
+          "**「画布」回到工具页**——修复 0.2.72 丢失画布入口的问题，多图拼版、标注、裁剪、导出都在原处。Figure Studio 需要额外的 Tavotto 运行时，在它就绪前原生画布始终可用。"
+        ],
+        "en": [
+          "**「画布」is back on the tools page** — fixes 0.2.72 dropping the canvas entry; multi-panel layout, annotations, cropping and export are where they were. Figure Studio needs an extra Tavotto runtime, and until it is in place the native canvas always works."
+        ]
+      },
+      {
+        "version": "0.2.72",
+        "date": "2026-10-09",
+        "zh": [
+          "**商城新增「课程与工作空间」**——可以购买论文 1:1 复现的工作空间，付款后导入到本机目录，随包附带的课程对话点「打开对话」即可继续看。导入需要本机 Core 0.4.15 及以上。",
+          "**Figure Studio 独立成页**——自带编辑器、Tavotto 智能体面板和 Tavotto MCP 入口，可以把工作区图片导入画布。",
+          "**对话可靠性修复**——明确失败的子代理不再显示为成功；冷重连后不再出现两条回答；云端会话的上下文统计恢复显示。",
+          "**侧边聊天支持语音输入**——识别的文字填进草稿，不会自动发送；浅色主题下发送按钮显示正常。",
+          "**窄输入区收成图标**——宽度不够时按钮隐去文字、只留图标，提示和无障碍名称保留。",
+          "**其它**——启动登录更稳；浅色主题下工作区预览里的嵌套代码不再看不清。"
+        ],
+        "en": [
+          "**The store gains 「课程与工作空间」** — buy a 1:1 paper-reproduction workspace, import it into a local directory after payment, and open the bundled course conversations with 「打开对话」. Import needs local Core 0.4.15 or newer.",
+          "**Figure Studio is now its own page** — with the editor, the Tavotto agent panel and the Tavotto MCP entry, plus importing workspace images onto the canvas.",
+          "**Conversation reliability fixes** — a sub-agent that failed no longer shows as successful; a cold reconnect no longer produces a duplicate answer; context statistics are back for cloud sessions.",
+          "**Voice input in side chat** — recognised text goes into the draft and is not sent automatically; the send button now renders correctly in the light theme.",
+          "**A narrow composer collapses to icons** — controls drop their labels when space is tight, keeping tooltips and accessible names.",
+          "**Also** — steadier startup sign-in; nested code in the light theme's workspace preview is readable again."
+        ]
+      },
+      {
+        "version": "0.2.71",
+        "date": "2026-10-03",
+        "zh": [
+          "**实验室版报价写清楚了**——卡片和购买弹窗显示该账号适用「学术价」还是「标准价」、每席单价、年付/月付和最少席位数。学术优惠按购买账号的机构与邮箱识别，同一团队成员可能看到不同报价。",
+          "**修复设置里 OAuth 登录状态显示错误**——切换运行时或供应商后，迟到的响应不再写进错误的卡片；自定义供应商的草稿只在切换供应商时清空。",
+          "**远端连接的 OAuth 对话框更稳**——关闭后不会被迟到的响应重新弹出，也不会重复轮询。"
+        ],
+        "en": [
+          "**Lab plan pricing is explicit** — the card and purchase dialog show whether this account gets the academic or standard price, the per-seat price, yearly/monthly, and the seat minimum. Academic pricing follows the buying account's institution and email, so teammates may see different quotes.",
+          "**Fixed OAuth sign-in in settings showing the wrong state** — after switching runtime or provider, late responses no longer write into the wrong card; a custom provider's draft is cleared only when the provider changes.",
+          "**A steadier remote-connection OAuth dialog** — a closed dialog is no longer revived by a late response, and polls no longer overlap."
+        ]
+      },
+      {
+        "version": "0.2.70",
+        "date": "2026-10-02",
+        "zh": [
+          "**画布可以放进你自己的图**——拖入文件、「从电脑导入」或「从工作区打开」；PDF 和 SVG 正常渲染，面板按图本身的比例显示。",
+          "**画布新增标注与页面设置**——文字、方框、箭头、引线和裁剪；「页面」里可选版面尺寸、背景色、标尺和网格吸附(不进导出)。画布助手可以照着导入的图用合成数据重写绘图脚本。",
+          "**证据模式回复更干净**——机器可读的记录不再显示为原始 JSON。",
+          "**以上画布功能需要 Core 0.4.13 及以上**——0.4.11 / 0.4.12 上画布仍可用，但 PDF/SVG 面板显示为灰块。"
+        ],
+        "en": [
+          "**Bring your own figure into the canvas** — drop a file, \"Import from computer\" or \"Open from workspace\"; PDF and SVG render properly and panels keep the figure's own proportions.",
+          "**Canvas annotations and page settings** — text, boxes, arrows, leader lines and cropping; the Page tab offers page sizes, background colour, rulers and grid snapping (never exported). The figure assistant can rewrite a plotting script from an imported figure using synthetic data.",
+          "**Cleaner evidence-mode replies** — machine-readable records no longer appear as raw JSON.",
+          "**These canvas features need Core 0.4.13 or newer** — on 0.4.11 / 0.4.12 the canvas still works, but PDF/SVG panels show as grey blocks."
+        ]
+      },
+      {
+        "version": "0.2.69",
+        "date": "2026-10-01",
+        "zh": [
+          "**画布支持多图拼版**——一页放多张图，可拖动、缩放或按毫米精确定位，调层级、锁比例、固定、一键平铺，改页面尺寸；每一步都可撤销。需要 Core 0.4.11 及以上。",
+          "**小改进**——打开对话时显示「正在打开」；「免费模型」视图说明它与普通入口共用供应商和 API Key；内置 PDF 查看器起不来时退回逐页渲染并注明是降级显示。"
+        ],
+        "en": [
+          "**Multi-figure layout on the canvas** — put several figures on one page; drag, resize or position them in millimetres, reorder, lock aspect ratio, pin, tile into a grid, and change the page size. Every step can be undone. Needs Core 0.4.11 or newer.",
+          "**Smaller improvements** — the conversation list shows \"opening\" while a chat loads; the \"Free models\" view explains it shares the provider and API key with the normal one; when the built-in PDF viewer cannot start, the preview renders pages itself and says it is a degraded view."
+        ]
+      },
+      {
+        "version": "0.2.68",
+        "date": "2026-09-28",
+        "zh": [
+          "**画布编辑器重做**——分析出的图可以直接改标题、轴标签、刻度、图例的文字、字号、颜色和位置，由内核真实重绘。需要 Core 0.4.11 及以上。",
+          "**输入框语音听写**——按住说话，松开转成可编辑文字，不会自动发送。macOS 需要更新到下一个桌面端版本才能使用。",
+          "**聊天链接显示预览卡片。**",
+          "**其它**——模型选择器只显示当前模型真实支持的思考档位；修复切换对话后发送目标跑错、以及 macOS 窗口拖拽区域失效的问题。"
+        ],
+        "en": [
+          "**A rebuilt canvas editor** — edit an analysis figure's title, axis labels, ticks and legend (text, size, colour, position) in place, re-rendered by the core. Needs Core 0.4.11 or newer.",
+          "**Dictation in the composer** — hold to speak, release for editable text; nothing is sent automatically. On macOS this needs the next desktop build.",
+          "**Links in chat show a preview card.**",
+          "**Also** — the model picker shows only the reasoning levels the current model supports; fixed the send target following the wrong conversation after switching chats, and window dragging on macOS."
+        ]
+      },
+      {
+        "version": "0.2.67",
+        "date": "2026-09-22",
+        "zh": [
+          "**设置 → MCP 服务器新增「Paper2Agent 社区」**——浏览社区发布的论文工具，下载后先核对 SHA-256 再一键安装，装好在对话里 @ 即可使用，也可分享给实验室。需要 Core 0.4.9 及以上；安装会运行第三方代码，哈希只验证文件与目录记录一致。",
+          "**免费云端模型出错时说清楚**——被限流或暂不可用时给出说明和「去配置 API Key」的入口；选中免费模型时提示其共享额度与高峰限流。"
+        ],
+        "en": [
+          "**Settings → MCP servers adds a \"Paper2Agent community\" tab** — browse community paper tooling, verify the SHA-256 on download, install in one step, @-mention it in chat, and optionally share it with your lab. Needs Core 0.4.9 or newer; installing runs third-party code, and the hash only proves the file matches the catalog record.",
+          "**The free cloud model explains failures** — when rate-limited or unavailable it says so and offers to configure your own API key; while selected, a note explains its shared budget and peak-hour limits."
+        ]
+      },
+      {
+        "version": "0.2.66",
+        "date": "2026-09-20",
+        "zh": [
+          "**@ 可以点名 MCP 服务器**——被 @ 的服务器会作为明确指示进入本轮，委派给子智能体时也会带上。界面上统一使用服务器自己声明的名称和 MCP 标识。",
+          "**Paper2Agent**——从输入框的「+」把论文的配套代码装成 MCP 服务器；设置里标明每个服务器的来源，论文安装的可以分享给实验室或撤回。",
+          "**修复状态读取失败时误显示「正在启动本地运行时」。**",
+          "**其它修复**——模型菜单的键盘导航与滚动；已退役模型不再出现在选择器中；以及若干显示问题。"
+        ],
+        "en": [
+          "**@ can name an MCP server** — a mentioned server enters the turn as an explicit instruction and travels with delegated tasks. The interface now uses each server's declared name and a single MCP mark.",
+          "**Paper2Agent** — install a paper's companion code as an MCP server from the composer's 「+」; settings show where each server came from, and paper-installed servers can be shared with your lab or withdrawn.",
+          "**Fixed a failed status read showing as \"starting the local runtime\".**",
+          "**Other fixes** — keyboard navigation and scrolling in the model menu; retired models no longer appear in the picker; several display fixes."
+        ]
+      },
+      {
+        "version": "0.2.65",
+        "date": "2026-09-15",
+        "zh": [
+          "**PDF 精准解析**——设置的搜索页可以填写 MinerU Token，用于更精确地解析 PDF 的版面、公式和表格；不填则自动使用本地解析。",
+          "**环境选择器显示已注册的 Python 内核。**",
+          "**首次打开 PDF 更快。**",
+          "**已下线的 Moonshot 模型不再可选。**"
+        ],
+        "en": [
+          "**Precise PDF parsing** — the Search page in settings accepts a MinerU token for more precise parsing of PDF layout, formulas and tables; without one, PDFs use the local parser automatically.",
+          "**The environment picker lists registered Python kernels.**",
+          "**The first PDF opens faster.**",
+          "**Retired Moonshot models can no longer be selected.**"
+        ]
+      },
+      {
+        "version": "0.2.64",
+        "date": "2026-09-13",
+        "zh": [
+          "**材料科学工作台**——新增晶体结构查看器和谱图工作台，支持原位(operando)热图与等效电路。",
+          "**设置新增「桌面代理」**——可为本地 Core 及其运行的工具单独设置 HTTP(S) 代理，并支持检测系统代理。",
+          "**修复工作区内核控制按钮和已配置模型从选择器消失的问题。**",
+          "**分享工作区变量前会先提醒。**"
+        ],
+        "en": [
+          "**Materials workbench** — a crystal structure viewer and a spectra workbench with operando heatmaps and equivalent-circuit fitting.",
+          "**Settings adds 「桌面代理」** — set an HTTP(S) proxy just for the local Core and the tools it runs, with system proxy detection.",
+          "**Fixed workspace kernel controls and configured models disappearing from the picker.**",
+          "**You are warned before sharing workspace variables.**"
+        ]
+      },
+      {
+        "version": "0.2.63",
+        "date": "2026-09-11",
+        "zh": [
+          "**对话搜索**——按标题搜索全部项目的对话(含已归档)。",
+          "**修复内联图片路径被错误拼接到输出目录的问题。**"
+        ],
+        "en": [
+          "**Conversation search** — search conversations by title across all projects, archived ones included.",
+          "**Fixed inline image paths being wrongly joined to the output directory.**"
+        ]
+      },
+      {
+        "version": "0.2.62",
+        "date": "2026-09-09",
+        "zh": [
+          "**切换 Python 环境更可靠**——选择新环境后工作目录与内核同步切换，远端解释器不匹配时会直接报错。",
+          "**连接状态更准确**——输入框不再把等待提交误报为「远程离线」。",
+          "**修复分子查看器后台同步卡住、导致新对话发不出去的问题。**",
+          "**证据模式**——列出没能落实的来源，并标出未核验或已撤稿的引用。"
+        ],
+        "en": [
+          "**More reliable Python environment switching** — the working directory and kernel follow a newly chosen environment, and a mismatched remote interpreter is reported as an error.",
+          "**More accurate connection status** — the composer no longer reports a pending submit as \"remote offline\".",
+          "**Fixed molecule viewer sync hanging and blocking new conversations.**",
+          "**Evidence mode** — lists sources that could not be grounded and flags unverified or retracted citations."
+        ]
+      },
+      {
+        "version": "0.2.61",
+        "date": "2026-09-08",
+        "zh": [
+          "**按账号隔离本地数据**——切换账号或退出后，本地记忆状态随之重置，不会带到另一个账号。",
+          "**修复同时提及项目文件和本轮输出文件时，项目文件路径被加错前缀的问题。**",
+          "**修复笔记本侧栏与 Copilot 面板的宽度和标签显示。**"
+        ],
+        "en": [
+          "**Local data scoped to the account** — switching accounts or signing out now resets local memory state, so it does not carry over to another account.",
+          "**Fixed project file paths getting the wrong prefix when a message mentions both project files and this turn's output files.**",
+          "**Fixed the notebook sidebar and Copilot panel width and labels.**"
+        ]
+      },
+      {
+        "version": "0.2.60",
+        "date": "2026-09-07",
+        "zh": [
+          "**宠物伙伴**——新增 XiXi、HuaHua、MoMo 三只应用内伙伴。",
+          "**对话导航栏**——每条用户消息一个刻度，预览只显示你发的内容。",
+          "**模型目录更新**——新增 GPT-6 Astra、Grok 4.6、Gemini 3.8 Flash 与 OpenCode Zen/Go；新装默认使用 OmicOS 云端模型。",
+          "**登录与连接修复**——退出后重新登录不再变成「未登录」；模型偏好同步失败时不再误显示已保存；附件按会话所在工作区上传。"
+        ],
+        "en": [
+          "**Companions** — three in-app companions: XiXi, HuaHua and MoMo.",
+          "**Conversation navigation bar** — one tick per user message, with previews showing only what you sent.",
+          "**Model catalog update** — adds GPT-6 Astra, Grok 4.6, Gemini 3.8 Flash and OpenCode Zen/Go; fresh setups default to the OmicOS cloud model.",
+          "**Sign-in and connection fixes** — signing back in after logout no longer shows \"not signed in\"; a failed model preference sync no longer shows as saved; attachments upload to the conversation's own workspace."
+        ]
+      },
+      {
+        "version": "0.2.59",
+        "date": "2026-09-04",
+        "zh": [
+          "**「雪白」主题配色更柔和**——用调校过的中性色替代纯灰。",
+          "**修复**——附件保留原始文件名；流式输出时也遵循工具显示样式；文件操作始终限定在工作区内。"
+        ],
+        "en": [
+          "**A softer Snow theme** — a tuned neutral palette replaces pure grey.",
+          "**Fixes** — attachments keep their original filenames; the tool display style is honoured while streaming; file actions stay bound to the workspace."
+        ]
+      },
+      {
+        "version": "0.2.58",
+        "date": "2026-09-03",
+        "zh": [
+          "**「订阅服务」更名为「商城」**——并新增「服务器」页签，可选购合作方提供的云服务器。"
+        ],
+        "en": [
+          "**「订阅服务」 is now 「商城」** — with a new 「服务器」 tab offering cloud servers from a partner."
+        ]
+      },
+      {
+        "version": "0.2.57",
+        "date": "2026-09-03",
+        "zh": [
+          "**工具面板由对话驱动**——智能体作答时自动打开对应面板，并接上内核里已加载的数据；也可以从对话记录里重新打开。",
+          "**划词翻译**——选中文字即可翻译(PDF 里也可以)，注明所用模型，并有 DeepL/Google 兜底。",
+          "**分子查看器**——新增剖面、标注和光照，智能体发出的视图命令能正确作用到查看器。",
+          "**新增「雪白」浅色主题。**"
+        ],
+        "en": [
+          "**Tool panels follow the conversation** — the matching panel opens when its agent answers and picks up data already loaded in the kernel; you can also reopen it from the transcript.",
+          "**Selection translate** — select text to translate it (in PDFs too), with the model named and DeepL/Google as fallback.",
+          "**Molecule viewer** — adds cutaways, captions and lighting, and the agent's view commands now reach the viewer.",
+          "**A new Snow (「雪白」) light theme.**"
+        ]
+      },
+      {
+        "version": "0.2.56",
+        "date": "2026-08-28",
+        "zh": [
+          "**审阅(自动纠错)模型选择器补上了「思考强度 / 速度」两行控制**,此前一直写死为「当前模型不支持」。现在与主对话选择器共用同一套解析:跟随对话模型时显示实际生效的档位,固定了审阅模型则显示该模型的目录默认值;审阅器的档位单独存储,不会改到主对话。(需内核 0.3.36。)",
+          "**修复:视觉模型选「默认(跟随主模型)」保存后,重开设置却显示成免费云视觉模型**——内核现在能区分「从未配置」与「已保存为默认」,界面只在真正未配置时才预选免费模型。"
+        ],
+        "en": [
+          "**The review (auto-correct) model picker gains thinking-strength & speed controls** — previously stuck on \"not supported\". It now shares the main composer's resolution logic (shows the real effective tier while following the conversation model, or a pinned reviewer model's catalog default), and stores the reviewer's tier separately from the main conversation. (Needs Core 0.3.36.)",
+          "**Fixed: vision model set to \"Default (follow main model)\" showing as the free cloud model after reopening settings** — the core now distinguishes \"never configured\" from \"saved as default\", so the free model is preselected only when genuinely unconfigured."
+        ]
+      },
+      {
+        "version": "0.2.55",
+        "date": "2026-08-25",
+        "zh": [
+          "**经本地转发(via-local)连接 SSH 远端时,会先确认账号身份对齐、再展示该远端的对话**,而不是先显示再补一次可能失败的同步。内核太旧、答不出这个确认的,会保持「未验证」并提示升级,不会露出可能属于别的账号的历史。仅影响 via-local 的 SSH 连接。"
+        ],
+        "en": [
+          "**Via-local SSH connections now confirm the remote is account-aligned before showing that remote's chats**, instead of showing them first and patching sync afterward. A remote Core too old to confirm stays \"unverified\" with an upgrade prompt rather than risking exposure of another account's history. Only affects via-local SSH connections."
+        ]
+      },
+      {
+        "version": "0.2.54",
+        "date": "2026-08-24",
+        "zh": [
+          "**重新设计了对话列表的滚动归属**:没主动上滑时一直跟随底部;一旦上滑就进入「阅读」模式,记住稳定的消息锚点与像素偏移(按账号 / 工作区 / 会话持久化),切换、刷新、重启都能回到原处。",
+          "**真实执行 Python/R/shell 的工具卡补齐了源码 / 输出的展开、收起、复制**(复制取完整源码而非折叠后可见的一截)。",
+          "**审阅(自动纠错)可固定一个独立于对话的模型**(composer 新增「审阅模型」pill,需内核 0.3.36);笔记本侧栏 NbCopilot 也能单独选择并记住自己的模型。",
+          "**修复了几处会话切换的时序问题**(不再误把远端会话标成本地;打开未加载的对话不再闪屏)。"
+        ],
+        "en": [
+          "**Reworked scroll ownership in the conversation list** — pinned to the bottom until you deliberately scroll up, then it remembers a stable message anchor and pixel offset (persisted per account/workspace/conversation) so switching, reloading, or restarting returns you to where you were reading.",
+          "**Real Python/R/shell tool cards get full source & output expand / collapse / copy** (copy takes the full source, not the truncated view).",
+          "**Review (auto-correct) can pin a model independent of the conversation** (a new \"review model\" pill in the composer; needs Core 0.3.36); NbCopilot in the notebook sidebar can also pick and remember its own model.",
+          "**Fixed several conversation-switch timing issues** (a remote conversation is no longer mis-stamped as local; opening an unloaded conversation no longer flashes)."
+        ]
+      },
+      {
+        "version": "0.2.53",
+        "date": "2026-08-22",
+        "zh": [
+          "**修复:项目里的对话数量会自己跳、归属会丢**(叠加的写回时序问题 + 云端快照覆盖本地正确状态)。",
+          "**模型上下文长度不再被低估成 32K**——供应商声明的真实能力现在按供应商缓存并用于聊天与 token 统计。",
+          "**Antigravity OAuth 新增 Gemini 3.7 Flash(高 / 中),修正 Nemotron 3 Nano 免费版上下文。**(需内核 0.3.35。)"
+        ],
+        "en": [
+          "**Fixed: project conversation counts jumping and ownership getting lost** (overlapping write-backs plus a cloud snapshot overwriting correct local state).",
+          "**Model context length is no longer under-counted at 32K** — a provider's real advertised capabilities are cached per provider and used for chat and token stats.",
+          "**Antigravity OAuth adds Gemini 3.7 Flash (high / medium); corrected the Nemotron 3 Nano free-tier context.** (Needs Core 0.3.35.)"
+        ]
+      },
+      {
+        "version": "0.2.52",
+        "date": "2026-08-22",
+        "zh": [
+          "**笔记本页新增 Colab 式目录**:Markdown 标题生成侧边目录、点击跳转、可折叠;含糊的「+ Cell」拆成明确的「+ 代码」「+ 文本」。",
+          "**新增一批免费模型**(NVIDIA、Groq、Cerebras、ModelScope、OpenRouter、SiliconFlow、HuggingFace、Mistral、Google、OpenCode Zen),刷新时每个候选都会真跑一次简短对话才算可用。",
+          "**修复**:勾选「同时删除项目记忆」时删除对话报错;绑定到非默认工作区的对话打不开图片 / 结果。",
+          "**Google 个人账号登录改名为 Antigravity OAuth**(需内核 0.3.33)。"
+        ],
+        "en": [
+          "**The notebook page gets a Colab-style table of contents** — Markdown headings build a side outline with click-to-jump and collapsing; the vague \"+ Cell\" splits into explicit \"+ Code\" and \"+ Text\".",
+          "**A batch of free models added** (NVIDIA, Groq, Cerebras, ModelScope, OpenRouter, SiliconFlow, HuggingFace, Mistral, Google, OpenCode Zen), each verified with a short live exchange on refresh.",
+          "**Fixed**: deleting a conversation with \"also delete this conversation's project memory\" erroring; figures/results not opening in a non-default workspace.",
+          "**Google personal-account sign-in renamed Antigravity OAuth** (needs Core 0.3.33)."
+        ]
+      },
+      {
+        "version": "0.2.51",
+        "date": "2026-08-17",
+        "zh": [
+          "**修复:对话会自己换成限速的免费云端模型、一轮跑上几百分钟**。根因是每次发送前的「哪些 API Key 配好了」在挂着 SSH 时被问到了远端。"
+        ],
+        "en": [
+          "**Fixed: a conversation silently switching to a rate-limited free cloud model and running for hundreds of minutes** — the pre-send \"which API keys are configured\" check was being answered by the remote while SSH was attached."
+        ]
+      },
+      {
+        "version": "0.2.50",
+        "date": "2026-08-17",
+        "zh": [
+          "**新增「创建图片」**(输入框「+」菜单):描述画面即由模型生成,落在工作区 `outputs/` 并进入画廊;支持 OpenAI、Codex、xAI Grok、Google、智谱、通义千问、MiniMax(不支持的模型会置灰并说明原因)。",
+          "**远程内核的运行状态改以远端实际内核池为准**,不再从「隧道是否连通」推断;停止内核也区分「已停止」与「本来就没在跑」。",
+          "**修复:云端进程会话在一轮未跑完时被误判为已结束。**"
+        ],
+        "en": [
+          "**New \"Create image\"** in the composer's \"+\" menu — describe it and a capable model generates it into the workspace `outputs/` and the gallery (OpenAI, Codex, xAI Grok, Google, Zhipu, Qwen, MiniMax; unsupported models are greyed out with a reason).",
+          "**Remote-kernel running state now reflects the remote's actual kernel pool** rather than whether the tunnel is up; stopping also distinguishes \"stopped\" from \"wasn't running\".",
+          "**Fixed: cloud-process sessions mis-detected as finished mid-turn.**"
+        ]
+      },
+      {
+        "version": "0.2.49",
+        "date": "2026-08-16",
+        "zh": [
+          "**修复:连接远程后流量持续偏高**——每 1.8 秒一次的「这轮还在跑吗」心跳把整段对话原样搬了回来(还重复了一份);现在只取运行状态。挂 SSH 时尤其明显。",
+          "**DeepSeek V4 新增「首轮优化」开关**(默认开,仅新对话);并修复其在多轮工具调用中丢失推理上下文。(需内核 0.3.30。)"
+        ],
+        "en": [
+          "**Fixed: sustained high traffic after connecting to a remote** — the every-1.8s \"is this turn still running\" heartbeat was hauling the whole conversation back (and duplicating it); it now carries only run state. Most noticeable over SSH.",
+          "**DeepSeek V4 \"first-turn optimization\" toggle** (on by default, new conversations only), and fixed V4 losing reasoning context across multi-turn tool calls. (Needs Core 0.3.30.)"
+        ]
+      },
+      {
+        "version": "0.2.48",
+        "date": "2026-08-15",
+        "zh": [
+          "**修复:点「批准 / 拒绝」后按钮变灰、整轮再无下文**(决定可能被丢弃,投递失败也不恢复按钮)——两处都已堵上。",
+          "**Windows**:修复残留锁导致的启动卡死;修复正式出图失败(内核现在自行生成并注入渲染授权密钥)。(需内核 0.3.29。)",
+          "**桌面端只连接自己启动的那个 Core**(不再在冷启动一瞬误连另一个本机 Core);重新登录同一账号后 Core 身份会跟着同步。",
+          "**SSH**:修复第一轮偶尔消失、远端改名被自动命名覆盖;可接管服务器上系统托管的 Core(只读,跨账号关闭)。"
+        ],
+        "en": [
+          "**Fixed: after clicking Approve/Reject the buttons greyed out and the turn stalled** — the decision could be dropped and a failed send didn't re-enable the buttons; both are now closed.",
+          "**Windows**: fixed a startup hang from a stale lock, and fixed figure rendering (Core now provisions and injects the renderer authority key). (Needs Core 0.3.29.)",
+          "**Desktop connects only to the Core it started** (no longer grabbing another local Core during cold start); Core identity re-syncs after signing back into the same account.",
+          "**SSH**: fixed the first turn occasionally vanishing and renamed remotes being overwritten by auto-naming; you can attach a system-managed Core on the server (read-only, cross-account off)."
+        ]
+      },
+      {
+        "version": "0.2.47",
+        "date": "2026-08-13",
+        "zh": [
+          "**项目现在有了自己的记忆**:同一项目下的对话共享结论 / 约定 / 关键产物,叠加在你的全局记忆之上,并严格按项目隔离。",
+          "**「停止」现在能真正停下当前工作区的 Python 内核**(而非只停默认内核)。",
+          "**修复:在某个研究域付费、另一域已到期的账号,会话检索被误当免费用户挡下**(现与服务端一致)。(需内核 0.3.28。)",
+          "导航与对话控件做了一轮打磨。"
+        ],
+        "en": [
+          "**Projects now have their own memory** — conversations in a project share conclusions / conventions / key artifacts, layered on top of your global memory and strictly isolated per project.",
+          "**\"Stop\" now actually stops the Python kernel of the current workspace** (not just the default one).",
+          "**Fixed: session search wrongly blocked as a free user for accounts paid in one research domain but expired in another** (now consistent with the server). (Needs Core 0.3.28.)",
+          "A round of navigation / conversation-control polish."
+        ]
+      },
+      {
+        "version": "0.2.46",
+        "date": "2026-08-11",
+        "zh": [
+          "**输入框里用 @ 引用另一个对话当背景**——由 Core 在你自己的账号范围内重新读取真实历史(不用页面上显示的文字)。",
+          "**病理切片查看器换成真正的深缩放画布**:放大时从 NDPI 金字塔现裁瓦片,越放越清晰。",
+          "**可把本机文件直接上传到 SSH 远端工作区**(分块、带进度、核对字节数)。",
+          "**Windows**:内核下拉里终于能看到自己的 conda 环境;另修多处(预览闪烁、根目录工作区、.fcs 路径输入、DeepSeek-V4 思考档、CLI→网页工作区交接)。"
+        ],
+        "en": [
+          "**Reference another conversation as context with @** — Core re-reads the real history under your own account (not the text shown on the page).",
+          "**The pathology slide viewer is now a true deep-zoom canvas** — sharp tiles cut from the NDPI pyramid as you zoom.",
+          "**Upload local files straight into an SSH remote's workspace** (chunked, with progress and byte-count verification).",
+          "**Windows**: your own conda environments finally show in the kernel picker; plus fixes (preview flicker, root-directory workspaces, .fcs path entry, the DeepSeek-V4 thinking picker, CLI→web workspace handoff)."
+        ]
+      },
+      {
+        "version": "0.2.45",
+        "date": "2026-08-10",
+        "zh": [
+          "**对话里的图片和文件现在能正确打开**——请求跟着文件所属的会话和运行时走,远端服务器上的文件也能直接预览。",
+          "**文件 / 图片统一了右键菜单**(工作区中定位、下载 / 另存为、在文件管理器打开、复制路径);SSH 服务器上的文件可下载到本机。",
+          "**SSH 会话的「从此处分支」不再报 404**(分支创建在真正持有历史的机器上)。需服务器上的 Core 一并更新。"
+        ],
+        "en": [
+          "**Images and files in a conversation open correctly now** — requests follow the session and runtime that own the file, and remote-server files preview inline.",
+          "**A unified right-click menu on files / images** (locate in workspace, download / save-as, open in file manager, copy path); SSH-server files download to this computer.",
+          "**\"Branch from here\" in SSH sessions no longer 404s** (the branch is created on the machine that holds the history). Needs a matching Core on the server."
+        ]
+      },
+      {
+        "version": "0.2.43",
+        "date": "2026-08-08",
+        "zh": [
+          "**聊天输入框有了本会话的输入历史**(行首 / 行尾按 ↑ ↓ 翻),**未发送的草稿也会持久化**(文字、引用、附件,按账号 / 工作区 / 会话)。",
+          "**画廊可从工作区导入图片**(引用原图,不另存副本);图片的「笔记本中编辑」现在支持 SSH 远端工作区。",
+          "新建 / 连接时可直接建新文件夹。",
+          "**修复**:服务器 Core 重新注册拿到新进程 id 后仍能自动改绑;身份卡按研究域分别显示套餐。"
+        ],
+        "en": [
+          "**The composer gains per-conversation input history** (↑ / ↓ at the line edges) and **persistent unsent drafts** (text, references, attachments — per account / workspace / conversation).",
+          "**Import workspace images into the gallery** (references to the originals, not copies); \"Edit in notebook\" for an image now supports SSH remote workspaces.",
+          "Create a new folder while picking a local or remote directory.",
+          "**Fixed**: rebinding after a server Core re-registers with a new process id; the identity card shows plans per research domain."
+        ]
+      },
+      {
+        "version": "0.2.40",
+        "date": "2026-08-06",
+        "zh": [
+          "**可从工具栏 / 右键下载工作区文件**,单个或整批(边下边写、单项与整批进度、可取消)。",
+          "**上下文用量指示器不再闪烁**;「思考强度 / 速度」菜单改为向内展开。",
+          "**团队页重做成巡查台**;新增可浮起对照的**工作区图片画廊**。",
+          "**修复**:CLI 设备授权页先校验登录;多处会话时序与 Windows 扩展路径修复。"
+        ],
+        "en": [
+          "**Download workspace files** from the toolbar / right-click, singly or in batches (streamed to disk, per-file and batch progress, cancelable).",
+          "**The context-usage indicator no longer flickers**; the thinking-strength / speed menus expand inward.",
+          "**The team page is reworked into a review console**; a new **workspace image gallery** can float over the analysis view.",
+          "**Fixed**: the CLI device-authorization page checks login first; assorted conversation-timing and Windows extended-path fixes."
+        ]
+      },
+      {
+        "version": "0.2.31",
+        "date": "2026-08-01",
+        "zh": [
+          "**对话导航现在跟着你实际看到的位置走**(不再永远停在第一轮);新增「跳转」,「从此处开始」改叫「从此处分支」。",
+          "**修复**:非启动目录的对话里图片显示为裂图。",
+          "**修复(桌面版)**:笔记本状态现按实际选中的工作区隔离。",
+          "**macOS**:窗口红绿灯位置对齐标题栏(需重装桌面端)。"
+        ],
+        "en": [
+          "**The conversation navigator now tracks where you actually are** (no longer stuck on the first turn); \"Jump\" added, and \"从此处开始\" is renamed \"branch from here\".",
+          "**Fixed**: figures showing as broken images in conversations outside the startup directory.",
+          "**Fixed (desktop)**: notebook state is now isolated per selected workspace.",
+          "**macOS**: the window traffic-light buttons align to the title bar (desktop reinstall required)."
+        ]
+      },
+      {
+        "version": "0.2.30",
+        "date": "2026-08-01",
+        "zh": [
+          "**修复:项目删除完全没反应**(不发请求、不报错、且永久)——被服务端拒绝的一次创建 / 删除也不再堵死整个同步队列。",
+          "**修复:流式回答一边生成一边被切成一列一个词**。",
+          "**远端笔记本不再被拽回本地**;重命名笔记本后不再「改完就断」。",
+          "**付费后权限直接同步给运行中的内核**,不必重启。"
+        ],
+        "en": [
+          "**Fixed: project deletion doing nothing** (no request, no error, and permanent) — and a server-rejected create/delete no longer jams the whole sync queue.",
+          "**Fixed: streaming answers being chopped one word per line** while generating.",
+          "**Remote notebooks stay on their remote runtime**; renaming a notebook no longer \"disconnects\" it.",
+          "**Entitlements sync to a running kernel right after paying** — no restart."
+        ]
+      },
+      {
+        "version": "0.2.29",
+        "date": "2026-07-28",
+        "zh": [
+          "**笔记本 Copilot 重做**:锁定你发消息时选中的那个单元格,思考时你仍可编辑,改动是精确替换并带冲突检测。",
+          "**新增 Sanger 测序峰图查看器(.ab1/.scf)与流式细胞门控(.fcs)**,助手都能读懂并直接修改。",
+          "**修复**:工作区图片失败后不再永久空白(自动重试);打不开的会话不再显示成空会话;Windows 盘符根 / UNC 工作区路径不再被截断。"
+        ],
+        "en": [
+          "**Notebook Copilot reworked**: it targets the cell you had selected when you sent the message, you can keep editing while it thinks, and edits are precise replacements with conflict detection.",
+          "**New Sanger trace viewer (.ab1/.scf) and flow-cytometry gating (.fcs)** — both readable and editable by the assistant.",
+          "**Fixed**: workspace images retry instead of staying blank after one failure; unreadable conversations are no longer shown as empty; Windows drive-root / UNC workspace paths are no longer truncated."
+        ]
+      },
+      {
+        "version": "0.2.28",
+        "date": "2026-07-26",
+        "zh": [
+          "**工具页改成卡片主页**:每个工具作为独立标签页运行,可并存、可关闭,切换标签不打断正在跑的分析。",
+          "**新增 Motif 分子生物学工作台**(需先连接 motif MCP 服务):质粒图谱、酶切 / 凝胶、Gibson / Golden Gate、引物设计与 PCR、序列比对、Sanger、ORF / 翻译、CRISPR guide。",
+          "**修复**:MCP 应用(如 Motif)现在能随助手结果实时更新。",
+          "分子查看器顶部新增带残基标尺的序列条。"
+        ],
+        "en": [
+          "**The tools page becomes a card home** — each tool opens as its own tab, coexisting and closable, and switching tabs doesn't interrupt a running analysis.",
+          "**New Motif molecular-biology workbench** (connect the motif MCP server first): plasmid maps, digests / gels, Gibson / Golden Gate, primer design & PCR, alignment, Sanger, ORF / translation, CRISPR guides.",
+          "**Fixed**: MCP apps (e.g. Motif) now update live from the assistant's results.",
+          "The molecular viewer adds a sequence bar with a residue ruler."
+        ]
+      },
+      {
+        "version": "0.2.27",
+        "date": "2026-07-25",
+        "zh": [
+          "**团队版:任何人都能直接购买席位**(不再需要申请);新增只统计用量(绝不涉及对话内容)的团队控制台。",
+          "**修复**:更新后偶尔白屏(现有启动进度条)。",
+          "**修复**:人文社科用户的 Pro 权益被误锁(现按当前所在领域判断)。",
+          "AI 自动生成的会话标题在侧栏以渐变动画显示。"
+        ],
+        "en": [
+          "**Team plan: anyone can buy seats directly** (no application needed); a new team console shows per-member usage only (never any conversation content).",
+          "**Fixed**: an occasional white screen after updating (there's a startup progress bar now).",
+          "**Fixed**: humanities/social-science users' Pro entitlements being wrongly locked (now judged by the current research domain).",
+          "AI-generated conversation titles animate into the sidebar."
+        ]
+      },
+      {
+        "version": "0.2.22",
+        "date": "2026-07-23",
+        "zh": [
+          "**一键安装 MCP 服务器**:从服务端下发的精选目录直接拉取构建(含作者与开源许可证署名,国内走镜像加速);支持本地路径 MCP 服务器,MCP 工具返回的界面(MCP Apps)直接渲染成标签页。",
+          "**真·左右分栏**:任意标签页可拖到右侧独立成栏,拖动中内容不重载。",
+          "LLM 供应商改为一家一张卡;修复自定义模型上下文保存、内核在线时模型 / 技能列表偶尔空白。"
+        ],
+        "en": [
+          "**One-click MCP server install** from a curated, server-provided catalog (with author and open-source-license attribution; CN mirror acceleration); local-path MCP servers are supported, and MCP-tool UIs (MCP Apps) render directly as tabs.",
+          "**True split view** — drag any tab into a second column without reloading.",
+          "One card per LLM provider; fixes for saving a custom model's context window and for the kernel model/skill list occasionally blanking."
+        ]
+      },
+      {
+        "version": "0.2.21",
+        "date": "2026-07-22",
+        "zh": [
+          "**修复:切换目录领域时卡在「切换中…」**——切换现在即时完成,目录在后台刷新。",
+          "**记忆管理**:打开一条记忆编辑时也能直接删除;手动「整理记忆」套用了新的质量标准。"
+        ],
+        "en": [
+          "**Fixed: switching catalog domain hanging on \"switching…\"** — the switch is instant now and the catalog refreshes in the background.",
+          "**Memory management**: delete a memory from within its editor; manual \"organize memory\" applies the new quality bar."
+        ]
+      },
+      {
+        "version": "0.2.20",
+        "date": "2026-07-22",
+        "zh": [
+          "**记忆评审面板重做**:提案改为「标题 + 正文 + 分型标签 + 重要度圆点」,按来源(会话 / 做梦 / 手动)分组,更新用「改动前 / 改动后」两栏对照。",
+          "**更聪明的做梦(Pro)**:新增耐久门——一次性的分析琐事不再被记成长期记忆,只留可复用的偏好与失败教训;一键清理旧的低质量做梦记忆(软归档、可恢复)。"
+        ],
+        "en": [
+          "**The memory review panel is redesigned** — proposals now render as title + body with a type tag and an importance dot, grouped by source (conversation / dreaming / manual), with a before/after diff for updates.",
+          "**Smarter dreaming (Pro)** — a durability gate keeps one-off analysis trivia out of long-term memory, keeping only reusable preferences and lessons; one-click cleanup retires old low-quality dream memories (soft-archived, recoverable)."
+        ]
+      },
+      {
+        "version": "0.2.14",
+        "date": "2026-07-20",
+        "zh": [
+          "**修复:SSH 远端重连后的一批问题**——502、页面卡住、远端内核启停无效,以及网络不稳时回答变空白。根因相同:对话记住的是一条会随每次重连改变的隧道编号,网络一抖就指向了已不存在的隧道。现在对话绑定的是稳定的连接名称,历史绑定会自动迁移。(需配合内核 0.3.12。)",
+          "**新增:可把本机 API Key 同步到 SSH 服务器**。连接旁的「同步 API Key」会把你选中的 Key 复制到那台机器,让它在「走服务器」模式下用你自己的供应商——即使本机休眠或断开也能继续跑。同步前会逐条说明风险,随时可用「清除服务器上的 Key」撤回。",
+          "**安全修复**:此前只要当前对话绑定了某台 SSH 远端,设置里读写的其实是那台远端上的密钥,而界面无任何提示。现在密钥始终属于本机,只有你主动同步并确认后才会离开这台电脑。",
+          "**修复**:桌面端「断开并结束远端运行时」的确认框现在会正常弹出;终止时核对进程身份,不会误杀你复用的、别人已在跑的实例。",
+          "**改进**:自定义供应商的模型按模型家族给出正确的思考等级,而非一律低 / 中 / 高。"
+        ],
+        "en": [
+          "**Fixed: a cluster of issues after an SSH remote reconnects** — 502s, a stuck page, remote kernel start/stop doing nothing, and blank answers on a flaky network. One cause: a conversation remembered a tunnel id that changes on every reconnect. Conversations now bind to the stable connection name, and existing bindings are migrated. (Needs kernel 0.3.12.)",
+          "**New: sync this computer's API keys to an SSH server**. \"Sync API keys\" copies the keys you pick to that machine so it can use your own providers in \"via server\" mode — and keep running while this computer is asleep or disconnected. Risks are spelled out first; \"Clear keys on server\" takes them back off.",
+          "**Security fix**: previously, whenever the open conversation was bound to an SSH remote, the keys in Settings were read from/written to THAT machine, with nothing saying so. Keys now always belong to this computer and leave it only when you explicitly sync and confirm.",
+          "**Fixed**: on desktop, the \"disconnect and stop remote runtime\" confirmation now actually appears; termination verifies process identity so a reused, pre-existing instance is never killed by mistake.",
+          "**Improved**: a custom provider's models offer the thinking levels their family actually supports, instead of a single hardcoded low/medium/high."
+        ]
+      },
+      {
+        "version": "0.2.13",
+        "date": "2026-07-18",
+        "zh": [
+          "**改进:断开 SSH 远端不再结束远端上正在跑的任务**。默认「断开」只关本机连接,远端内核和任务继续跑,回来重连即可接上;要真正释放服务器,用单独的「断开并结束远端运行时」(需二次确认,且只会结束由你这台客户端启动的实例)。",
+          "**修复:SSH 远端会话的三个问题**——本地未绑定的对话不再被误标成远端进程;远端历史改名在离线镜像上不再「假成功」;桌面端删除对话现在会正常弹出确认框。",
+          "**新增:设置里可配置 Grok 的 OAuth 登录**。"
+        ],
+        "en": [
+          "**Improved: disconnecting an SSH remote no longer ends what's running on it**. Plain Disconnect now closes only the local connection; the remote kernel and its tasks keep running and reattach on reconnect. To actually free the server, use the separate \"disconnect and stop remote runtime\" (asks for confirmation, and only stops an instance your client started).",
+          "**Fixed: three SSH-remote conversation problems** — a local unbound conversation is no longer mislabelled as a remote process; renaming a remote conversation against an offline mirror no longer reports false success; and deleting a conversation on desktop now shows its confirmation dialog.",
+          "**New: Grok OAuth sign-in can be configured in Settings**."
+        ]
+      },
+      {
+        "version": "0.2.10",
+        "date": "2026-07-17",
+        "zh": [
+          "**新增:内核「卡住还是在算」现在能看清了**。环境页某个内核旁的「AI 分析」按钮会用 py-spy 采样它的调用栈,再交给你配置的模型解读——内核长时间静默时,用来判断它是在跑耗时计算还是真卡死。(桌面端首次分析会弹系统授权对话框临时提权。)",
+          "**改进:长会话打开更快**。会话先按最后一段消息打开,向上滚动时再按需加载更早内容。",
+          "**修复:云端进程相关的路由**——取消 / 引导 / 记忆会话、以及「保存代码」都正确发往拥有该会话的机器;更新提示弹窗不再被侧栏裁掉。"
+        ],
+        "en": [
+          "**New: see whether a kernel is stuck or just working**. The \"AI 分析\" button next to a kernel samples its call stack with py-spy and has your model read it — for when a kernel has gone quiet and you can't tell a long computation from a hang. (On desktop the first analysis asks for elevation.)",
+          "**Improved: long conversations open faster**. A conversation opens on its most recent messages and loads earlier ones as you scroll up.",
+          "**Fixed: cloud-process routing** — cancel / guidance / memory-session and \"保存代码\" now reach the machine that owns the conversation; the update popover is no longer clipped by the rail."
+        ]
+      },
+      {
+        "version": "0.2.9",
+        "date": "2026-07-17",
+        "zh": [
+          "**新增:对话列表可按「来源」筛选**(本地 / 某台 SSH 远端 / 某个云端进程,可多选)。",
+          "**新增:设置 → 关于 可回退到指定的历史稳定版**——列出经确认可安全回退的旧版本,一键装回。",
+          "**改进:SSH 远端相关的一批修复**——关闭隧道后仍能从本地镜像只读查看远端历史;云端进程的 plan / 目标操作正确路由;诊断面板每一行标明它说的是哪台机器。"
+        ],
+        "en": [
+          "**New: filter the conversation list by source** (this computer / a specific SSH remote / a cloud process; multi-select).",
+          "**New: Settings → About can roll back to a named older stable build** — it lists versions confirmed safe to return to, one click to reinstall.",
+          "**Improved: a batch of SSH-remote fixes** — a shut tunnel's history stays readable from the local mirror (read-only); a cloud process's plan/goal actions route correctly; each diagnostics row names the machine it's about."
+        ]
+      },
+      {
+        "version": "0.2.8",
+        "date": "2026-07-17",
+        "zh": [
+          "**修复:SSH 远端的历史对话现在真的能用了**。上一版让它们回到侧栏,但打开是空的、删除没反应——因为操作仍问的是本机;现在打开、删除都作用到真正持有它的机器,空的 `turn_…` 条目也不再出现。",
+          "**新增:设置 → 生物数据库 可自己填 Hugging Face 令牌与 openFDA 密钥**(前者是病理 / 蛋白基础模型的门槛,后者可选提额)。",
+          "**其他**:Kimi Code 移到设置的「订阅」分组下,更好找。"
+        ],
+        "en": [
+          "**Fixed: your history on an SSH remote is actually usable now**. The last release brought those conversations back, but opening one showed nothing and deleting did nothing — actions still asked this computer. Open and delete now reach the machine that holds it, and the empty `turn_…` rows are gone.",
+          "**New: Settings → Biological databases takes your own Hugging Face token and openFDA key** (the first unlocks gated pathology/protein foundation models; the second is optional and raises rate limits).",
+          "**Also**: Kimi Code is filed under Plans in settings, where it's easier to find."
+        ]
+      }
+    ]
+  },
+  "desktop": {
+    "name": "omicos desktop",
+    "latest": null,
+    "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/desktop.md",
+    "github_releases": "https://github.com/omicverse/omicos/releases?q=desktop-",
+    "releases": []
+  }
+}
