@@ -16,3 +16,15 @@ Almost all user-facing changes come from the **kernel** and the **web UI** — s
 
 外壳本身(安装器、自动更新、窗口 / 托盘、系统集成)很少单独发版;当某项变化确实属于桌面外壳时,会在上面两份记录里注明「需重装桌面端」或「桌面版」。此文件将在外壳出现独立于内核 / 网页端的用户可见变化时开始逐版记录。
 The shell itself (installer, auto-update, window / tray, OS integration) rarely ships on its own; when a change genuinely belongs to the desktop shell it is flagged as "desktop reinstall required" or "(desktop)" in the two changelogs above. This file will start listing per-version entries once the shell has user-facing changes independent of the kernel / web UI.
+
+---
+
+## 0.1.24 — 2026-10-20
+
+- **Windows 恢复界面自动更新**——装上本版后，之后发布的界面更新会在后台下载，下次启动时生效，不必再等新的安装包。
+- **多工作区登录更稳定**——登录同步不再清掉其他工作区已有的身份，启动和远程重连时身份保持一致。
+- 内置内核更新到 0.5.1，内置界面更新到 0.3.10。
+
+- **Windows UI updates are back** — after installing this version, new UI releases download in the background and apply on the next launch instead of waiting for a new installer.
+- **Steadier sign-in across workspaces** — sign-in sync no longer clears the identity other workspaces already hold, so launches and remote reconnects keep the same identity.
+- The bundled kernel is now 0.5.1 and the bundled UI 0.3.10.
