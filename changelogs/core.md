@@ -9,6 +9,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.2 — 2026-10-22
+
+- **设备管理**——每台设备有了独立标识，为后续的同时在线设备管理做准备；即使超出可同时在线的设备数，这台设备也只是暂停高级功能并提示你释放一台设备，不会要求升级套餐。
+- **R 环境**——R 内核会安装到你选择的 R 环境里，并确认能持续执行代码。
+- **内核**——只是查看或同步时，不会再把已经停止的内核重新唤起。
+- **模型**——更准确地识别模型是否支持图片输入；OpenCode Go 只列出协议可用的模型；Sol 订阅的上下文长度与对话压缩保持一致。
+
+- **Device management** — each device now has its own identity, in preparation for managing how many devices can be online at once. Even when that limit is exceeded, the device keeps working with advanced features paused and a prompt to free up a device — it never asks you to upgrade your plan.
+- **R environments** — the R kernel installs into the R environment you chose and is checked to keep executing code.
+- **Kernel** — simply viewing or syncing no longer wakes a kernel that has stopped.
+- **Models** — more accurate detection of whether a model accepts images; OpenCode Go lists only models whose protocol is supported; the context length for Sol subscriptions now matches conversation compaction.
+
 ## 0.5.1 — 2026-10-20
 
 - **云端算力（按账户逐步开放）**——已开通的账户可以把计算任务放到云端运行：确认后自动上传所选的本地文件（支持断点续传），结果自动回传原工作区；大文件可直接传到云存储，提交与回传失败时会自动退避重试。
