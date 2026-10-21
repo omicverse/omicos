@@ -10,6 +10,22 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.13 — 2026-10-21
+
+- 在项目里新建对话时，首页的「为你推荐」和「编辑精选」只围绕这个项目的研究方向，标题也会写明项目名；还没有研究方向的新项目会先显示全部项目的推荐，并说明原因。
+- 不在任何项目里新建对话时，推荐会在各个项目之间轮流挑选，每张卡片标明它来自哪个项目，不再被某一个项目占满。
+- 编辑精选每个项目每天各有一批，当天已经生成过的项目不会重新生成，也不会再扣次数；每日次数仍按账号合计。
+- 修复：设置里的 API Key 还在读取时输入新 Key，不会再被晚到的旧值覆盖；读取未完成时点「保存全部」不会把其他 Key 清空。
+- 修复：更换 Key 后如果保存失败，会直接提示错误，不再继续用旧 Key 去获取模型列表。
+- 修复：刷新免费模型时，个别模型暂时限流不会再把它从可用列表里移除。
+
+- When you start a chat inside a Project, the homepage "For you" and "Editorial picks" panels stay on that Project's research, and the heading names the Project. A new Project with no research direction yet shows recommendations across all Projects and says why.
+- Outside any Project, recommendations rotate across your Projects, and each card says which Project it is for, so one busy Project no longer fills the page.
+- Editorial picks keep one batch per Project per day. A Project that already has today's batch is not regenerated and uses no extra refresh; the daily allowance is still shared across your account.
+- Fixed: typing a new API key in Settings while saved keys are still loading is no longer overwritten by the late response, and "Save all" during loading no longer clears other keys.
+- Fixed: if saving a changed key fails, Settings now shows the error instead of fetching models with the old key.
+- Fixed: refreshing free models no longer drops a model from the available list just because it was briefly rate-limited.
+
 ## 0.3.11 — 2026-10-21
 
 - 首页生成推荐时显示分步进度条：能看到正在进行哪一步、已用多长时间；生成失败时会标出失败的步骤和原因，编辑精选可直接重试，失败不扣次数。
