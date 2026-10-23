@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.18 — 2026-10-24
+
+- 靶点图谱新增 28 个疾病，覆盖神经与精神、肿瘤、自身免疫、代谢与肾脏、心血管等，可在疾病下拉框中切换。
+- 桌面宠物新增专属对话，聊到需要分析时可以转到分析工作台继续。
+- 高缩放下模型选择器保持可见；更新公告会先于新手引导出现。
+
+- Target Atlas now offers 28 diseases across neurology and psychiatry, oncology, autoimmune, metabolic and kidney, and cardiovascular disease, selectable from the disease picker.
+- Desktop pets get their own conversation, which you can carry over to the analysis workspace when it turns into analysis.
+- Model pickers stay visible at high zoom, and update announcements now appear before onboarding.
+
 ## 0.3.17 — 2026-10-23
 
 - 新增八款 Mirage 主题与半透明 Mist 外观，Notebook 编辑器配色随主题切换。
