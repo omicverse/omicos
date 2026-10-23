@@ -2,10 +2,28 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.2",
+    "latest": "0.5.3",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.3",
+        "date": "2026-10-23",
+        "zh": [
+          "对获准使用云端算力的账户，对话可申请把 Python 挂到经用户批准的云端沙箱；图片和输出照常展示，关闭时显示费用与已取回的文件。",
+          "分析流程支持在对话中提出配置卡片，由用户确认启动，并查看环境检查、子对话和运行记录。",
+          "支持读取本地靶点图谱缓存和更紧凑的数据包格式。",
+          "模型代码改用权限受限的内核令牌；本地代理不再转发付费审批请求。",
+          "改进子对话链接、历史与输出读取上限、MCP 环境安装及 R 环境发现，并修正部分模型路由、上下文回退和推理强度设置。"
+        ],
+        "en": [
+          "Eligible cloud-compute accounts can propose a cloud Python kernel for a conversation, subject to user approval. Images and outputs remain visible; closing shows charges and retrieved files.",
+          "Analysis pipelines can be proposed as setup cards in a conversation, started by the user, and followed through environment checks, child conversations and run records.",
+          "Read locally cached target-atlas data, including a more compact package format.",
+          "Model-authored code uses a restricted kernel token; the local proxy no longer forwards spending-approval requests.",
+          "Improve child-conversation links, history/output limits, MCP environment setup and R discovery, alongside model-routing, offline context and reasoning-setting fixes."
+        ]
+      },
       {
         "version": "0.5.2",
         "date": "2026-10-22",
