@@ -10,6 +10,18 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.17 — 2026-10-23
+
+- 新增八款 Mirage 主题与半透明 Mist 外观，Notebook 编辑器配色随主题切换。
+- 工具页增加搜索、最近使用与详情；靶点图谱支持工作区数据包、机会图、靶点视图和私有分析列。
+- 改善高缩放下的输入框显示、对话导航、文件移动和传输操作。
+- 桌面宠物支持按需下载运行资源，需要桌面客户端 0.1.25。
+
+- Eight new Mirage themes and translucent Mist styling, with matching notebook editor palettes.
+- Tools add search, recents and details. Target Atlas supports workspace packages, opportunity maps, target views and private analysis columns.
+- Improved composer visibility at high zoom, chat navigation, file moves and transfers.
+- Desktop pets download their runtime on demand. Requires desktop app 0.1.25.
+
 ## 0.3.16 — 2026-10-23
 
 - 已获准使用云算力的账号可在对话中确认云端内核方案，查看状态、预算和费用明细。
