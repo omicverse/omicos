@@ -19,6 +19,18 @@ The shell itself (installer, auto-update, window / tray, OS integration) rarely 
 
 ---
 
+## 0.1.25 — 2026-10-23
+
+- 桌面宠物新增独立桌面窗口，首次启用时按需下载运行资源，可查看下载进度并重试。
+- 内置最新完整界面，包含 Mirage 主题、靶点图谱、工具搜索和对话导航改进。
+- 内置分析内核更新至 0.5.3，支持云端内核和分析流程；云算力仍需要账号获准并由用户确认。
+- 更新内置分析环境，并修正 Intel Mac 的 R 运行库架构。
+
+- Desktop pets gain their own desktop window. Runtime resources download on first use, with progress and retry controls.
+- Includes the complete updated interface, with Mirage themes, Target Atlas, tool search and chat navigation improvements.
+- Bundles Core 0.5.3 with cloud kernels and analysis pipelines. Cloud compute still requires account access and user confirmation.
+- Updates the bundled analysis environment and corrects the R runtime architecture on Intel Macs.
+
 ## 0.1.24 — 2026-10-20
 
 - **Windows 恢复界面自动更新**——装上本版后，之后发布的界面更新会在后台下载，下次启动时生效，不必再等新的安装包。
