@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.16 — 2026-10-23
+
+- 已获准使用云算力的账号可在对话中确认云端内核方案，查看状态、预算和费用明细。
+- 新增分析流程：在对话中确认输入和参数后启动，在流程运行页查看环境检查、步骤和运行记录。需要分析内核 0.5.3。
+
+- Accounts approved for cloud compute can confirm cloud kernel proposals in chat and follow their status, budget and usage receipts.
+- New analysis pipelines: confirm inputs and parameters in chat, then follow environment checks, steps and run records. Requires Core 0.5.3.
+
 ## 0.3.15 — 2026-10-22
 
 - 泛AI4S 新增 17 位学科专家：气象、气候、海洋、地震、地球物理、地质、水文、粒子物理、等离子体、理论物理、电磁、控制、航空航天、有限元、电力、机器人和信号处理。
