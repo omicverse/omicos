@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.19 — 2026-10-24
+
+- 靶点图谱总分把缺失的疾病证据记为 0，只靠单一证据的靶点不再排在前面；可成药性、安全性这类靶点属性缺失时仍不计入。
+- 疾病下拉框按领域分组：神经与精神、肿瘤、自身免疫与炎症、代谢与内分泌、肾脏、心血管、呼吸与纤维化、眼科。
+
+- Target Atlas totals now count missing disease evidence as zero, so targets backed by a single piece of evidence no longer top the list; missing target properties such as tractability and safety are still left out.
+- The disease picker is grouped by area: neurology and psychiatry, oncology, autoimmune and inflammatory, metabolic and endocrine, renal, cardiovascular, respiratory and fibrotic, and ophthalmology.
+
 ## 0.3.18 — 2026-10-24
 
 - 靶点图谱新增 28 个疾病，覆盖神经与精神、肿瘤、自身免疫、代谢与肾脏、心血管等，可在疾病下拉框中切换。
