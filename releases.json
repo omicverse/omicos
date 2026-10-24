@@ -2,10 +2,24 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.3",
+    "latest": "0.5.4",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.4",
+        "date": "2026-10-24",
+        "zh": [
+          "靶点图谱排序将缺失的疾病证据通道计为零分，让排序与面板展示保持一致，避免单一强证据压过更广泛的证据支持。",
+          "当后台尚未提供分析流程接口时，流程目录显示为空，不再报加载失败。",
+          "文件移动使用原子操作，目标已存在时不会覆盖已有文件。"
+        ],
+        "en": [
+          "Target Atlas ranking counts missing disease-evidence channels as zero, matching the panel and preventing a single strong signal from outweighing broader evidence.",
+          "Show an empty pipeline catalog when the server does not yet provide the pipeline API.",
+          "Move files atomically without overwriting an existing destination."
+        ]
+      },
       {
         "version": "0.5.3",
         "date": "2026-10-23",

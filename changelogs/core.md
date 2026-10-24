@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.4 — 2026-10-24
+
+- 靶点图谱排序将缺失的疾病证据通道计为零分，让排序与面板展示保持一致，避免单一强证据压过更广泛的证据支持。
+- 当后台尚未提供分析流程接口时，流程目录显示为空，不再报加载失败。
+- 文件移动使用原子操作，目标已存在时不会覆盖已有文件。
+
+- Target Atlas ranking counts missing disease-evidence channels as zero, matching the panel and preventing a single strong signal from outweighing broader evidence.
+- Show an empty pipeline catalog when the server does not yet provide the pipeline API.
+- Move files atomically without overwriting an existing destination.
+
 ## 0.5.3 — 2026-10-23
 
 - 对获准使用云端算力的账户，对话可申请把 Python 挂到经用户批准的云端沙箱；图片和输出照常展示，关闭时显示费用与已取回的文件。
