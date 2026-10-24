@@ -19,6 +19,16 @@ The shell itself (installer, auto-update, window / tray, OS integration) rarely 
 
 ---
 
+## 0.1.26 — 2026-10-24
+
+- 内置分析内核更新至 0.5.4，改进靶点图谱排序、分析流程兼容性与文件移动保护。
+- 内置最新完整界面；靶点图谱按文献关注度、组织和靶点属性分组，编码值显示为可读标签。
+- 内置桌面伴侣支持独立窗口，并加入桌面扩展宿主支持。
+
+- Bundles Core 0.5.4 with improved Target Atlas ranking, pipeline compatibility and protection against overwriting files during moves.
+- Includes the latest complete interface, with Target Atlas groups for literature attention, tissue and target properties, and readable labels for coded values.
+- Built-in desktop companions support independent windows, alongside desktop extension host support.
+
 ## 0.1.25 — 2026-10-23
 
 - 桌面宠物新增独立桌面窗口，首次启用时按需下载运行资源，可查看下载进度并重试。
