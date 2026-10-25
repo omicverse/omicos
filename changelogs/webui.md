@@ -10,6 +10,18 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.20 — 2026-10-25
+
+- 靶点档案可查看各证据通道的研究明细，Plus 及以上可继续展开完整列表。
+- 靶点表新增文献关注、组织和靶点属性分组，开发等级等字段显示易读名称。
+- 桌面伴侣支持独立窗口和统一对话入口，需要桌面客户端 0.1.26。
+- 移动文件夹时检查同名冲突，旧版分析内核会提示升级。
+
+- Target profiles show the studies behind each evidence channel, with full lists available on Plus and above.
+- Target tables group literature attention, tissue and target properties, with readable development-stage labels.
+- Desktop companions support separate windows and a shared chat entry on desktop app 0.1.26.
+- Folder moves check for name conflicts and ask users of older analysis kernels to upgrade.
+
 ## 0.3.19 — 2026-10-24
 
 - 靶点图谱总分把缺失的疾病证据记为 0，只靠单一证据的靶点不再排在前面；可成药性、安全性这类靶点属性缺失时仍不计入。
