@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.21 — 2026-10-26
+
+- 对话支持定时发送，发送前可预览并管理待发送消息，需要分析内核 0.5.5。
+- 超大对话支持继续加载历史和分页读取原文；专家回复收起重复正文，保留独有结果。
+- 模型设置使用当前执行端的可用模型，侧边栏隐藏不活跃的项目。
+
+- Schedule chat messages with previews and pending-send management. Requires Core 0.5.5.
+- Large conversations keep loading history with paged access to original records. Expert replies collapse duplicate text while keeping unique results.
+- Model settings use the active runtime’s available models, and inactive projects stay out of the sidebar.
+
 ## 0.3.20 — 2026-10-25
 
 - 靶点档案可查看各证据通道的研究明细，Plus 及以上可继续展开完整列表。
