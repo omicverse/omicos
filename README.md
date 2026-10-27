@@ -51,7 +51,7 @@ npx @omicverse/omicos
 <!-- versions:start -->
 | 组件 / Component | 说明 / What it is | 最新版本 / Latest | 更新记录 / Changelog |
 |---|---|---|---|
-| **omicos-core** | 分析内核 / 运行时(命令行 `omicos`,桌面 App 内置)<br>Analysis kernel / runtime (`omicos` CLI, bundled in the desktop app) | **0.5.4** · 2026-10-24 | [changelogs/core.md](changelogs/core.md) |
+| **omicos-core** | 分析内核 / 运行时(命令行 `omicos`,桌面 App 内置)<br>Analysis kernel / runtime (`omicos` CLI, bundled in the desktop app) | **0.5.5** · 2026-10-26 | [changelogs/core.md](changelogs/core.md) |
 | **omicos webui** | 浏览器 / 桌面 App 内的界面,静默 OTA 更新<br>The in-browser / in-desktop interface, delivered silently via OTA | **0.3.21** · 2026-10-26 | [changelogs/webui.md](changelogs/webui.md) |
 | **omicos desktop** | Windows / macOS 桌面客户端(外壳)<br>Windows / macOS desktop client (the shell) | **0.1.26** · 2026-10-24 | [changelogs/desktop.md](changelogs/desktop.md) |
 <!-- versions:end -->

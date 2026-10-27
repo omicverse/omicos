@@ -9,6 +9,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.5 — 2026-10-26
+
+- 临时授权与当前限制得到更准确的遵守，权限询问不再调用工具。
+- 支持定时发送保存的消息；超大对话恢复时保留完整原文，历史超限原因更清晰。
+- 专家回复保留独有结果和身份，任务交接与远程账号校验更可靠。
+- 支持发现 Antigravity 的可用模型。
+
+- Temporary grants and current restrictions are followed more accurately; permission inquiries do not call tools.
+- Schedule saved messages, recover oversized conversations with original records intact, and see clearer history-limit errors.
+- Expert replies keep unique results and speaker identities, with more reliable task handoffs and remote account checks.
+- Discover available Antigravity models.
+
 ## 0.5.4 — 2026-10-24
 
 - 靶点图谱排序将缺失的疾病证据通道计为零分，让排序与面板展示保持一致，避免单一强证据压过更广泛的证据支持。
