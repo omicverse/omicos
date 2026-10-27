@@ -21,8 +21,12 @@ The shell itself (installer, auto-update, window / tray, OS integration) rarely 
 
 ## 0.1.27 — 2026-10-26
 
+- 支持流式保存工作区文件，桌面伴侣的后台操作不再抢占主窗口。
+
 - 内置分析内核更新至 0.5.5，支持定时发送与超大对话恢复。
 - 支持保存完整历史原文，更新专家回复展示与当前执行端的模型选择。
+
+- Streams workspace files to disk and keeps background companion actions from raising the main window.
 
 - Bundles Core 0.5.5 with scheduled sending and oversized conversation recovery.
 - Save complete original history records, with updated expert reply presentation and model selection for the active runtime.
