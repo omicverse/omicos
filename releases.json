@@ -2,10 +2,26 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.4",
+    "latest": "0.5.5",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.5",
+        "date": "2026-10-26",
+        "zh": [
+          "临时授权与当前限制得到更准确的遵守，权限询问不再调用工具。",
+          "支持定时发送保存的消息；超大对话恢复时保留完整原文，历史超限原因更清晰。",
+          "专家回复保留独有结果和身份，任务交接与远程账号校验更可靠。",
+          "支持发现 Antigravity 的可用模型。"
+        ],
+        "en": [
+          "Temporary grants and current restrictions are followed more accurately; permission inquiries do not call tools.",
+          "Schedule saved messages, recover oversized conversations with original records intact, and see clearer history-limit errors.",
+          "Expert replies keep unique results and speaker identities, with more reliable task handoffs and remote account checks.",
+          "Discover available Antigravity models."
+        ]
+      },
       {
         "version": "0.5.4",
         "date": "2026-10-24",
