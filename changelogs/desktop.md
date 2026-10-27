@@ -19,6 +19,14 @@ The shell itself (installer, auto-update, window / tray, OS integration) rarely 
 
 ---
 
+## 0.1.27 — 2026-10-26
+
+- 内置分析内核更新至 0.5.5，支持定时发送与超大对话恢复。
+- 支持保存完整历史原文，更新专家回复展示与当前执行端的模型选择。
+
+- Bundles Core 0.5.5 with scheduled sending and oversized conversation recovery.
+- Save complete original history records, with updated expert reply presentation and model selection for the active runtime.
+
 ## 0.1.26 — 2026-10-24
 
 - 内置分析内核更新至 0.5.4，改进靶点图谱排序、分析流程兼容性与文件移动保护。
