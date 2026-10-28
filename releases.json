@@ -2,10 +2,24 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.5",
+    "latest": "0.5.6",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.6",
+        "date": "2026-10-27",
+        "zh": [
+          "云端模型合并为一张卡片，显示免费和点数计费及价格；限流时等待后重试，避免无谓压缩对话。",
+          "已获准的账号可使用 GPU 云算力；运行前只检查代码与依赖，不再在本机试跑。",
+          "模型列表跟随当前登录账号的订阅，命令行登录密码不再回显。"
+        ],
+        "en": [
+          "Cloud models share one card with free and credit billing labels and prices. Rate limits wait and retry without unnecessary conversation compaction.",
+          "Approved accounts can use GPU cloud compute. Code and dependencies are checked without running the code locally first.",
+          "Model discovery follows the signed-in account’s subscriptions, and command-line login hides passwords."
+        ]
+      },
       {
         "version": "0.5.5",
         "date": "2026-10-26",
