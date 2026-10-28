@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.6 — 2026-10-27
+
+- 云端模型合并为一张卡片，显示免费和点数计费及价格；限流时等待后重试，避免无谓压缩对话。
+- 已获准的账号可使用 GPU 云算力；运行前只检查代码与依赖，不再在本机试跑。
+- 模型列表跟随当前登录账号的订阅，命令行登录密码不再回显。
+
+- Cloud models share one card with free and credit billing labels and prices. Rate limits wait and retry without unnecessary conversation compaction.
+- Approved accounts can use GPU cloud compute. Code and dependencies are checked without running the code locally first.
+- Model discovery follows the signed-in account’s subscriptions, and command-line login hides passwords.
+
 ## 0.5.5 — 2026-10-26
 
 - 临时授权与当前限制得到更准确的遵守，权限询问不再调用工具。
