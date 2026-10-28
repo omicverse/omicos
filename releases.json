@@ -1080,10 +1080,22 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.23",
+    "latest": "0.3.24",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.24",
+        "date": "2026-10-28",
+        "zh": [
+          "修复靶点图谱标签页的空白栏，拖到右侧后工具栏可随宽度换行。",
+          "靶点档案新增公开来源的功能描述、通路与定位信息，并保留引用。"
+        ],
+        "en": [
+          "Target Atlas tabs fill their pane, with controls wrapping when moved to a narrow split.",
+          "Target profiles include public-source function descriptions, pathways and localization with references."
+        ]
+      },
       {
         "version": "0.3.23",
         "date": "2026-10-28",

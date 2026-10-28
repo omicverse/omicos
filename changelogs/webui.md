@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.24 — 2026-10-28
+
+- 修复靶点图谱标签页的空白栏，拖到右侧后工具栏可随宽度换行。
+- 靶点档案新增公开来源的功能描述、通路与定位信息，并保留引用。
+
+- Target Atlas tabs fill their pane, with controls wrapping when moved to a narrow split.
+- Target profiles include public-source function descriptions, pathways and localization with references.
+
 ## 0.3.23 — 2026-10-28
 
 - 云算力钱包和任务列表改为可展开的摘要，已结束任务、价目和明细默认收起。
