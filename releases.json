@@ -1066,10 +1066,24 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.21",
+    "latest": "0.3.22",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.22",
+        "date": "2026-10-27",
+        "zh": [
+          "OmicOS 云端模型合并为一张卡片，显示免费或点数计费与价格，需要分析内核 0.5.6。",
+          "云算力显示排队位置、截止时间和 GPU 主机准备进度。",
+          "改善长对话历史恢复、定时消息卡片与工作区快捷入口，收起历史请求错误。"
+        ],
+        "en": [
+          "OmicOS cloud models share one card with free or credit billing and prices. Requires Core 0.5.6.",
+          "Cloud compute shows queue position, deadlines and GPU host preparation.",
+          "Improved long-history recovery, scheduled message cards and workspace shortcuts, with past request errors collapsed."
+        ]
+      },
       {
         "version": "0.3.21",
         "date": "2026-10-26",

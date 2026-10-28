@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.22 — 2026-10-27
+
+- OmicOS 云端模型合并为一张卡片，显示免费或点数计费与价格，需要分析内核 0.5.6。
+- 云算力显示排队位置、截止时间和 GPU 主机准备进度。
+- 改善长对话历史恢复、定时消息卡片与工作区快捷入口，收起历史请求错误。
+
+- OmicOS cloud models share one card with free or credit billing and prices. Requires Core 0.5.6.
+- Cloud compute shows queue position, deadlines and GPU host preparation.
+- Improved long-history recovery, scheduled message cards and workspace shortcuts, with past request errors collapsed.
+
 ## 0.3.21 — 2026-10-26
 
 - 对话支持定时发送，发送前可预览并管理待发送消息，需要分析内核 0.5.5。
