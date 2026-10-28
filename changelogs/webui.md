@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.23 — 2026-10-28
+
+- 云算力钱包和任务列表改为可展开的摘要，已结束任务、价目和明细默认收起。
+- 忙闲时价格显示更完整的适用时段说明。
+- 重新加载对话后，旧格式工具参数和已识别的空参数调用不再丢失。
+
+- Cloud compute wallets and tasks use expandable summaries, with completed tasks, prices and details folded away.
+- Peak and off-peak prices show clearer schedule information.
+- Reloaded conversations preserve legacy tool arguments and identified calls with empty arguments.
+
 ## 0.3.22 — 2026-10-27
 
 - OmicOS 云端模型合并为一张卡片，显示免费或点数计费与价格，需要分析内核 0.5.6。
