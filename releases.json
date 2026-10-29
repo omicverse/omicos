@@ -1096,10 +1096,24 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.24",
+    "latest": "0.3.25",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.25",
+        "date": "2026-10-28",
+        "zh": [
+          "调整对话字体、字号与间距，后续建议默认收起。",
+          "修复 Mermaid 图表自动绘制，加载失败时保留源码并显示重试提示。",
+          "窄窗口展开侧栏时，对话与输入框保持可见。"
+        ],
+        "en": [
+          "Refined chat typography and spacing, with follow-up suggestions collapsed by default.",
+          "Mermaid diagrams draw automatically; failed loads retain the source and show retry guidance.",
+          "Chat and the composer remain visible when the sidebar opens in a narrow window."
+        ]
+      },
       {
         "version": "0.3.24",
         "date": "2026-10-28",
