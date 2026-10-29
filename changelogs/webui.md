@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.25 — 2026-10-28
+
+- 调整对话字体、字号与间距，后续建议默认收起。
+- 修复 Mermaid 图表自动绘制，加载失败时保留源码并显示重试提示。
+- 窄窗口展开侧栏时，对话与输入框保持可见。
+
+- Refined chat typography and spacing, with follow-up suggestions collapsed by default.
+- Mermaid diagrams draw automatically; failed loads retain the source and show retry guidance.
+- Chat and the composer remain visible when the sidebar opens in a narrow window.
+
 ## 0.3.24 — 2026-10-28
 
 - 修复靶点图谱标签页的空白栏，拖到右侧后工具栏可随宽度换行。
