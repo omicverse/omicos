@@ -9,6 +9,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.8 — 2026-10-29
+
+- 可选用持久化云端分析环境，保留空闲中的长时间分析会话，并更早发现云端内核。
+- 云算力规划包含运行时长、结果回传策略与总预算，并保留自定义镜像及已核对的软件信息。
+- 新增 Coding Plan 和更多服务商的余额查询，改善 SSH 大请求和慢链路图片发送。
+- 更新 Anthropic 登录兼容性，并改善损坏环境记录的恢复。
+
+- Choose persistent cloud analysis environments, retain idle long-running sessions and discover cloud kernels earlier.
+- Cloud compute plans include runtime, result delivery and total budgets while preserving custom images and verified software information.
+- Added Coding Plan and more provider balance queries, with improved large SSH requests and image sending over slower links.
+- Updated Anthropic sign-in compatibility and recovery of damaged environment records.
+
 ## 0.5.7 — 2026-10-28
 
 - 云算力会根据任务的 CPU、内存、临时磁盘、运行时长和预算推荐可运行的规格；Cell Ranger 等大任务会计入临时磁盘需求，提交仍需你确认。
