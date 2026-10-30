@@ -1112,10 +1112,22 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.26",
+    "latest": "0.3.27",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.27",
+        "date": "2026-10-30",
+        "zh": [
+          "本机内核连接超时时显示重试入口，保留登录和对话；首次准备环境时继续显示实际进度。",
+          "修复长对话历史翻页、工具结果衔接和滚动位置恢复。"
+        ],
+        "en": [
+          "A timed-out local runtime connection offers a retry while keeping your sign-in and conversations; first-run setup continues to show its progress.",
+          "Improved long-conversation history paging, tool-result continuity and scroll-position restoration."
+        ]
+      },
       {
         "version": "0.3.26",
         "date": "2026-10-30",
