@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.27 — 2026-10-30
+
+- 本机内核连接超时时显示重试入口，保留登录和对话；首次准备环境时继续显示实际进度。
+- 修复长对话历史翻页、工具结果衔接和滚动位置恢复。
+
+- A timed-out local runtime connection offers a retry while keeping your sign-in and conversations; first-run setup continues to show its progress.
+- Improved long-conversation history paging, tool-result continuity and scroll-position restoration.
+
 ## 0.3.26 — 2026-10-30
 
 - 新增「设置 → 云空间」：上传的数据会自动只读挂载到云端任务；可按文件夹浏览和批量管理，用点数兑换额外空间，并把临时任务结果保存下来。
