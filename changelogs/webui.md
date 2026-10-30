@@ -10,6 +10,18 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.26 — 2026-10-30
+
+- 新增「设置 → 云空间」：上传的数据会自动只读挂载到云端任务；可按文件夹浏览和批量管理，用点数兑换额外空间，并把临时任务结果保存下来。
+- 确认云端任务前可选择共享的 Python / R 环境；任务卡片默认收起，关键操作始终可见。
+- 参考数据方案显示实际物种与工具；长输入自动收起，窄窗口下输入栏更紧凑。
+- 网络短暂中断后对话历史会自动恢复；粘贴带引号的 FCS 路径也能正常读取。
+
+- New Settings → Cloud space: uploads are mounted read-only in cloud tasks; browse by folder, manage files in bulk, redeem credits for more storage and keep temporary task results.
+- Choose a shared Python or R environment before approving a cloud task; task cards start collapsed with key actions always visible.
+- Reference-data proposals show the actual species and tool; long inputs are compacted and composer controls fit narrow windows.
+- Conversation history recovers after brief network drops, and pasted FCS paths wrapped in quotes are read correctly.
+
 ## 0.3.25 — 2026-10-28
 
 - 调整对话字体、字号与间距，后续建议默认收起。
