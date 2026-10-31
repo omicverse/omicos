@@ -1112,10 +1112,20 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.28",
+    "latest": "0.3.29",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.29",
+        "date": "2026-10-30",
+        "zh": [
+          "云任务存储失败或结果收集超时时，只说明实际失败原因；下载入口以已保存的产物清单为准，不再暗示尚未取回的文件可以下载。"
+        ],
+        "en": [
+          "Cloud storage and result-collection errors describe the failure without implying that missing files are downloadable. Download actions depend on the saved artifact list."
+        ]
+      },
       {
         "version": "0.3.28",
         "date": "2026-10-30",

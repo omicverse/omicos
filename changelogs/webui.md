@@ -10,6 +10,12 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.29 — 2026-10-30
+
+- 云任务存储失败或结果收集超时时，只说明实际失败原因；下载入口以已保存的产物清单为准，不再暗示尚未取回的文件可以下载。
+
+- Cloud storage and result-collection errors describe the failure without implying that missing files are downloadable. Download actions depend on the saved artifact list.
+
 ## 0.3.28 — 2026-10-30
 
 - 新建云任务时，参考库按实际物种和分析工具显示名称，未知类型保留原始标识。
