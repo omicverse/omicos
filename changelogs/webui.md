@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.28 — 2026-10-30
+
+- 新建云任务时，参考库按实际物种和分析工具显示名称，未知类型保留原始标识。
+- 任务未扣计算点数时，不再据此判断代码没有运行；云存储权限失败和代码结束后的结果收集超时也有独立提示。
+
+- New cloud tasks show reference names for the actual species and analysis tool, preserving unknown identifiers.
+- A zero compute charge no longer implies code did not run. Storage authorization failures and result-collection timeouts after code completes also have distinct messages.
+
 ## 0.3.27 — 2026-10-30
 
 - 本机内核连接超时时显示重试入口，保留登录和对话；首次准备环境时继续显示实际进度。
