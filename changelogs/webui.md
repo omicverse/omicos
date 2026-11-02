@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.30 — 2026-11-02
+
+- SSH 重连后自动跟随新的连接地址，历史恢复期间保持对话可恢复。
+- 修复历史翻页与来源识别，已接受的定时消息卡片自动隐藏。
+- 上下文卡片适配当前主题和语言，工作区路径自动换行并过滤失效入口。
+
+- SSH reconnections follow the updated connection address, keeping conversations recoverable while history loads.
+- Improved history paging and conversation source identity; accepted scheduled-message cards are hidden automatically.
+- Context cards follow your theme and language; workspace paths wrap and stale shortcuts are filtered out.
+
 ## 0.3.29 — 2026-10-30
 
 - 云任务存储失败或结果收集超时时，只说明实际失败原因；下载入口以已保存的产物清单为准，不再暗示尚未取回的文件可以下载。
