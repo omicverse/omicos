@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.9 — 2026-11-02
+
+- SSH 转发通道耗尽后可恢复仍在线的会话，运行时探测按身份依次尝试。
+- 改善旧版 SSH 重连锁处理，取消挂起的请求并回收未被接受的远程启动。
+- 远程创建对话失败时保留真实错误信息，网页诊断信息中保留面板日志。
+
+- Recover live SSH sessions after forwarding channels are exhausted, with runtime probes trying identities in sequence.
+- Improve reconnect locking for older SSH connections, cancel pending requests and clean up remote launches that were not accepted.
+- Preserve the original error when creating a remote conversation fails, and include panel logs in web diagnostics.
+
 ## 0.5.8 — 2026-10-29
 
 - 可选用持久化云端分析环境，保留空闲中的长时间分析会话，并更早发现云端内核。
