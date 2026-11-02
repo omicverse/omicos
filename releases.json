@@ -2,10 +2,20 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.9",
+    "latest": "0.5.10",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.10",
+        "date": "2026-11-02",
+        "zh": [
+          "修复本机连接下已获授权的分析流程被误判为不可用的问题。"
+        ],
+        "en": [
+          "Fix authorized analysis pipelines being incorrectly marked unavailable on a local connection."
+        ]
+      },
       {
         "version": "0.5.9",
         "date": "2026-11-02",

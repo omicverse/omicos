@@ -9,6 +9,12 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.10 — 2026-11-02
+
+- 修复本机连接下已获授权的分析流程被误判为不可用的问题。
+
+- Fix authorized analysis pipelines being incorrectly marked unavailable on a local connection.
+
 ## 0.5.9 — 2026-11-02
 
 - SSH 转发通道耗尽后可恢复仍在线的会话，运行时探测按身份依次尝试。
