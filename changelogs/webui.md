@@ -12,8 +12,10 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ## 0.3.31 — 2026-11-02
 
+- 云算力请求遇到临时错误时显示真实状态和重试提示，不再误报充值不可用。
 - 专家完成路由任务后，流式草稿直接更新为最终答复，避免重复显示；保留独有过程、限制说明和文件入口。此项需配合新版 Core。
 
+- Temporary cloud compute failures show their status and retry guidance instead of an unrelated top-up error.
 - When a routed specialist finishes, its streamed draft becomes the final reply without a duplicate; distinct progress, caveats and file links are kept. Requires the matching Core update.
 
 ## 0.3.30 — 2026-11-02
