@@ -10,6 +10,18 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.32 — 2026-11-03
+
+- 选择工作区时可以浏览并选择 Windows 局域网（SMB）共享文件夹。此项需配合新版 Core。
+- 从建议任务开出的子对话会记住是否已开始，刷新后仍可继续，不会重复发送第一条任务。此项需配合新版 Core。
+- 在项目中新建话题时保留所选项目，对话列表里的项目归属不再跳动。
+- H&E 查看器安装依赖后会检查环境是否兼容，并提示重启内核后再使用。
+
+- The workspace picker can browse and select Windows network (SMB) shared folders. Requires the matching Core update.
+- A child conversation opened from a suggested task remembers whether it has started, so it can resume after a refresh without sending the first task twice. Requires the matching Core update.
+- Starting a topic inside a project keeps that project, and project membership in the conversation list stays stable.
+- After installing dependencies, the H&E viewer checks environment compatibility and asks you to restart the kernel before use.
+
 ## 0.3.31 — 2026-11-02
 
 - 云算力请求遇到临时错误时显示真实状态和重试提示，不再误报充值不可用。
