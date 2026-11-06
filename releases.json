@@ -1182,10 +1182,22 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.34",
+    "latest": "0.3.35",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.35",
+        "date": "2026-11-06",
+        "zh": [
+          "Bot 之间的私聊里，成员等你批准时卡片直接出现在对话底部，正在干活的 Bot 也会显示「正在分析」；之前这里看不到批准卡，Bot 看起来像没回复。",
+          "总管和群管理员的详情里可以设置它派活的 Bot 要批准的操作：由它判断、自动批准或都问我，和它自己的权限无关。此项需配合新版 Core。"
+        ],
+        "en": [
+          "In chats between two bots, a bot waiting for your approval now shows its card at the bottom of the chat, and a bot at work shows that it is working; before, the card was missing and the bot looked silent.",
+          "The main bot and group admins get a setting for approval requests from the bots they direct — they judge, approve automatically, or ask you — independent of their own permission. Requires the matching Core update."
+        ]
+      },
       {
         "version": "0.3.34",
         "date": "2026-11-06",
