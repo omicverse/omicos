@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.13 — 2026-11-06
+
+- Bot 头像库：没起名字的 Bot 会按职责自动取一个神话人物的名字和头像，也可以从库里换。
+- 群聊可以设成「管理员先审」：成员的审批请求先交给管理员处理；审批摘要更好读。
+- Antigravity：按当前账号列出可用的 Claude、GPT、Gemini 模型，并显示共享额度；登录、续期和登出不再互相冲突。
+
+- Bot avatar library: an unnamed bot gets a mythological figure's name and avatar that fits its role, and you can pick another from the library.
+- Group chats can require admin review first: members' approval requests go to the admin, and approval summaries are easier to read.
+- Antigravity: lists the Claude, GPT and Gemini models your account can use and shows shared quotas; sign-in, refresh and sign-out no longer conflict.
+
 ## 0.5.12 — 2026-11-06
 
 - 新增 Bot（Beta）：Bot 是长期存在的身份，每个对话各有自己的会话；支持最多九方参与的群聊；每个 Bot 有私有记忆，群聊有共享记忆；IM 聊天可以绑定到指定 Bot；手机端会提示是哪个 Bot 需要你，Bot 之间的对话不再打扰你。
