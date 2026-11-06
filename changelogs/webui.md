@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.35 — 2026-11-06
+
+- Bot 之间的私聊里，成员等你批准时卡片直接出现在对话底部，正在干活的 Bot 也会显示「正在分析」；之前这里看不到批准卡，Bot 看起来像没回复。
+- 总管和群管理员的详情里可以设置它派活的 Bot 要批准的操作：由它判断、自动批准或都问我，和它自己的权限无关。此项需配合新版 Core。
+
+- In chats between two bots, a bot waiting for your approval now shows its card at the bottom of the chat, and a bot at work shows that it is working; before, the card was missing and the bot looked silent.
+- The main bot and group admins get a setting for approval requests from the bots they direct — they judge, approve automatically, or ask you — independent of their own permission. Requires the matching Core update.
+
 ## 0.3.34 — 2026-11-06
 
 - Bot：顶部右侧的侧栏按钮在 Bot 页里打开 Bot 或群的详情；Bot 的工作方向以小字显示在名字旁边。
