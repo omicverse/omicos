@@ -9,6 +9,12 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.14 — 2026-11-06
+
+- Bot：总管和群管理员可以单独设置怎么处理它派活的 Bot 的审批请求——由它判断、自动批准或交给你，和它自己的权限无关；只读的总管也会审查成员的请求，Bot 之间协作时不再因为等你批准而看起来没有反应。
+
+- Bots: the main bot and group admins can choose how to handle approval requests from the bots they direct — judge each one, approve automatically, or pass them to you — independent of their own permission. A read-only main bot now reviews its members' requests too, so bots working together no longer look stuck while waiting for your approval.
+
 ## 0.5.13 — 2026-11-06
 
 - Bot 头像库：没起名字的 Bot 会按职责自动取一个神话人物的名字和头像，也可以从库里换。

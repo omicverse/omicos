@@ -2,10 +2,20 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.13",
+    "latest": "0.5.14",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.14",
+        "date": "2026-11-06",
+        "zh": [
+          "Bot：总管和群管理员可以单独设置怎么处理它派活的 Bot 的审批请求——由它判断、自动批准或交给你，和它自己的权限无关；只读的总管也会审查成员的请求，Bot 之间协作时不再因为等你批准而看起来没有反应。"
+        ],
+        "en": [
+          "Bots: the main bot and group admins can choose how to handle approval requests from the bots they direct — judge each one, approve automatically, or pass them to you — independent of their own permission. A read-only main bot now reviews its members' requests too, so bots working together no longer look stuck while waiting for your approval."
+        ]
+      },
       {
         "version": "0.5.13",
         "date": "2026-11-06",
