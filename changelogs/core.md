@@ -9,6 +9,20 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.12 — 2026-11-06
+
+- 新增 Bot（Beta）：Bot 是长期存在的身份，每个对话各有自己的会话；支持最多九方参与的群聊；每个 Bot 有私有记忆，群聊有共享记忆；IM 聊天可以绑定到指定 Bot；手机端会提示是哪个 Bot 需要你，Bot 之间的对话不再打扰你。
+- 每轮对话的提示词开头保持一致，模型服务商的缓存更容易命中，响应更快、费用更低。
+- 已购课程按章节下发资源，下载前会校验；授权中断后可以重试，大文件支持续传。
+- 免费模型恢复兼容的上下文长度。
+- 定时消息里的路径保持原样；模型目录不完整时可以自动恢复；SSH 连接时已有内核较多也不会超时。
+
+- New Bot (Beta): bots are long-lived identities with a session per conversation; group chats with up to nine members; each bot has private memory and each group shares one; IM chats can be bound to a chosen bot; the phone tells you which bot needs you, and bot-to-bot chats no longer interrupt you.
+- Each turn keeps the same prompt opening, so the model provider's cache hits more often: faster replies at lower cost.
+- Purchased courses deliver resources chapter by chapter and verify them before use; downloads can be retried after an interrupted authorization, and large files resume.
+- Free models get a compatible context length again.
+- Paths in scheduled messages are kept as written; an incomplete model catalog recovers on its own; SSH connections no longer time out when many kernels already exist.
+
 ## 0.5.11 — 2026-11-03
 
 - 选择工作区时可以浏览 Windows 局域网（SMB）服务器和共享文件夹；UNC、盘符和 POSIX 路径照常可用。
