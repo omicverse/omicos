@@ -10,6 +10,20 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.37 — 2026-11-08
+
+- Bot 详情新增「运行代码」：Bot 运行代码前可以每次都问、每个对话问一次，或者不问；新建的 Bot 默认每个对话问一次。需配合新版 Core。
+- 模型用量里可以看到 Coding Plan 的额度和账号余额。需配合新版 Core。
+- Notebook 的代码格可以选 Python 或 R；刷新已保存的 Notebook 不再误报冲突；文档保存失败会提示，关闭未保存的文档前会先确认。
+- 中断的回合继续时不会重复已经做过的步骤；订阅恢复后不再残留旧的异常提示。
+- 新对话的设置项高度对齐；macOS 上触控板不再误缩放页面；翻译语言改用主题菜单；arXiv 插件改用 Python 3.11。
+
+- A bot's details have Running code: it can ask before every run, once per chat, or never; new bots ask once per chat. Needs the new Core.
+- Model usage shows Coding Plan quotas and account balances. Needs the new Core.
+- Notebook cells can be Python or R; refreshing a saved notebook no longer reports a false conflict; failed document saves are shown, and closing an unsaved document asks first.
+- An interrupted turn resumes without redoing finished steps; old subscription warnings clear once it recovers.
+- New-chat settings line up; the macOS trackpad no longer zooms the page by accident; translation languages use the themed menu; the arXiv plugin uses Python 3.11.
+
 ## 0.3.36 — 2026-11-07
 
 - 设置里新增「连接器」：在这台电脑上连接一次 GitHub、邮箱或远程 MCP，再在 Bot 详情里为它打开要用的那几个；密码和令牌加密存在本机，Bot 发邮件前都要你批准。此项需配合新版 Core。
