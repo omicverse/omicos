@@ -10,6 +10,24 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.38 — 2026-11-11
+
+- Bot 详情新增「唤醒」：Bot 可以按计划（每隔几分钟或每天定时）、在监视的文件夹出现新文件时、或空闲一段时间后自己开始一轮；对话里以一行事件显示，只回复 [PASS] 的回合不再显示。需配合新版 Core。
+- Bot 可以订阅论文关键词，每天有新论文时醒来，列出标题、期刊、日期和 DOI。需配合新版 Core。
+- Bot 详情新增「研究方向」：按研究记忆树列出每个 Bot 负责的方向和没做完的工作；重启后会显示它从哪里接着做。需配合新版 Core。
+- 对话里显示实时输出速度；可以为中转服务设置余额查询（需配合新版 Core）；过期的 API 密钥会标出来。
+- 云登录过期时保留已有的付费权益并提示重新登录，重新登录后旧提示自动关闭。
+- SSH：刷新页面后恢复已有会话，恢复期间暂停密钥操作；常驻或远程 Core 保持原来的账号，较旧的 Core 要先升级才能同步账号。
+- 恢复历史记录时保留阅读位置；刷新后保留对方的回复；对话的工作区不可用、模型校验不完整时会说明原因；退出确认显示在其他弹窗之上；MCP 下载窗口显示 Node.js 24。
+
+- A bot's details have Wake-ups: a bot can start a turn on its own on a schedule (every few minutes or at a time each day), when a new file appears in a watched folder, or after it has been idle; each wake shows as one line in the chat, and turns that only answer [PASS] are hidden. Needs the new Core.
+- A bot can follow keywords for new papers: it wakes when new papers arrive and lists their titles, journals, dates and DOIs. Needs the new Core.
+- A bot's details have Directions: the directions each bot owns in your research memory and the work still open; after a restart it shows where it picks up. Needs the new Core.
+- Chats show the live output speed; relay services can have a balance query (needs the new Core); expired API keys are marked.
+- When the cloud login expires, paid access is kept and you are asked to sign in again; the old prompt closes once you do.
+- SSH: existing sessions come back after a page refresh, and key actions pause while they recover; a persistent or remote Core keeps its account, and an older Core must be upgraded before it can sync an account.
+- History recovery keeps your reading position; peer replies survive a refresh; an unavailable conversation workspace or an incomplete model check now says why; the quit confirmation stays above other dialogs; the MCP download dialog shows Node.js 24.
+
 ## 0.3.37 — 2026-11-08
 
 - Bot 详情新增「运行代码」：Bot 运行代码前可以每次都问、每个对话问一次，或者不问；新建的 Bot 默认每个对话问一次。需配合新版 Core。
