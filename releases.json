@@ -2,10 +2,32 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.16",
+    "latest": "0.5.17",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.17",
+        "date": "2026-11-11",
+        "zh": [
+          "Bot 可以自己醒来：按计划（每隔几分钟或每天定时）、在监视的文件夹出现新文件时、或空闲一段时间后开始一轮；只回复 [PASS] 的回合不记录也不通知。",
+          "Bot 可以追踪文献：订阅关键词后，每天有新论文时醒来，列出标题、期刊、日期和 DOI；也能直接检索论文库。",
+          "Bot 的研究方向：按团队和研究记忆树算出每个 Bot 负责的方向，列出没做完的工作；重启后中断的任务会接着做，重启前没送达的回复也会补发。",
+          "可以查询中转服务的余额；服务商的认证错误会原样保留，OpenCode Go 密钥过期时给出明确提示。",
+          "模型把代码写错参数名时，运行 Python / R 代码也能正常执行，缺少代码时给出完整提示；建议任务到达卡片上限后不再反复重试。",
+          "SSH 在有过期记录时也能接受匹配的受信主机密钥，各 SSH 连接的账号互不影响；常驻 Core 保持原来的账号。",
+          "Antigravity 保留工具参数的类型约束，地区受限时说明要检查的网络出口；PubMed 预设改用 Node.js 24。"
+        ],
+        "en": [
+          "Bots can wake on their own: on a schedule (every few minutes or at a time each day), when a new file appears in a watched folder, or after being idle; turns that only answer [PASS] are neither recorded nor notified.",
+          "Bots can follow the literature: after you subscribe to keywords, a bot wakes when new papers arrive and lists their titles, journals, dates and DOIs; it can also search the paper library directly.",
+          "Bot directions: each bot's directions are worked out from the team and your research memory, with the work still open; after a restart, interrupted tasks continue and replies that were not delivered are sent.",
+          "Relay service balances can be checked; provider authentication errors are kept as they are, and an expired OpenCode Go key gets a clear message.",
+          "Running Python or R code works even when the model misnames the code argument, and a missing code argument gets a complete hint; suggested tasks stop retrying once the card limit is reached.",
+          "SSH accepts a matching trusted host key even when an outdated record exists, SSH connections keep their accounts apart, and a persistent Core keeps its account.",
+          "Antigravity keeps tool parameter type constraints and explains which network exit to check when a region is refused; the PubMed preset uses Node.js 24."
+        ]
+      },
       {
         "version": "0.5.16",
         "date": "2026-11-08",
