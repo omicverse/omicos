@@ -10,6 +10,18 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.39 — 2026-11-12
+
+- 自定义中转服务可以自动发现可用的模型和余额，并显示每个模型来自哪里；刷新后已选的模型会保留。余额自动发现需配合新版 Core。
+- 模型列表按正在运行的 Core 显示：当前 Core 用不了的模型会标出原因，例如阿里云 Token Plan 的 Qwen 模型需配合新版 Core；免费额度和 Console 可用的模型按最新规则显示。
+- 已下线的模型仍保留在原来的对话和 Bot 设置里并标注出来；模型的上下文长度会注明来源；官方模型名称更简短。
+- 输出速度在等待首个字时显示更清楚；旧版本的启动链接仍能连上 Core；Markdown 里的文件链接能正确打开，未绑定项目的对话保留文件路径；退出确认始终显示在最上层。
+
+- Custom relay services can discover their available models and balances on their own, showing where each model came from; your selections stay after a refresh. Automatic balance discovery needs the new Core.
+- Model lists follow the Core that runs them: models the current Core cannot use say why, for example the Qwen models on Alibaba Token Plan need the new Core; free-quota and Console-eligible models follow the current rules.
+- Retired models stay in the chats and bot settings that use them and are marked; each model's context length notes where it came from; official model names are shorter.
+- Output speed is clearer while waiting for the first token; older launch links still connect to the Core; file links in Markdown open correctly, and chats not bound to a project keep their file paths; the quit confirmation always stays on top.
+
 ## 0.3.38 — 2026-11-11
 
 - Bot 详情新增「唤醒」：Bot 可以按计划（每隔几分钟或每天定时）、在监视的文件夹出现新文件时、或空闲一段时间后自己开始一轮；对话里以一行事件显示，只回复 [PASS] 的回合不再显示。需配合新版 Core。
