@@ -2,10 +2,24 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.18",
+    "latest": "0.5.19",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.19",
+        "date": "2026-11-13",
+        "zh": [
+          "命令行：输入框为空时按 ? 打开帮助、按 ← 打开最近的对话；最近的对话可以按标题或 ID 搜索；翻看输入历史时不再被斜杠命令菜单打断。",
+          "登录：云登录改为一次性完整保存，同一账号通过 SSH 重连时不再误报「Core 属于其他账号」。",
+          "SSH：内部控制请求不再走代理，直接发到本地转发端口。"
+        ],
+        "en": [
+          "Command line: with an empty input, ? opens help and ← opens recent conversations; recent conversations can be searched by title or ID; browsing input history is no longer interrupted by the slash-command menu.",
+          "Sign-in: the cloud login is now saved in one atomic step, so reconnecting the same account over SSH no longer reports that the Core belongs to another account.",
+          "SSH: internal control requests skip proxies and go straight to the local forwarded port."
+        ]
+      },
       {
         "version": "0.5.18",
         "date": "2026-11-12",
