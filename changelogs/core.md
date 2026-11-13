@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.19 — 2026-11-13
+
+- 命令行：输入框为空时按 ? 打开帮助、按 ← 打开最近的对话；最近的对话可以按标题或 ID 搜索；翻看输入历史时不再被斜杠命令菜单打断。
+- 登录：云登录改为一次性完整保存，同一账号通过 SSH 重连时不再误报「Core 属于其他账号」。
+- SSH：内部控制请求不再走代理，直接发到本地转发端口。
+
+- Command line: with an empty input, ? opens help and ← opens recent conversations; recent conversations can be searched by title or ID; browsing input history is no longer interrupted by the slash-command menu.
+- Sign-in: the cloud login is now saved in one atomic step, so reconnecting the same account over SSH no longer reports that the Core belongs to another account.
+- SSH: internal control requests skip proxies and go straight to the local forwarded port.
+
 ## 0.5.18 — 2026-11-12
 
 - 模型：刷新时优先使用服务商自己公布的模型列表，并记录上下文长度的来源；支持阿里云 Token Plan 的 Qwen 模型、Moonshot K3.1 的推理与上下文，以及官方 Mistral 上 Large 4 的推理强度；已下线的模型在官方接口上会被明确拒绝；免费额度和 Console 可用的模型按最新规则执行。
