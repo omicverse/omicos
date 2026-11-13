@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.40 — 2026-11-13
+
+- SSH：可浏览的连接会记住你选的目录，确认目录后自动连回之前为该目录准备的 Core；切换目录后对话的工作区也会恢复。
+- 退出登录时不再丢掉之后新开的会话；合并显示的错误卡片也能点重试；回答还在生成时就能打开文件预览。
+
+- SSH: browsable connections remember the directory you chose, and confirming it reconnects the Core prepared for that directory; a chat's workspace comes back after the directory changes.
+- Signing out no longer drops sessions opened after it; grouped error cards have a retry button; file previews open while an answer is still streaming.
+
 ## 0.3.39 — 2026-11-12
 
 - 自定义中转服务可以自动发现可用的模型和余额，并显示每个模型来自哪里；刷新后已选的模型会保留。余额自动发现需配合新版 Core。

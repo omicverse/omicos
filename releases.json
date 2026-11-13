@@ -1274,10 +1274,22 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.39",
+    "latest": "0.3.40",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.40",
+        "date": "2026-11-13",
+        "zh": [
+          "SSH：可浏览的连接会记住你选的目录，确认目录后自动连回之前为该目录准备的 Core；切换目录后对话的工作区也会恢复。",
+          "退出登录时不再丢掉之后新开的会话；合并显示的错误卡片也能点重试；回答还在生成时就能打开文件预览。"
+        ],
+        "en": [
+          "SSH: browsable connections remember the directory you chose, and confirming it reconnects the Core prepared for that directory; a chat's workspace comes back after the directory changes.",
+          "Signing out no longer drops sessions opened after it; grouped error cards have a retry button; file previews open while an answer is still streaming."
+        ]
+      },
       {
         "version": "0.3.39",
         "date": "2026-11-12",
