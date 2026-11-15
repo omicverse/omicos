@@ -9,6 +9,12 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.20 — 2026-11-15
+
+- Bot：可以查看 Bot 团队运行在哪台机器上（桌面、经 SSH 连接的服务器，或独立运行），以及这台机器上的 Bot 在电脑关机后能否继续工作。需配合新版网页端。
+
+- Bots: see which machine a team of bots runs on (the desktop, a server reached over SSH, or a standalone machine), and whether bots there keep working while the computer is off. Requires the matching app update.
+
 ## 0.5.19 — 2026-11-13
 
 - 命令行：输入框为空时按 ? 打开帮助、按 ← 打开最近的对话；最近的对话可以按标题或 ID 搜索；翻看输入历史时不再被斜杠命令菜单打断。
