@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.41 — 2026-11-15
+
+- Bot：连上服务器后，可以在 Bot 页顶部切换到服务器，把 Bot 放在服务器上，这台电脑关了它们照样运行；服务器上 Bot 的详情里会显示它能不能常开（已登录、同一账号、自己能调模型、手机能找到）。此项需配合新版 Core。
+- Bot 详情里的「唤醒」「方向」和「运行代码」设置之前可能不显示，现在恢复了。
+- SSH：账号同步失败时，服务器上已缓存的对话历史不再丢失；连接卡片在窄窗口里排版更合理。
+
+- Bots: once a server is connected, the top of the Bot view can switch to it and keep bots there, where they keep running when this computer is off; a bot on a server shows whether it can stay up (signed in, same account, its own models, reachable from the phone). Requires the matching Core update.
+- The Wake-ups, Directions and running-code settings in Bot details could be missing; they show again.
+- SSH: cached conversation history on a server is kept when account sync fails; connection cards fit narrow windows better.
+
 ## 0.3.40 — 2026-11-13
 
 - SSH：可浏览的连接会记住你选的目录，确认目录后自动连回之前为该目录准备的 Core；切换目录后对话的工作区也会恢复。
