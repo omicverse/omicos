@@ -10,6 +10,18 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.42 — 2026-11-16
+
+- 对话里新增紧凑的跳转按钮，短距离跳转带动画；重新打开对话时阅读位置恢复得更准。
+- 对话里引用的工作区图片在重绘、重连和目录出错时都能保持显示；几个对话同时加载图片不再互相串。
+- SSH：重连后保留选中的服务，旧对话能找回原来的远程连接；切换连接失败会提示，隔离实例的历史记录说明更清楚。
+- 重连后保留来源筛选；修改自定义模型后上下文用量会重新计算。
+
+- Chats have compact navigation buttons, with short jumps animated; your reading position comes back more accurately when you reopen a chat.
+- Workspace images in a chat stay visible through redraws, reconnects and directory errors, and images loading in several chats at once no longer mix up.
+- SSH: the selected service survives reconnects and older chats find their remote connection again; failed connection switches are shown, and isolated instance history is explained more clearly.
+- Source filters survive reconnects, and context usage is recalculated after you edit a custom model.
+
 ## 0.3.41 — 2026-11-15
 
 - Bot：连上服务器后，可以在 Bot 页顶部切换到服务器，把 Bot 放在服务器上，这台电脑关了它们照样运行；服务器上 Bot 的详情里会显示它能不能常开（已登录、同一账号、自己能调模型、手机能找到）。此项需配合新版 Core。
