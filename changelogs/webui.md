@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.43 — 2026-11-18
+
+- SSH：远端主机密钥变更后，连接页会显示新的指纹；填入管理员核验过的指纹即可继续连接，原来的目录和设置都保留。需配合新版 Core。
+- 小米 MiMo Token Plan 显示计费周期和套餐状态（需配合新版 Core）；套餐额度暂时查不到时会说明原因。
+
+- SSH: when a remote host key changes, the connections page shows the new fingerprint; enter the fingerprint your administrator verified to continue, keeping your directory and settings. Needs the new Core.
+- Xiaomi MiMo Token Plan shows its billing cycle and plan status (needs the new Core); when a plan quota is temporarily unavailable, the reason is shown.
+
 ## 0.3.42 — 2026-11-16
 
 - 对话里新增紧凑的跳转按钮，短距离跳转带动画；重新打开对话时阅读位置恢复得更准。
