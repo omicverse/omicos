@@ -1316,10 +1316,22 @@
   },
   "webui": {
     "name": "omicos webui",
-    "latest": "0.3.42",
+    "latest": "0.3.43",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/webui.md",
     "github_releases": null,
     "releases": [
+      {
+        "version": "0.3.43",
+        "date": "2026-11-18",
+        "zh": [
+          "SSH：远端主机密钥变更后，连接页会显示新的指纹；填入管理员核验过的指纹即可继续连接，原来的目录和设置都保留。需配合新版 Core。",
+          "小米 MiMo Token Plan 显示计费周期和套餐状态（需配合新版 Core）；套餐额度暂时查不到时会说明原因。"
+        ],
+        "en": [
+          "SSH: when a remote host key changes, the connections page shows the new fingerprint; enter the fingerprint your administrator verified to continue, keeping your directory and settings. Needs the new Core.",
+          "Xiaomi MiMo Token Plan shows its billing cycle and plan status (needs the new Core); when a plan quota is temporarily unavailable, the reason is shown."
+        ]
+      },
       {
         "version": "0.3.42",
         "date": "2026-11-16",
