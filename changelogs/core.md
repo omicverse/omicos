@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.22 — 2026-11-18
+
+- 额度：可以查询小米 MiMo Token Plan 的额度；智谱 Coding Plan 额度查不到时如实显示；显示当前的免费模型资格。
+- SSH：受信任的主机密钥更换并核验通过后，连接能自动恢复。
+- 上下文压缩：修正 DeepSeek 的上下文长度。
+
+- Usage: Xiaomi MiMo Token Plan quotas can be checked; an unavailable Zhipu Coding Plan quota is shown as such; current free-model eligibility is shown.
+- SSH: after a trusted host key is rotated and verified, the connection recovers on its own.
+- Context compaction: the DeepSeek context length is corrected.
+
 ## 0.5.21 — 2026-11-16
 
 - SSH：探测暂时失败时，重连会继续使用原来的 Core 和对话，不再误换连接；连接前先核验所选的运行实例，复用已选实例时不再要求远端装有命令行工具；目录探测不受登录 shell 输出干扰；默认端口拒绝连接时会自动改用备用方式；读取身份失败可以重试；远程对话历史直接走已验证的转发端口。
