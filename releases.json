@@ -2,10 +2,24 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.21",
+    "latest": "0.5.22",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.22",
+        "date": "2026-11-18",
+        "zh": [
+          "额度：可以查询小米 MiMo Token Plan 的额度；智谱 Coding Plan 额度查不到时如实显示；显示当前的免费模型资格。",
+          "SSH：受信任的主机密钥更换并核验通过后，连接能自动恢复。",
+          "上下文压缩：修正 DeepSeek 的上下文长度。"
+        ],
+        "en": [
+          "Usage: Xiaomi MiMo Token Plan quotas can be checked; an unavailable Zhipu Coding Plan quota is shown as such; current free-model eligibility is shown.",
+          "SSH: after a trusted host key is rotated and verified, the connection recovers on its own.",
+          "Context compaction: the DeepSeek context length is corrected."
+        ]
+      },
       {
         "version": "0.5.21",
         "date": "2026-11-16",
