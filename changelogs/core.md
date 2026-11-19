@@ -9,6 +9,16 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.23 — 2026-11-19
+
+- 技能：能找到所选工作区里你自己写的技能及其资源文件，给出扫描诊断，加载时会重新核对当前的订阅权益。
+- 订阅登录：跟随最新的稳定版订阅客户端。
+- Antigravity：恢复 Gemini 的额度窗口显示。
+
+- Skills: the skills you wrote in the selected workspace, and their resource files, are found and scanned with diagnostics, and your current subscription is checked again when they load.
+- Subscription sign-in: follows the latest stable subscription client.
+- Antigravity: Gemini quota windows are shown again.
+
 ## 0.5.22 — 2026-11-18
 
 - 额度：可以查询小米 MiMo Token Plan 的额度；智谱 Coding Plan 额度查不到时如实显示；显示当前的免费模型资格。

@@ -2,10 +2,24 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.22",
+    "latest": "0.5.23",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.23",
+        "date": "2026-11-19",
+        "zh": [
+          "技能：能找到所选工作区里你自己写的技能及其资源文件，给出扫描诊断，加载时会重新核对当前的订阅权益。",
+          "订阅登录：跟随最新的稳定版订阅客户端。",
+          "Antigravity：恢复 Gemini 的额度窗口显示。"
+        ],
+        "en": [
+          "Skills: the skills you wrote in the selected workspace, and their resource files, are found and scanned with diagnostics, and your current subscription is checked again when they load.",
+          "Subscription sign-in: follows the latest stable subscription client.",
+          "Antigravity: Gemini quota windows are shown again."
+        ]
+      },
       {
         "version": "0.5.22",
         "date": "2026-11-18",
