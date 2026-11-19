@@ -10,6 +10,14 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.44 — 2026-11-19
+
+- 技能页会列出当前工作区里你自己写的技能，可以重新扫描，并说明哪些技能没能加载、为什么。Plus 及以上套餐可用，需配合新版 Core。
+- Antigravity 账户默认使用 Gemini 模型。
+
+- The Skills page lists the skills you wrote in the current workspace, can rescan them, and explains which ones failed to load and why. Available on Plus and above; needs the new Core.
+- Antigravity accounts default to a Gemini model.
+
 ## 0.3.43 — 2026-11-18
 
 - SSH：远端主机密钥变更后，连接页会显示新的指纹；填入管理员核验过的指纹即可继续连接，原来的目录和设置都保留。需配合新版 Core。
