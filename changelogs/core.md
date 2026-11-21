@@ -9,6 +9,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.24 — 2026-11-21
+
+- 模型：当前的 OpenAI 和 Console 模型改走 Responses 接口；支持 Qwen4 Max、TokenHub Hy4、托管的 Kimi Pro、MiniMax M3.1 Flash 稳定版和 GLM FlashX Legal；补上 Gemini 4 的上下文长度，修正 Ollama 的上下文长度；OpenCode Console 重新能发现 GPT-6.2；TokenHub 保留模型历史；已下线的 Console 模型和 CommandCode 上的 Beam 会被明确拒绝。
+- 图片生成：恢复 Google 图片生成；改用当前的 OpenAI 图片模型；Qwen 图片请求按区域发送。
+- 订阅：套餐续期时的网络失败会单独归类，便于排查。
+- 修复：订阅模型的上下文长度更准确；Bot 固定使用的模型不再沿用过期的上下文长度；Antigravity 在输出过程中也能刷新凭据；OpenAI Responses 的请求头与 Codex 登录互不干扰；只有内容确实被转存时才提示；慢速网络下中继会等请求传完，上传超时不再丢掉排队中的请求。
+
+- Models: current OpenAI and Console models use the Responses API; Qwen4 Max, TokenHub Hy4, hosted Kimi Pro, stable MiniMax M3.1 Flash and GLM FlashX Legal are supported; Gemini 4 context lengths are added and Ollama's are corrected; OpenCode Console finds GPT-6.2 again; TokenHub keeps model history; retired Console models and Beam on CommandCode are refused clearly.
+- Image generation: Google image generation works again; current OpenAI image models are used; Qwen image requests go to the right region.
+- Subscription: network failures during plan renewal are classified separately for easier diagnosis.
+- Fixes: subscription model context lengths are more accurate; a bot's pinned model no longer keeps an outdated context length; Antigravity refreshes credentials during a running reply; OpenAI Responses headers no longer interfere with Codex sign-in; the offload notice only appears when content was actually offloaded; on slow links the relay waits for the request to finish uploading, and an upload timeout no longer drops queued requests.
+
 ## 0.5.23 — 2026-11-19
 
 - 技能：能找到所选工作区里你自己写的技能及其资源文件，给出扫描诊断，加载时会重新核对当前的订阅权益。
