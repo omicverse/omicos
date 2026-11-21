@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.45 — 2026-11-21
+
+- SSH：重连、账号重新验证或账号服务暂时不可用之后，原来打开的远程对话和历史记录会自动恢复；历史只通过核验过的同一台服务读取。
+- 模型列表按当前运行的 Core 加载，切换运行环境后会刷新；打开列表时自动定位到已选模型；已下线的模型显示迁移说明；模型设置里加了 OpenAI 账单链接。
+- 套餐续期遇到网络问题时会给出可操作的提示；删除远程对话时工作区仍可使用；Bot 的上下文用量按它自己的模型计算。
+
+- SSH: after a reconnect, an account re-check or a brief account outage, the remote chat you had open and its history come back on their own; history is read only through a verified connection to the same service.
+- Model lists load for the Core that runs the chat and refresh when you switch runtime; opening the list scrolls to the selected model; retired models show where they moved; model settings link to OpenAI billing.
+- Plan renewal network warnings now say what to do; the workspace stays usable while a remote chat is deleted; a bot's context usage follows its own model.
+
 ## 0.3.44 — 2026-11-19
 
 - 技能页会列出当前工作区里你自己写的技能，可以重新扫描，并说明哪些技能没能加载、为什么。Plus 及以上套餐可用，需配合新版 Core。
