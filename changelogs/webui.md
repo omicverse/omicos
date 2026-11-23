@@ -10,6 +10,12 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.46 — 2026-11-23
+
+- Bot 详情打开时，任务记录会自动刷新；只从模型目录发现模型时也会读回已保存的设置；多个自定义模型共用一次 Core 能力检查时不再卡住。
+
+- A bot's task records refresh while its details are open; saved settings load after catalog-only model discovery; custom models sharing one Core capability check no longer hang.
+
 ## 0.3.45 — 2026-11-21
 
 - SSH：重连、账号重新验证或账号服务暂时不可用之后，原来打开的远程对话和历史记录会自动恢复；历史只通过核验过的同一台服务读取。
