@@ -2,10 +2,26 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.24",
+    "latest": "0.5.25",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.25",
+        "date": "2026-11-23",
+        "zh": [
+          "项目说明文件：会读取项目里的 AGENTS.md（没有就读 CLAUDE.md）以及 ~/.omicos/AGENTS.md。实验室约定写一次，网页、桌面和命令行的每个对话都会遵守。",
+          "新增命令行 `omicos exec`：不进入终端界面，直接跑一轮，适合脚本、Slurm 作业和 CI。只输出最终答案或 JSONL 事件，默认只读，审批按 `--allow` 自动作答，退出码含义明确；无人值守运行时，模型出现可重试的故障会自动续跑。",
+          "命令行界面新增 /compact、/fork、/mcp、/init 命令，默认沿用终端自己的背景色和配色。",
+          "修复：服务商探测返回无效内容时会被拒绝；对话归属索引读取失败时，保留已核验的对话列表并如实报告。"
+        ],
+        "en": [
+          "Project instruction files: AGENTS.md in the project (or CLAUDE.md if there is none) and ~/.omicos/AGENTS.md are read, so lab conventions written once are followed in every chat on the web, the desktop app and the command line.",
+          "New `omicos exec` command: runs one turn without the terminal interface, for scripts, Slurm jobs and CI. It prints only the final answer or JSONL events, is read-only by default, answers approvals from `--allow`, and has clear exit codes; unattended runs continue automatically after retryable model failures.",
+          "The command-line interface adds /compact, /fork, /mcp and /init, and keeps the terminal's own background and colours by default.",
+          "Fixes: invalid provider probe responses are rejected; if the conversation ownership index cannot be read, the verified conversation list is kept and the problem is reported."
+        ]
+      },
       {
         "version": "0.5.24",
         "date": "2026-11-21",
