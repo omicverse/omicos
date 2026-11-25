@@ -2,10 +2,22 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.25",
+    "latest": "0.5.26",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.26",
+        "date": "2026-11-25",
+        "zh": [
+          "审批：待处理的审批会标明来自哪个对话线程、由谁审查，方便在界面上找到并处理。",
+          "子对话：全新创建的子对话内核也保留运行时辅助函数，不再因缺少它们而出错。"
+        ],
+        "en": [
+          "Approvals: pending approvals now show which conversation thread they belong to and who reviews them, so they are easy to find and handle.",
+          "Child conversations: freshly created child kernels keep their runtime helper functions, so they no longer fail because those are missing."
+        ]
+      },
       {
         "version": "0.5.25",
         "date": "2026-11-23",
