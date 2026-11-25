@@ -9,6 +9,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.26 — 2026-11-25
+
+- 审批：待处理的审批会标明来自哪个对话线程、由谁审查，方便在界面上找到并处理。
+- 子对话：全新创建的子对话内核也保留运行时辅助函数，不再因缺少它们而出错。
+
+- Approvals: pending approvals now show which conversation thread they belong to and who reviews them, so they are easy to find and handle.
+- Child conversations: freshly created child kernels keep their runtime helper functions, so they no longer fail because those are missing.
+
 ## 0.5.25 — 2026-11-23
 
 - 项目说明文件：会读取项目里的 AGENTS.md（没有就读 CLAUDE.md）以及 ~/.omicos/AGENTS.md。实验室约定写一次，网页、桌面和命令行的每个对话都会遵守。
