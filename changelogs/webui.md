@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.47 — 2026-11-25
+
+- 登录在运行环境较晚就绪时也能正常完成，不再卡在加载状态。
+- 委派给你的审批会直接显示在侧栏里，结果标签也写得更清楚。
+- SSH 远程对话的历史、标题与删除在重连或切换来源后保持稳定，不再串号或把已删除的对话恢复出来。
+
+- Sign-in now completes even when the runtime finishes preparing late, instead of sticking on a loading state.
+- Approvals delegated to you now show up in the sidebar, with clearer result labels.
+- SSH chat history, titles and deletions stay correct across reconnects and source switches, so conversations no longer mix owners or come back after being deleted.
+
 ## 0.3.46 — 2026-11-23
 
 - Bot 详情打开时，任务记录会自动刷新；只从模型目录发现模型时也会读回已保存的设置；多个自定义模型共用一次 Core 能力检查时不再卡住。
