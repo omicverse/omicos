@@ -9,6 +9,18 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.27 — 2026-11-27
+
+- 模型：多步调用工具时不再反复确认权限，回复里也不会再提到它；提示词前缀缓存照常命中。请求刚开始就遇到 token 速率限制时会自动重试。
+- 命令行：命令空闲超时或被取消时会结束它启动的全部进程，不再留下仍在运行的子进程。
+- SSH：过期的对话写入会被拒绝；数据目录的保存会写回提供它的那条连接。
+- 修复：子对话内核的启动与关闭按顺序进行，不再互相冲突。
+
+- Models: multi-step tool use no longer keeps re-confirming permissions, and replies no longer mention them; the prompt prefix cache still hits. Requests that hit a token rate limit right at the start are retried automatically.
+- Command line: when a command times out while idle or is cancelled, every process it started is stopped, so no child processes are left running.
+- SSH: stale conversation writes are rejected, and data-folder saves go back to the connection that supplied them.
+- Fixes: child-conversation kernels start and shut down in order instead of conflicting with each other.
+
 ## 0.5.26 — 2026-11-25
 
 - 审批：待处理的审批会标明来自哪个对话线程、由谁审查，方便在界面上找到并处理。
