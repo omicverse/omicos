@@ -9,6 +9,14 @@ The analysis kernel / runtime (`omicos` CLI, bundled in the desktop app). The bu
 
 ---
 
+## 0.5.28 — 2026-11-28
+
+- 命令行：打开 `omicos cli` 默认新建对话，`--continue` 继续最近一个，`--resume` 按 ID 恢复或从列表里选，退出时会提示恢复用的命令。多行输入可以用上下键移动光标，输入框最高 12 行。对话排版更易读：段落之间留空行，列表正确缩进，按词换行。工具调用会显示改动的行数和输出的开头，需要审批时直接展示要执行的改动或命令。
+- 命令行 `omicos exec`：结束前会核对交付结果；未经验证就改动了默认结果的交付物会被退回修改，最终恢复为默认值。
+
+- Command line: `omicos cli` now starts a new conversation; `--continue` picks up the most recent one and `--resume` reopens one by ID or from a list, and on exit it prints the command to resume. Up and Down move the cursor through multi-line input, and the input box grows to 12 rows. Conversations are easier to read: blank lines between paragraphs, properly indented lists, and line breaks between words. Tool calls show how many lines an edit changes and the start of their output, and approval prompts show the change or command itself.
+- Command line `omicos exec`: before finishing, it checks the deliverables; one that changes a default result without verification is sent back for revision and finally restored to the default.
+
 ## 0.5.27 — 2026-11-27
 
 - 模型：多步调用工具时不再反复确认权限，回复里也不会再提到它；提示词前缀缓存照常命中。请求刚开始就遇到 token 速率限制时会自动重试。

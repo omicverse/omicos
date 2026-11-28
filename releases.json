@@ -2,10 +2,22 @@
   "$comment": "Generated from releases/ by scripts/release-notes.mjs — do not edit. Source: https://github.com/omicverse/omicos",
   "core": {
     "name": "omicos-core",
-    "latest": "0.5.27",
+    "latest": "0.5.28",
     "changelog": "https://github.com/omicverse/omicos/blob/main/changelogs/core.md",
     "github_releases": "https://github.com/omicverse/omicos/releases?q=core-",
     "releases": [
+      {
+        "version": "0.5.28",
+        "date": "2026-11-28",
+        "zh": [
+          "命令行：打开 `omicos cli` 默认新建对话，`--continue` 继续最近一个，`--resume` 按 ID 恢复或从列表里选，退出时会提示恢复用的命令。多行输入可以用上下键移动光标，输入框最高 12 行。对话排版更易读：段落之间留空行，列表正确缩进，按词换行。工具调用会显示改动的行数和输出的开头，需要审批时直接展示要执行的改动或命令。",
+          "命令行 `omicos exec`：结束前会核对交付结果；未经验证就改动了默认结果的交付物会被退回修改，最终恢复为默认值。"
+        ],
+        "en": [
+          "Command line: `omicos cli` now starts a new conversation; `--continue` picks up the most recent one and `--resume` reopens one by ID or from a list, and on exit it prints the command to resume. Up and Down move the cursor through multi-line input, and the input box grows to 12 rows. Conversations are easier to read: blank lines between paragraphs, properly indented lists, and line breaks between words. Tool calls show how many lines an edit changes and the start of their output, and approval prompts show the change or command itself.",
+          "Command line `omicos exec`: before finishing, it checks the deliverables; one that changes a default result without verification is sent back for revision and finally restored to the default."
+        ]
+      },
       {
         "version": "0.5.27",
         "date": "2026-11-27",
