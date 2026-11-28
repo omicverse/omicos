@@ -10,6 +10,16 @@ The in-browser / in-desktop interface. Delivered silently via OTA with the deskt
 
 ---
 
+## 0.3.48 — 2026-11-28
+
+- SSH：远程 Bot 的历史和对话副本会从它们所在的那台服务打开；确认过的对话操作留在对应的 SSH 服务上；账号重新验证期间，你选中的远程历史会保持不变。
+- 计划的审批按钮会一直可见，不再被挤出视野。
+- 保存数据根目录后会给出明确的反馈；已授权的共享目录可以正常浏览。
+
+- SSH: a remote bot's history and conversation copies open from the service they live on; confirmed conversation actions stay on that SSH service; the remote history you selected stays put while your account is re-verified.
+- Plan approval controls stay visible instead of scrolling out of view.
+- Saving the data root now gives clear feedback, and authorized shared folders can be browsed normally.
+
 ## 0.3.47 — 2026-11-25
 
 - 登录在运行环境较晚就绪时也能正常完成，不再卡在加载状态。
